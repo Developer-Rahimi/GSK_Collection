@@ -1,7 +1,9 @@
 <template>
     <div id="Wrapper">
         <div id="Header">
-
+            <h1 class="SiteName">Site Title</h1>
+            <br>
+            <h4 class="SiteName">Banner ‌Site</h4>
         </div>
         <div id="Content">
 

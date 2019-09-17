@@ -1748,6 +1748,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Master"
 });
@@ -37103,7 +37105,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "Wrapper" } }, [
-      _c("div", { attrs: { id: "Header" } }),
+      _c("div", { attrs: { id: "Header" } }, [
+        _c("h1", { staticClass: "SiteName" }, [_vm._v("Site Title")]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("h4", { staticClass: "SiteName" }, [_vm._v("Banner ‌Site")])
+      ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "Content" } }),
       _vm._v(" "),
