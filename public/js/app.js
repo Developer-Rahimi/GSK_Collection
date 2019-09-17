@@ -37196,7 +37196,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    { staticClass: "menu" },
+    _vm._l(_vm.Menues, function(menu) {
+      return _c(
+        "a",
+        { attrs: { href: menu.Link, title: menu.Title } },
+        [_c("sapn", [_vm._v(_vm._s(menu.Title))])],
+        1
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

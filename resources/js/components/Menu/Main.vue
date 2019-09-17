@@ -1,7 +1,7 @@
 <template>
-<div>
-
-</div>
+    <div class="menu">
+       <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><sapn >{{menu.Title}}</sapn></a>
+    </div>
 </template>
 
 <script>
@@ -13,7 +13,6 @@
                     {Title:"صفحه اصلی",Link:"#"},
                     {Title:"حساب من",Link:"#"},
                     {Title:"مرکز دانلود",Link:"#"},
-
                     {Title:"تماس با ما",Link:"#"},
                     {Title:"در باره ما",Link:"#"},
                     {Title:"خروج",Link:"#"},

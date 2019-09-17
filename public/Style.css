@@ -20,6 +20,7 @@
             width: 100%;
             height: auto;
         }
+        /*****************************Header************************/
         #Header {
             float:right;
             width: 100%;
@@ -41,7 +42,24 @@
             font: 19px IRANSans-web,Tahoma;
             text-align: right;
         }
-
+        #Header .menu{
+            float:right;
+            width: 100%;
+            font: 14px IRANSans-web,Tahoma;
+            text-align: right;
+            background: #1d2124;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #Header .menu a{
+            float:right;
+            width: auto;
+            margin-right: 5px;
+            font: 14px IRANSans-web,Tahoma;
+            color: white;
+            text-align: right;
+        }
+        /*****************************Content************************/
         #Content {
             float:right;
             width: 100%;
