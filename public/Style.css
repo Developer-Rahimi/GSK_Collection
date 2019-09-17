@@ -14,12 +14,56 @@
 /*Laptop*/
 @media (min-width: 950px) {
     @media (max-width: 1400px) {
-
+        #Wrapper {
+            float:right;
+            width: 100%;
+            height: auto;
+        }
+        #Header {
+            float:right;
+            width: 100%;
+            height: 200px;
+            background: red;
+        }
+        #Content {
+            float:right;
+            width: 100%;
+            height: 800px;
+            background: silver;
+        }
+        #Footer {
+            float:right;
+            width: 100%;
+            height: 800px;
+            background: green;
+        }
     }
 }
 /*PC*/
 @media (min-width: 1400px) {
     @media (max-width: 2600px) {
-
+        #Wrapper {
+            float:right;
+            width: 100%;
+            height: auto;
+        }
+        #Header {
+            float:right;
+            width: 100%;
+            height: 200px;
+            background: red;
+        }
+        #Content {
+            float:right;
+            width: 100%;
+            height: 800px;
+            background: silver;
+        }
+        #Footer {
+            float:right;
+            width: 100%;
+            height: 800px;
+            background: green;
+        }
     }
 }

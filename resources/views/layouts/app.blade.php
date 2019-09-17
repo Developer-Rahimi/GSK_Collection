@@ -26,5 +26,6 @@
             @yield('content')
         </main>
     </div>
+    <link href="{{ asset('Style.css') }}" rel="stylesheet">
 </body>
 </html>
