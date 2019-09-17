@@ -37110,7 +37110,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("br"),
         _vm._v(" "),
-        _c("h4", { staticClass: "SiteName" }, [_vm._v("Banner ‌Site")])
+        _c("h4", { staticClass: "SiteBanner" }, [_vm._v("Banner ‌Site")])
       ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "Content" } }),
