@@ -10,6 +10,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Master', require('./components/Layout/Master.vue').default);
+Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
+
 
 
 
