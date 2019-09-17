@@ -1,9 +1,10 @@
 <template>
     <div id="Wrapper">
         <div id="Header">
-            <h1 class="SiteName">Site Title</h1>
+            <h1 class="SiteName">نام سایت</h1>
             <br>
-            <h4 class="SiteBanner">Banner ‌Site</h4>
+            <h4 class="SiteBanner">شعار سایت</h4>
+
         </div>
         <div id="Content">
 

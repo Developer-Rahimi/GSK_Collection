@@ -26,6 +26,22 @@
             height: 200px;
             background: red;
         }
+        #Header .SiteName{
+            float:right;
+            width: 80%;
+            margin-right: 10%;
+            font: 25px IRANSans-web,Tahoma;
+            font-weight: bold ;
+            text-align: right;
+        }
+        #Header .SiteBanner{
+            float:right;
+            width: 80%;
+            margin-right: 10%;
+            font: 19px IRANSans-web,Tahoma;
+            text-align: right;
+        }
+
         #Content {
             float:right;
             width: 100%;
