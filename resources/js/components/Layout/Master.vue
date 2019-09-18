@@ -7,7 +7,7 @@
             <MainMenu></MainMenu>
         </div>
         <div id="Content">
-
+            <SlideShow></SlideShow>
         </div>
         <div id="Footer">
 
