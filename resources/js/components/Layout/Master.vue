@@ -10,10 +10,18 @@
             <SlideShow></SlideShow>
         </div>
         <div id="Footer">
-
-            <div class="Designer">
+            <div class="Acsess">
 
             </div>
+            <div class="About">
+
+            </div>
+            <div class="Contact">
+
+            </div>
+            <span class="Designer">
+               Copyright© 2019 Industrial Projects Rahimi of Iran. All rights reserved.
+            </span>
         </div>
 
     </div>
