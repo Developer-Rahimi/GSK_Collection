@@ -8,6 +8,7 @@
         </div>
         <div id="Content">
             <SlideShow></SlideShow>
+            <slot></slot>
         </div>
         <div id="Footer">
             <div class="Access">
