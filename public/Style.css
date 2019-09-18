@@ -76,8 +76,24 @@
         #Footer {
             float:right;
             width: 100%;
-            height: 200px;
+            height: auto;
             background: #1a2849;
+        }
+        #Footer .Access{
+            float:right;
+            width: 33.33%;
+            height: 200px;
+            background: yellow;
+        }#Footer .About{
+            float:right;
+            width:  33.33%;
+            height: 200px;
+            background: orange;
+        }#Footer .Contact{
+            float:right;
+            width: 33.33%;
+            height: 200px;
+            background: red;
         }
         #Footer .Designer {
             float:right;

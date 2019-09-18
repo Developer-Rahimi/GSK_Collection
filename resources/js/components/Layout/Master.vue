@@ -10,7 +10,7 @@
             <SlideShow></SlideShow>
         </div>
         <div id="Footer">
-            <div class="Acsess">
+            <div class="Access">
 
             </div>
             <div class="About">
