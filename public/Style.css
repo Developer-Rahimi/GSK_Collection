@@ -24,8 +24,8 @@
         #Header {
             float:right;
             width: 100%;
-            height: 200px;
-            background: red;
+            height: auto;
+            background: #1a2849;
         }
         #Header .SiteName{
             float:right;
@@ -34,6 +34,7 @@
             font: 25px IRANSans-web,Tahoma;
             font-weight: bold ;
             text-align: right;
+            color: white;
         }
         #Header .SiteBanner{
             float:right;
@@ -41,6 +42,7 @@
             margin-right: 10%;
             font: 19px IRANSans-web,Tahoma;
             text-align: right;
+            color: #eeeeee;
         }
         #Header .menu{
             float:right;
@@ -48,16 +50,20 @@
             font: 14px IRANSans-web,Tahoma;
             text-align: right;
             background: #1d2124;
-            margin-top: 20px;
-            margin-bottom: 20px;
+
         }
         #Header .menu a{
             float:right;
             width: auto;
-            margin-right: 5px;
-            font: 14px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web,Tahoma;
             color: white;
             text-align: right;
+            padding: 10px;
+        }
+        #Header .menu a:hover{
+            background: #1d643b;
+            color: white;
+            text-decoration: none;
         }
         /*****************************Content************************/
         #Content {
