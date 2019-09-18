@@ -21,6 +21,7 @@ Vue.component('Master', require('./components/Layout/Master.vue').default);
 
 
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
+Vue.component('Access', require('./components/Menu/Access.vue').default);
 
 
 

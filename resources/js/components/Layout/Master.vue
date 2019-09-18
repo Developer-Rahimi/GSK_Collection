@@ -11,7 +11,7 @@
         </div>
         <div id="Footer">
             <div class="Access">
-
+                <Access></Access>
             </div>
             <div class="About">
                 <h3 class="title">درباره ما</h3>
