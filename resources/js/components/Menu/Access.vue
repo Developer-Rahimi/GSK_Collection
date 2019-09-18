@@ -1,12 +1,28 @@
 <template>
     <div>
-        Access
+        <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><sapn >{{menu.Title}}</sapn></a>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Access"
+        name: "Access",
+        data(){
+            return {
+                Menues:[
+                    {Title:"اتوماسیون",Link:"#"},
+                    {Title:"محصولات جدید",Link:"#"},
+                    {Title:"آموزش",Link:"#"},
+                    {Title:"وبلاگ",Link:"#"},
+                ],
+            }
+        },
+        mounted:{
+
+        },
+        methods:{
+
+        }
     }
 </script>
 
