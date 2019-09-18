@@ -8,6 +8,13 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vue from 'vue'
+import EasySlider from 'vue-easy-slider'
+
+Vue.use(EasySlider)
+
+
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Master', require('./components/Layout/Master.vue').default);
 
