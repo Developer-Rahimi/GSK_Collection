@@ -90,13 +90,14 @@
         }
         #Footer .Access{
             float:right;
-            width: 33.33%;
+            width: 30%;
             height: auto;
         }
         #Footer .About{
             float:right;
-            width: 33.33%;
+            width: 30%;
             height: auto;
+            margin-right: 5%;
         }
 
         #Footer .About span{
@@ -109,8 +110,9 @@
         }
         #Footer .Contact{
             float:right;
-            width: 33.33%;
+            width: 30%;
             height: auto;
+            margin-right: 5%;
         }
         #Footer .Designer {
             float:right;
