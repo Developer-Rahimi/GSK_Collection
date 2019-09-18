@@ -1,6 +1,11 @@
 <template>
     <div>
-        <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><sapn >{{menu.Title}}</sapn></a>
+        <ul>
+            <li v-for="menu in Menues">
+                <a  v-bind:href="menu.Link" v-bind:title="menu.Title"><sapn >{{menu.Title}}</sapn></a>
+            </li>
+        </ul>
+
     </div>
 </template>
 
