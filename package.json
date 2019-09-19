@@ -12,6 +12,7 @@
     "devDependencies": {
         "axios": "^0.18",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "bootstrap": "^4.1.0",
 <<<<<<< HEAD
         "cross-env": "^5.1",
@@ -20,6 +21,9 @@
 >>>>>>> install bootstrap-vue
 =======
 >>>>>>> remove node mudole in git
+=======
+        "bootstrap": "^4.3.1",
+>>>>>>> install bootstrap-vue
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
@@ -32,6 +36,7 @@
     },
     "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "vue-easy-slider": "^5.2.10",
         "@fortawesome/fontawesome-svg-core": "^1.2.20",
         "@fortawesome/free-solid-svg-icons": "^5.10.0",
@@ -39,6 +44,9 @@
 =======
         "bootstrap-vue": "^2.0.1",
 <<<<<<< HEAD
+=======
+        "bootstrap-vue": "^2.0.1",
+>>>>>>> install bootstrap-vue
         "vue-easy-slider": "^5.2.10"
 >>>>>>> install bootstrap-vue
 =======
