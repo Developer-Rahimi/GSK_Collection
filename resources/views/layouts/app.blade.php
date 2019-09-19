@@ -21,10 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <Master></Master>
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <Master>
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </Master>
+
     </div>
     <link href="{{ asset('Style.css') }}" rel="stylesheet">
 </body>
