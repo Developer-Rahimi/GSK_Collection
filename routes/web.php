@@ -11,12 +11,20 @@
 |
 */
 
-Route::get('/test', 'TestController@test');
+
 
 Auth::routes();
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('/About', 'AboutController@index');
+    Route::get('/Contact', 'ContactController@index');
+    Route::get('/test', 'TestController@test');
+    Route::group(['prefix' => '/Show'], function () {
+    Route::get('/Page', 'ShowPageController@index');
+    Route::get('/Content', 'ShowContentController@index');
+    });
 
-Route::get('/', 'HomeController@index');
-Route::get('/About', 'AboutController@index');
-Route::get('/Contact', 'ContactController@index');
-Route::get('/ShowPage', 'ShowPageController@index');
-Route::get('/ShowContent', 'ShowContentController@index');
+    Route::group(['prefix' => '/api'], function () {
+
+    });
+});
