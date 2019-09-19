@@ -46,9 +46,14 @@
 <<<<<<< HEAD
 =======
         "bootstrap-vue": "^2.0.1",
+<<<<<<< HEAD
 >>>>>>> install bootstrap-vue
         "vue-easy-slider": "^5.2.10"
 >>>>>>> install bootstrap-vue
+=======
+        "vue-easy-slider": "^5.2.10",
+        "vue-button-spinner": "^2.2.1"
+>>>>>>> install VueButtonSpinner
 =======
         "vue-easy-slider": "^5.2.10",
         "vue-button-spinner": "^2.2.1"
