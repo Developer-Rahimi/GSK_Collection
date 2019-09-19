@@ -256,6 +256,22 @@
             width: 100%;
             height: auto;
         }
+        #About .card-header{
+            float:right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            background: #505bda;
+        }
+        #About .card-title{
+            float:right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            color: white;
+            font: 19px IRANSans-web,Tahoma;
+            font-weight:bold ;
+        }
         #About .title {
             float:right;
             width: 100%;
@@ -275,7 +291,7 @@
             direction: rtl;
             text-align: justify;
         }
-        /****************************About-Page*********************************/
+        /****************************Contact-Page*********************************/
         #Contact {
             float:right;
             width: 100%;
