@@ -26,6 +26,6 @@ Route::group(['prefix' => '/'], function () {
     });
 
     Route::group(['prefix' => '/api'], function () {
-        Route::get('/Contact', 'ApiController@Contact');
+        Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
     });
 });

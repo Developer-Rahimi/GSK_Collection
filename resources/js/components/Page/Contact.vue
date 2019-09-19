@@ -6,7 +6,31 @@
 
 <script>
     export default {
-        name: "Contact"
+        name: "Contact",
+        props: {
+            UrlGetContact: {
+                type: String,
+                required: true,
+            },
+        },
+        data(){
+            return {
+                Contact:{},
+
+            }
+        },
+        mounted() {
+            this.GetContact();
+        },
+        methods:{
+            GetContact(){
+                axios
+                    .get(this.UrlGetContact)
+                    .then(response => {
+                       console.log(response.data) ;
+                    })
+            }
+        }
     }
 </script>
 
