@@ -1,5 +1,7 @@
 <template>
-    
+    <div>
+        <h1>Show-Content</h1>
+    </div>
 </template>
 
 <script>
@@ -7,7 +9,6 @@
         name: "ShowContent"
     }
 </script>
-
 <style scoped>
 
 </style>
