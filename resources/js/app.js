@@ -26,6 +26,7 @@ Vue.component('Master', require('./components/Layout/Master.vue').default);
 
 
 Vue.component('About', require('./components/Page/About.vue').default);
+Vue.component('Contact', require('./components/Page/Contact.vue').default);
 
 
 
