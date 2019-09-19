@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import EasySlider from 'vue-easy-slider'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -22,6 +23,13 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+>>>>>>> install bootstrap
+=======
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 Vue.use(BootstrapVue)
 >>>>>>> install bootstrap
 Vue.use(EasySlider)
