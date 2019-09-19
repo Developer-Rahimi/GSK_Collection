@@ -275,5 +275,48 @@
             direction: rtl;
             text-align: justify;
         }
+        /****************************About-Page*********************************/
+        #Contact {
+            float:right;
+            width: 100%;
+            height: auto;
+            direction: rtl;
+        }
+        #Contact .card-header{
+            float:right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            background: #505bda;
+        }
+        #Contact .card-title{
+            float:right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            color: white;
+            font: 19px IRANSans-web,Tahoma;
+            font-weight:bold ;
+        }
+
+        #Contact .label{
+            float:right;
+            width: 100%;
+            color: black;
+            font: 14px IRANSans-web,Tahoma;
+            direction: rtl;
+            font-weight:bold ;
+            text-align: right;
+
+        }
+        #Contact .data{
+            float:right;
+            width: 100%;
+            color: black;
+            font: 12px IRANSans-web,Tahoma;
+            direction: rtl;
+            text-align: right;
+
+        }
     }
 }
