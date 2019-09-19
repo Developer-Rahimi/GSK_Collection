@@ -63,6 +63,15 @@
                             placeholder="اینجا بنویسید ...."
                     ></b-form-textarea>
                 </b-form-group>
+                <br>
+                <VueButtonSpinner
+                        class="btn_send"
+                        :is-loading="true"
+                        :disabled="true"
+                        :status="true">
+                    <span  style="margin-left:4px;float: right ">ارسال</span>
+                </VueButtonSpinner>
+
             </div>
         </div>
     </div>
@@ -70,8 +79,12 @@
 </template>
 
 <script>
+    import VueButtonSpinner from 'vue-button-spinner';
     export default {
         name: "Contact",
+        components: {
+            VueButtonSpinner
+        },
         props: {
             UrlGetContact: {
                 type: String,

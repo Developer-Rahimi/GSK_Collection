@@ -369,5 +369,14 @@
             font: 12px IRANSans-web,Tahoma;
             direction: rtl;
         }
+        #Contact .Contact_Form .btn_send {
+            float:right;
+            width: auto;
+            height: auto;
+            font: 12px IRANSans-web,Tahoma;
+            direction: ltr;
+            padding: 10px;
+
+        }
     }
 }
