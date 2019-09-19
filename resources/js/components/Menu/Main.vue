@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-       <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><sapn >{{menu.Title}}</sapn></a>
+       <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><span >{{menu.Title}}</span></a>
     </div>
 </template>
 
@@ -19,7 +19,7 @@
                 ],
             }
         },
-        mounted:{
+        mounted(){
 
         },
         methods:{

@@ -13,10 +13,13 @@
         "axios": "^0.18",
 <<<<<<< HEAD
         "bootstrap": "^4.1.0",
+<<<<<<< HEAD
         "cross-env": "^5.1",
 =======
         "bootstrap": "^4.3.1",
 >>>>>>> install bootstrap-vue
+=======
+>>>>>>> remove node mudole in git
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
