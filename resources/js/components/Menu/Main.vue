@@ -10,11 +10,11 @@
         data(){
             return {
                 Menues:[
-                    {Title:"صفحه اصلی",Link:"#"},
+                    {Title:"صفحه اصلی",Link:"/"},
                     {Title:"حساب من",Link:"#"},
                     {Title:"مرکز دانلود",Link:"#"},
-                    {Title:"تماس با ما",Link:"#"},
-                    {Title:"در باره ما",Link:"#"},
+                    {Title:"تماس با ما",Link:"/Contact"},
+                    {Title:"در باره ما",Link:"/About"},
                     {Title:"خروج",Link:"#"},
                 ],
             }
