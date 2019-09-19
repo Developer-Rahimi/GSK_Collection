@@ -18,3 +18,4 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/About', 'AboutController@index');
 Route::get('/Contact', 'ContactController@index');
+Route::get('/ShowPage', 'ShowPageController@index');
