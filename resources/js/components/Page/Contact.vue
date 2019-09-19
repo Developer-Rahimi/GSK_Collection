@@ -22,6 +22,48 @@
             <br>
                     <span class="data" v-text="Contact.Fax"></span>
             <br>
+            <br>
+            <div class="Contact_Form">
+                <b-form-group
+                        class="lbl_name"
+                        label="نام شما:"
+                        description=""
+                >
+                    <b-form-input
+                            v-model="info.Name"
+                            class="name"
+                            type="email"
+                            required
+                            placeholder="برای مثال: علی"
+                    ></b-form-input>
+                </b-form-group>
+                <b-form-group
+                        class="lbl_email"
+                        label="رایانامه:"
+                        description=""
+                >
+                    <b-form-input
+                            v-model="info.email"
+                            type="email"
+                            class="email"
+                            required
+                            placeholder="info@gskcollection"
+                    ></b-form-input>
+                </b-form-group>
+                <b-form-group
+                        class="lbl_desc"
+                        label="متن:"
+                        description=""
+                >
+                    <b-form-textarea
+                            v-model="info.desc"
+                            type="email"
+                            class="desc"
+                            required
+                            placeholder="اینجا بنویسید ...."
+                    ></b-form-textarea>
+                </b-form-group>
+            </div>
         </div>
     </div>
     </div>
@@ -39,7 +81,7 @@
         data(){
             return {
                 Contact:{},
-
+                info:{}
             }
         },
         mounted() {
