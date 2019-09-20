@@ -2029,6 +2029,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   props: {
@@ -2039,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      Product: []
+      Products: []
     };
   },
   mounted: function mounted() {
@@ -2050,8 +2057,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.UrlGetProduct).then(function (response) {
-        console.log(response.data);
-        _this.Product = response.data;
+        var data = response.data;
+        console.log(data);
+        _this.Products = data;
       });
     }
   }
@@ -68185,7 +68193,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    _vm._l(_vm.Products, function(Product) {
+      return _c("div", { attrs: { ID: "Product" } }, [
+        _c("div", { staticClass: "card" }, [
+          _c("img", {
+            staticClass: "card-img",
+            attrs: { src: "Images/" + Product.ProductIamge }
+          }),
+          _vm._v(" "),
+          _c("span", {
+            staticClass: "title",
+            domProps: { textContent: _vm._s(Product.ProductName) }
+          }),
+          _vm._v(" "),
+          _c("span", {
+            staticClass: "price",
+            domProps: { textContent: _vm._s(Product.ProductPrice + " تومان") }
+          })
+        ])
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

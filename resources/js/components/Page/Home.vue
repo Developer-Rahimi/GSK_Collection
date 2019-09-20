@@ -1,7 +1,14 @@
 <template>
     <div>
-
+        <div ID="Product" v-for="Product in Products">
+            <div class="card">
+                <img class="card-img" v-bind:src="'Images/'+Product.ProductIamge">
+                <span class="title" v-text="Product.ProductName"></span>
+                <span class="price" v-text="Product.ProductPrice+' تومان'"></span>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -15,7 +22,7 @@
         },
         data(){
             return {
-                Product:[]
+                Products:[]
 
             };
         },
@@ -27,8 +34,9 @@
                 axios
                     .get(this.UrlGetProduct)
                     .then(response => {
-                        console.log(response.data) ;
-                        this.Product=response.data;
+                        var data=response.data;
+                        console.log(data) ;
+                        this.Products=data;
                     })
             }
         }
