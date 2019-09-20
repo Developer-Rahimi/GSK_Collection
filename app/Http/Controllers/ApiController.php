@@ -32,6 +32,9 @@ class ApiController extends Controller
             ['ProductName' => 'محصول چهارم',
                 'ProductIamge' => '4.jpg',
                 'ProductPrice' => '325000'],
+            ['ProductName' => 'محصول پنجم',
+                'ProductIamge' => '5.jpg',
+                'ProductPrice' => '725000'],
 
 
         );

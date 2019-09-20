@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
-    <Home></Home>
+    <Home
+            Url-Get-Product="{{route('Get.Product')}}"
+    ></Home>
 </div>
 @endsection

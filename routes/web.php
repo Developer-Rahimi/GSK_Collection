@@ -28,6 +28,6 @@ Route::group(['prefix' => '/'], function () {
     Route::group(['prefix' => '/api'], function () {
         Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
 
-        Route::get('/Product', ['as'=>'Get.Contact','uses'=>'ApiController@Product']);
+        Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
     });
 });
