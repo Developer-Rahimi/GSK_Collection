@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="08c1e817-b991-4dea-b8c7-2fedd15b20a2" name="Default Changelist" comment="">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9,10 +10,14 @@
 =======
     <list default="true" id="08c1e817-b991-4dea-b8c7-2fedd15b20a2" name="Default Changelist" comment="install bootstrap">
 >>>>>>> get product data in api url
+=======
+    <list default="true" id="08c1e817-b991-4dea-b8c7-2fedd15b20a2" name="Default Changelist" comment="get product data in api url">
+>>>>>>> update home page
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Page/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Page/Home.vue" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
 =======
@@ -14379,6 +14384,8 @@
       <change beforePath="$PROJECT_DIR$/public/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
 >>>>>>> Add Component About
+=======
+>>>>>>> update home page
     </list>
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -14515,7 +14522,7 @@
 =======
         <entry file="file://$PROJECT_DIR$/resources/js/components/Page/Contact.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="238">
               <caret line="92" column="10" selection-start-line="87" selection-start-column="8" selection-end-line="92" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#VueButtonSpinner#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -14534,13 +14541,19 @@
 =======
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="85">
               <caret line="5" column="49" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="49" />
 >>>>>>> get product data in api url
+=======
+            <state relative-caret-position="102">
+              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+>>>>>>> update home page
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -14561,41 +14574,52 @@
             <state relative-caret-position="306">
               <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
 >>>>>>> get product data in api url
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+>>>>>>> update home page
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/views/Pages/Contact.blade.php">
 =======
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
 >>>>>>> get product data in api url
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+=======
         <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+>>>>>>> update home page
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#278#299#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Page/Home.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/Style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="352" column="32" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
+            <state relative-caret-position="321">
+              <caret line="260" column="31" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
+              <folding>
+                <element signature="e#57584#60368#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -14675,6 +14699,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>sap</find>
+      <find>Product</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -14722,16 +14747,19 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Page/About.vue" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/public/Style.css" />
         <option value="$PROJECT_DIR$/resources/js/components/Page/Contact.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/Page/home.vue" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/resources/views/Pages/Contact.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Page/Home.vue" />
+<<<<<<< HEAD
 >>>>>>> get product data in api url
+=======
+        <option value="$PROJECT_DIR$/public/Style.css" />
+>>>>>>> update home page
       </list>
     </option>
   </component>
@@ -14871,6 +14899,7 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
+<<<<<<< HEAD
               <item name="GSK" type="b2602c69:ProjectViewProjectNode" />
               <item name="GSK" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -14887,17 +14916,37 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GSK_UI" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GSK_UI" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+>>>>>>> update home page
             </path>
             <path>
               <item name="GSK" type="b2602c69:ProjectViewProjectNode" />
               <item name="GSK" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
 <<<<<<< HEAD
               <item name="Menu" type="462c0819:PsiDirectoryNode" />
 =======
               <item name="Layout" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> update home page
+            </path>
+            <path>
+              <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GSK_UI" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
@@ -14905,15 +14954,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GSK_UI" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GSK_UI" type="b2602c69:ProjectViewProjectNode" />
@@ -14945,6 +14985,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\GSK_UI\public\Images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -15134,15 +15179,89 @@
       <option name="project" value="LOCAL" />
       <updated>1568981182703</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="get product data in api url">
+      <created>1568982103933</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568982103933</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add images to project">
+      <created>1568984978062</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1568984978062</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add image and update methode">
+      <created>1568987412519</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1568987412519</updated>
+    </task>
+    <task id="LOCAL-00027" summary="get product data in api url">
+      <created>1568990936433</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1568990936433</updated>
+    </task>
+    <task id="LOCAL-00028" summary="install carousel">
+      <created>1568991013222</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1568991013222</updated>
+    </task>
+    <task id="LOCAL-00029" summary="install vue-carousel">
+      <created>1568991413005</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1568991413005</updated>
+    </task>
+    <task id="LOCAL-00030" summary="design product ui">
+      <created>1569001482145</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1569001482145</updated>
+    </task>
+    <task id="LOCAL-00031" summary="update api">
+      <created>1569001802277</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1569001802277</updated>
+    </task>
+    <task id="LOCAL-00032" summary="update api">
+      <created>1569002162747</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1569002162747</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update css in product">
+      <created>1569002731056</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1569002731056</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="5794000" />
 =======
     <option name="totallyTimeSpent" value="22746000" />
 >>>>>>> get product data in api url
+=======
+    <option name="totallyTimeSpent" value="40245000" />
+>>>>>>> update home page
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="7" />
@@ -15261,11 +15380,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Component About" />
-    <MESSAGE value="Page About added" />
-    <MESSAGE value="ShowPage added" />
-    <MESSAGE value="add page" />
-    <MESSAGE value="setm link to main menu" />
     <MESSAGE value="ShowContent component added" />
     <MESSAGE value="ShowContent page added" />
     <MESSAGE value="ApiController added" />
@@ -15283,7 +15397,15 @@
     <MESSAGE value="add btn send to form contact" />
     <MESSAGE value="component home added" />
     <MESSAGE value="create methode get products" />
-    <option name="LAST_COMMIT_MESSAGE" value="create methode get products" />
+    <MESSAGE value="add images to project" />
+    <MESSAGE value="add image and update methode" />
+    <MESSAGE value="get product data in api url" />
+    <MESSAGE value="install carousel" />
+    <MESSAGE value="install vue-carousel" />
+    <MESSAGE value="design product ui" />
+    <MESSAGE value="update api" />
+    <MESSAGE value="update css in product" />
+    <option name="LAST_COMMIT_MESSAGE" value="update css in product" />
   </component>
 =======
 >>>>>>> remove node mudole in git
@@ -15450,6 +15572,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/Style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -15465,14 +15588,21 @@
 =======
         <state relative-caret-position="170">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+>>>>>>> update home page
           <folding>
-            <element signature="e#278#299#0" expanded="true" />
+            <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Pages/Contact.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="372">
           <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
 >>>>>>> get product data in api url
@@ -15494,19 +15624,39 @@
 =======
         <state relative-caret-position="85">
           <caret line="5" column="57" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="57" />
+=======
+        <state relative-caret-position="85">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Page/Contact.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="92" column="10" selection-start-line="87" selection-start-column="8" selection-end-line="92" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#VueButtonSpinner#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> update home page
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="85">
           <caret line="5" column="49" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="49" />
 >>>>>>> get product data in api url
+=======
+        <state relative-caret-position="102">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+>>>>>>> update home page
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="68">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
@@ -15553,24 +15703,40 @@
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="366">
+          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+>>>>>>> update home page
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Page/Contact.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="92" column="10" selection-start-line="87" selection-start-column="8" selection-end-line="92" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#VueButtonSpinner#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Page/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
 >>>>>>> get product data in api url
+=======
+        <state relative-caret-position="68">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="260" column="31" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
+          <folding>
+            <element signature="e#57584#60368#0" />
+          </folding>
+>>>>>>> update home page
         </state>
       </provider>
     </entry>
