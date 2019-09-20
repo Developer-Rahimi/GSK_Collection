@@ -7,6 +7,7 @@
                         <img class="card-img" v-bind:src="'Images/'+Product.ProductIamge">
                         <span class="title" v-text="Product.ProductName"></span>
                         <span class="price" v-text="Product.ProductPrice+' تومان'"></span>
+                        <span class="btn_add_cart" >افزودن به سبد خرید</span>
                     </div>
                 </slide>
 

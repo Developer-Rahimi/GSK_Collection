@@ -273,14 +273,25 @@
             width: 100%;
             text-align: center;
             font: 13px IRANSans-web,Tahoma;
+            margin-top: 10px;
+            color: #1a2849;
         }
         #Product .price{
             float:right;
-            width: 100%;
+            width: 50%;
             text-align: center;
-            color: #5a6268;
+            color: #1a2849;
             font: 12px IRANSans-web,Tahoma;
             direction: rtl;
+        }
+        #Product .btn_add_cart{
+            float:right;
+            width: 50%;
+            text-align: center;
+            color: #aa01ff;
+            font: 12px IRANSans-web,Tahoma;
+            direction: rtl;
+            margin-bottom: 10px;
         }
         /****************************About-Page*********************************/
         #About {
