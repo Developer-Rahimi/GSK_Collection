@@ -39,6 +39,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('Master', require('./components/Layout/Master.vue').default);
 
 
+Vue.component('Home', require('./components/Page/Home.vue').default);
 Vue.component('About', require('./components/Page/About.vue').default);
 <<<<<<< HEAD
 Vue.component('Contact', require('./components/Page/Contact.vue').default);
