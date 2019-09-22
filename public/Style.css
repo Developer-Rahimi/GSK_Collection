@@ -372,6 +372,7 @@
             float: right;
             width: 100%;
             height: auto;
+            background: #FBFFFF;
         }
 
         /*****************************Header************************/
@@ -531,23 +532,34 @@
             font-weight: bold;
         }
 
-        #Product .item {
+        #Product  a {
             float: right;
             width: 90%;
             margin-right: 5%;
             height: auto;
+            min-height: 300px;
             border-radius: 10px;
-            border: 1px solid silver;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: 1.5s;
+        }
+        #Product   a:hover {
+            box-shadow: 0 2px 17px 0 rgba(0,0,0,.1);
+            z-index: 11;
+            transition: 1s;
         }
 
         #Product .card-img {
             float: right;
-            width: 100%;
+            width: 90%;
+            margin-right: 5%;
+            margin-top: 10px;
             height: 200px;
             border-radius: 10px;
         }
 
-        #Product .item .title {
+        #Product  .title {
             float: right;
             width: 100%;
             text-align: center;
