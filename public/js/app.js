@@ -11469,7 +11469,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         Title: "محصولات جدید",
         Link: "#",
-        icon: "product-hunt"
+        icon: "industry"
       }, {
         Title: "آموزش",
         Link: "#",
@@ -77662,7 +77662,10 @@ var render = function() {
           _c(
             "a",
             { attrs: { href: menu.Link, title: menu.Title } },
-            [_c("sapn", [_vm._v(_vm._s(menu.Title))])],
+            [
+              _c("font-awesome-icon", { attrs: { icon: menu.icon } }),
+              _c("span", [_vm._v(_vm._s(menu.Title))])
+            ],
             1
           )
         ])
