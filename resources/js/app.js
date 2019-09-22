@@ -14,14 +14,14 @@ import EasySlider from 'vue-easy-slider'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
-    faTools,faIndustry,faSchool,faBlog
+    faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus
 
 }
 from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
-    faTools,faIndustry,faSchool,faBlog
+    faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

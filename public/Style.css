@@ -566,8 +566,11 @@
             font: 13px IRANSans-web, Tahoma;
             margin-top: 10px;
             color: #1a2849;
+            direction: rtl;
         }
-
+        #Product  .title span ,#Product  .price span ,#Product .btn_add_cart span{
+            margin-right: 5px;
+        }
         #Product .price {
             float: right;
             width: 50%;
@@ -581,7 +584,7 @@
             float: right;
             width: 50%;
             text-align: center;
-            color: yellow;
+            color: green;
             font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             margin-bottom: 10px;
