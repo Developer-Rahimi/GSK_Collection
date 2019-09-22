@@ -11,19 +11,8 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "bootstrap": "^4.1.0",
-<<<<<<< HEAD
+        "bootstrap": "^4.3.1",
         "cross-env": "^5.1",
-=======
-        "bootstrap": "^4.3.1",
->>>>>>> install bootstrap-vue
-=======
->>>>>>> remove node mudole in git
-=======
-        "bootstrap": "^4.3.1",
->>>>>>> install bootstrap-vue
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
@@ -35,34 +24,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "vue-easy-slider": "^5.2.10",
         "@fortawesome/fontawesome-svg-core": "^1.2.20",
         "@fortawesome/free-solid-svg-icons": "^5.10.0",
-        "@fortawesome/vue-fontawesome": "^0.1.6"
-=======
+        "@fortawesome/vue-fontawesome": "^0.1.6",
         "bootstrap-vue": "^2.0.1",
-<<<<<<< HEAD
-=======
-        "bootstrap-vue": "^2.0.1",
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> install bootstrap-vue
-        "vue-easy-slider": "^5.2.10"
->>>>>>> install bootstrap-vue
-=======
-        "vue-easy-slider": "^5.2.10",
-        "vue-button-spinner": "^2.2.1"
->>>>>>> install VueButtonSpinner
-=======
-        "vue-easy-slider": "^5.2.10",
-        "vue-button-spinner": "^2.2.1"
->>>>>>> install VueButtonSpinner
-=======
         "vue-button-spinner": "^2.2.1",
-        "vue-carousel": "^0.18.0",
-        "vue-easy-slider": "^5.2.10"
->>>>>>> install vue-carousel
+        "vue-carousel": "^0.18.0"
     }
 }

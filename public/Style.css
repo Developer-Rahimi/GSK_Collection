@@ -16,534 +16,678 @@
 @media (min-width: 950px) {
     @media (max-width: 1400px) {
         #Wrapper {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
         }
+
         /*****************************Header************************/
         #Header {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             background: #1a2849;
         }
-        #Header .SiteName{
-            float:right;
+
+        #Header .SiteName {
+            float: right;
             width: 80%;
             margin-right: 10%;
-            font: 25px IRANSans-web,Tahoma;
-            font-weight: bold ;
+            font: 25px IRANSans-web, Tahoma;
+            font-weight: bold;
             text-align: right;
             color: white;
         }
-        #Header .SiteBanner{
-            float:right;
+
+        #Header .SiteBanner {
+            float: right;
             width: 80%;
             margin-right: 10%;
-            font: 19px IRANSans-web,Tahoma;
+            font: 19px IRANSans-web, Tahoma;
             text-align: right;
             color: #eeeeee;
         }
-        #Header .menu{
-            float:right;
+
+        #Header .menu {
+            float: right;
             width: 100%;
-            font: 14px IRANSans-web,Tahoma;
+            font: 14px IRANSans-web, Tahoma;
             text-align: right;
             background: #505bda;
 
         }
-        #Header .menu a{
-            float:right;
+
+        #Header .menu a {
+            float: right;
             width: auto;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             color: white;
             text-align: right;
             padding: 10px;
         }
-        #Header .menu a:hover{
+
+        #Header .menu a:hover {
             background: #b063c5;
             color: #ffaac3;
             text-decoration: none;
         }
+
         /*****************************Content************************/
         #Content {
-            float:right;
+            float: right;
             width: 100%;
-            height: 800px;
-            background: silver;
+            height: auto;
         }
+
         /*****************************Footer************************/
         #Footer {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             background: #1a2849;
         }
         #Footer .title {
-            float:right;
-            width:  100%;
-            font: 16px IRANSans-web,Tahoma;
+            float: right;
+            width: 100%;
+            font: 16px IRANSans-web, Tahoma;
             font-weight: bold;
             border-bottom: 1px solid #eee;
             color: white;
             text-align: right;
         }
-        #Footer .Access{
-            float:right;
-            width: 30%;
-            height: auto;
-        }
-        #Footer .Access ul {
+        #Footer .Access {
             float: right;
-            width: 80%;
+            width: 30.0%;
             height: auto;
-            margin-right: 10%;
-            direction: rtl;
+            margin-right: 3%;
         }
-        #Footer .Access li{
+        #Footer .Access ul{
             float:right;
             width: 100%;
-            height: auto;
-            text-align: right;
-            list-style: inherit;
-            color: white;
+            list-style: none;
         }
         #Footer .Access li a{
-            color: white;
-            text-decoration: none;
-            font: 14px IRANSans-web,Tahoma;
-        }
-        #Footer .About{
             float:right;
-            width: 30%;
-            height: auto;
-            margin-right: 5%;
+            width: 100%;
+            color: white;
+            text-align: right;
+            direction: rtl;
+            font: 12px IRANSans-web, Tahoma;
+            text-decoration: none;
         }
 
-        #Footer .About span{
-            float:right;
-            width:  100%;
+        #Footer .About {
+            float: right;
+            width: 30.0%;
+            height: auto;
+            margin-right: 3%;
+        }
+
+
+
+        #Footer .About span {
+            float: right;
+            width: 100%;
             color: white;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             text-align: justify;
         }
-        #Footer .Contact{
-            float:right;
+
+        #Footer .Contact {
+            float: right;
             width: 30%;
             height: auto;
-            margin-right: 5%;
+            margin-right: 3%;
         }
+
         #Footer .Designer {
-            float:right;
+            float: right;
             width: 100%;
             text-align: center;
             color: white;
         }
-    }
-}
-/*PC*/
-@media (min-width: 1400px) {
-    @media (max-width: 2600px) {
-        #Wrapper {
-            float:right;
-            width: 100%;
-            height: auto;
-        }
-        /*****************************Header************************/
-        #Header {
-            float:right;
-            width: 100%;
-            height: auto;
-            background: #1a2849;
-        }
-        #Header .SiteName{
-            float:right;
-            width: 80%;
-            margin-right: 10%;
-            font: 25px IRANSans-web,Tahoma;
-            font-weight: bold ;
-            text-align: right;
-            color: white;
-        }
-        #Header .SiteBanner{
-            float:right;
-            width: 80%;
-            margin-right: 10%;
-            font: 19px IRANSans-web,Tahoma;
-            text-align: right;
-            color: #eeeeee;
-        }
-        #Header .menu{
-            float:right;
-            width: 100%;
-            font: 14px IRANSans-web,Tahoma;
-            text-align: right;
-            background: #505bda;
-
-        }
-        #Header .menu a{
-            float:right;
-            width: auto;
-            font: 12px IRANSans-web,Tahoma;
-            color: white;
-            text-align: right;
-            padding: 10px;
-        }
-        #Header .menu a:hover{
-            background: #b063c5;
-            color: #ffaac3;
-            text-decoration: none;
-        }
-        /*****************************Content************************/
-        #Content {
-            float:right;
-            width: 100%;
-            height: auto;
-        }
-        /*****************************Footer************************/
-        #Footer {
-            float:right;
-            width: 100%;
-            height: auto;
-            background: #1a2849;
-        }
-        #Footer .Access{
-            float:right;
-            width: 33.33%;
-            height: auto;
-        }
-        #Footer .About{
-            float:right;
-            width: 33.33%;
-            height: auto;
-        }
-        #Footer .About .title {
-            float:right;
-            width:  100%;
-            font: 16px IRANSans-web,Tahoma;
-            font-weight: bold;
-            border-bottom: 1px solid #eee;
-            color: white;
-            text-align: right;
-        }
-        #Footer .About span{
-            float:right;
-            width:  100%;
-            color: white;
-            font: 12px IRANSans-web,Tahoma;
-            direction: rtl;
-            text-align: justify;
-        }
-        #Footer .Contact{
-            float:right;
-            width: 33.33%;
-            height: auto;
-        }
-        #Footer .Designer {
-            float:right;
-            width: 100%;
-            text-align: center;
-            color: white;
-        }
-<<<<<<< HEAD
 
         /****************************Home-Page*********************************/
-        #Product{
-            float:right;
+        #Product {
+            float: right;
             width: 90%;
             margin-right: 5%;
             height: auto;
 
         }
-        #Product .carousel{
-            float:right;
+
+        #Product .carousel {
+            float: right;
             width: 100%;
             height: auto;
             margin-top: 20px;
         }
-        #Product .title{
-            float:right;
+
+        #Product .title {
+            float: right;
             width: 90%;
             margin-right: 2%;
             text-align: right;
-            font: 18px IRANSans-web,Tahoma;
-            font-weight:bold;
+            font: 18px IRANSans-web, Tahoma;
+            font-weight: bold;
         }
-        #Product .item{
-            float:right;
+
+        #Product .item {
+            float: right;
             width: 90%;
             margin-right: 5%;
             height: auto;
-            border-radius:10px;
+            border-radius: 10px;
             border: 1px solid silver;
         }
-        #Product .card-img{
-            float:right;
+
+        #Product .card-img {
+            float: right;
             width: 100%;
             height: 200px;
-            border-radius:10px;
+            border-radius: 10px;
         }
-        #Product .item .title{
-            float:right;
+
+        #Product .item .title {
+            float: right;
             width: 100%;
             text-align: center;
-            font: 13px IRANSans-web,Tahoma;
+            font: 13px IRANSans-web, Tahoma;
             margin-top: 10px;
             color: #1a2849;
         }
-        #Product .price{
-            float:right;
+
+        #Product .price {
+            float: right;
             width: 50%;
             text-align: center;
             color: #1a2849;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
         }
-        #Product .btn_add_cart{
-            float:right;
+
+        #Product .btn_add_cart {
+            float: right;
             width: 50%;
             text-align: center;
             color: yellow;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             margin-bottom: 10px;
         }
+
         /****************************About-Page*********************************/
         #About {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
         }
-        #About .card-header{
-            float:right;
+
+        #About .card-header {
+            float: right;
             width: 100%;
             height: auto;
             text-align: right;
             background: #505bda;
         }
-        #About .card-title{
-            float:right;
+
+        #About .card-title {
+            float: right;
             width: 100%;
             height: auto;
             text-align: right;
             color: white;
-            font: 19px IRANSans-web,Tahoma;
-            font-weight:bold ;
+            font: 19px IRANSans-web, Tahoma;
+            font-weight: bold;
         }
+
         #About .title {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             color: black;
-            font: 19px IRANSans-web,Tahoma;
+            font: 19px IRANSans-web, Tahoma;
             direction: rtl;
-            font-weight:bold ;
+            font-weight: bold;
             text-align: right;
         }
+
         #About .desc {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             color: black;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             text-align: justify;
         }
+
         /****************************Contact-Page*********************************/
         #Contact {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             direction: rtl;
             margin-top: 30px;
             margin-bottom: 30px;
         }
-        #Contact .card-header{
-            float:right;
+
+        #Contact .card-header {
+            float: right;
             width: 100%;
             height: auto;
             text-align: right;
             background: #505bda;
         }
-        #Contact .card-title{
-            float:right;
+
+        #Contact .card-title {
+            float: right;
             width: 100%;
             height: auto;
             text-align: right;
             color: white;
-            font: 19px IRANSans-web,Tahoma;
-            font-weight:bold ;
+            font: 19px IRANSans-web, Tahoma;
+            font-weight: bold;
         }
 
-        #Contact .label{
-            float:right;
+        #Contact .label {
+            float: right;
             width: 100%;
             color: black;
-            font: 14px IRANSans-web,Tahoma;
+            font: 14px IRANSans-web, Tahoma;
             direction: rtl;
-            font-weight:bold ;
+            font-weight: bold;
             text-align: right;
 
         }
-        #Contact .data{
-            float:right;
-            width: 100%;
-            color: black;
-            font: 12px IRANSans-web,Tahoma;
-            direction: rtl;
-            text-align: right;
 
-        }
-        #Contact .Contact_Form{
-            float:right;
+        #Contact .data {
+            float: right;
             width: 100%;
             color: black;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             text-align: right;
 
         }
-        #Contact .Contact_Form .lbl_name ,#Contact .Contact_Form .lbl_email ,#Contact .Contact_Form .lbl_desc{
-            float:right;
+
+        #Contact .Contact_Form {
+            float: right;
             width: 100%;
             color: black;
-            font: 14px IRANSans-web,Tahoma;
             direction: rtl;
-            font-weight:bold ;
             text-align: right;
 
         }
-        #Contact .Contact_Form .name ,#Contact .Contact_Form .email{
-            float:right;
+
+        #Contact .Contact_Form .lbl_name, #Contact .Contact_Form .lbl_email, #Contact .Contact_Form .lbl_desc {
+            float: right;
+            width: 100%;
+            color: black;
+            font: 14px IRANSans-web, Tahoma;
+            direction: rtl;
+            font-weight: bold;
+            text-align: right;
+
+        }
+
+        #Contact .Contact_Form .name, #Contact .Contact_Form .email {
+            float: right;
             width: 30%;
             color: black;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
         }
+
         #Contact .Contact_Form .desc {
-            float:right;
+            float: right;
             width: 50%;
             height: 250px;
             color: black;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
         }
+
         #Contact .Contact_Form .btn_send {
-            float:right;
+            float: right;
             width: auto;
             height: auto;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: ltr;
             padding: 10px;
 
-=======
+        }
     }
 }
 /*PC*/
 @media (min-width: 1400px) {
     @media (max-width: 2600px) {
         #Wrapper {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
         }
+
         /*****************************Header************************/
         #Header {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             background: #1a2849;
         }
-        #Header .SiteName{
-            float:right;
+
+        #Header .SiteName {
+            float: right;
             width: 80%;
             margin-right: 10%;
-            font: 25px IRANSans-web,Tahoma;
-            font-weight: bold ;
+            font: 25px IRANSans-web, Tahoma;
+            font-weight: bold;
             text-align: right;
             color: white;
         }
-        #Header .SiteBanner{
-            float:right;
+
+        #Header .SiteBanner {
+            float: right;
             width: 80%;
             margin-right: 10%;
-            font: 19px IRANSans-web,Tahoma;
+            font: 19px IRANSans-web, Tahoma;
             text-align: right;
             color: #eeeeee;
         }
-        #Header .menu{
-            float:right;
+
+        #Header .menu {
+            float: right;
             width: 100%;
-            font: 14px IRANSans-web,Tahoma;
+            font: 14px IRANSans-web, Tahoma;
             text-align: right;
             background: #505bda;
 
         }
-        #Header .menu a{
-            float:right;
+
+        #Header .menu a {
+            float: right;
             width: auto;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             color: white;
             text-align: right;
             padding: 10px;
         }
-        #Header .menu a:hover{
+
+        #Header .menu a:hover {
             background: #b063c5;
             color: #ffaac3;
             text-decoration: none;
         }
+
         /*****************************Content************************/
         #Content {
-            float:right;
+            float: right;
             width: 100%;
-            height: 800px;
-            background: silver;
+            height: auto;
         }
+
         /*****************************Footer************************/
         #Footer {
-            float:right;
+            float: right;
             width: 100%;
             height: auto;
             background: #1a2849;
         }
-        #Footer .Access{
-            float:right;
+
+        #Footer .Access {
+            float: right;
             width: 33.33%;
             height: auto;
         }
-        #Footer .About{
-            float:right;
+
+        #Footer .About {
+            float: right;
             width: 33.33%;
             height: auto;
         }
+
         #Footer .About .title {
-            float:right;
-            width:  100%;
-            font: 16px IRANSans-web,Tahoma;
+            float: right;
+            width: 100%;
+            font: 16px IRANSans-web, Tahoma;
             font-weight: bold;
             border-bottom: 1px solid #eee;
             color: white;
             text-align: right;
         }
-        #Footer .About span{
-            float:right;
-            width:  100%;
+
+        #Footer .About span {
+            float: right;
+            width: 100%;
             color: white;
-            font: 12px IRANSans-web,Tahoma;
+            font: 12px IRANSans-web, Tahoma;
             direction: rtl;
             text-align: justify;
         }
-        #Footer .Contact{
-            float:right;
+
+        #Footer .Contact {
+            float: right;
             width: 33.33%;
             height: auto;
         }
+
         #Footer .Designer {
-            float:right;
+            float: right;
             width: 100%;
             text-align: center;
             color: white;
->>>>>>> Add Component About
+        }
+
+        /****************************Home-Page*********************************/
+        #Product {
+            float: right;
+            width: 90%;
+            margin-right: 5%;
+            height: auto;
+
+        }
+
+        #Product .carousel {
+            float: right;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #Product .title {
+            float: right;
+            width: 90%;
+            margin-right: 2%;
+            text-align: right;
+            font: 18px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+
+        #Product .item {
+            float: right;
+            width: 90%;
+            margin-right: 5%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid silver;
+        }
+
+        #Product .card-img {
+            float: right;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        #Product .item .title {
+            float: right;
+            width: 100%;
+            text-align: center;
+            font: 13px IRANSans-web, Tahoma;
+            margin-top: 10px;
+            color: #1a2849;
+        }
+
+        #Product .price {
+            float: right;
+            width: 50%;
+            text-align: center;
+            color: #1a2849;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+        }
+
+        #Product .btn_add_cart {
+            float: right;
+            width: 50%;
+            text-align: center;
+            color: yellow;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+            margin-bottom: 10px;
+        }
+
+        /****************************About-Page*********************************/
+        #About {
+            float: right;
+            width: 100%;
+            height: auto;
+        }
+
+        #About .card-header {
+            float: right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            background: #505bda;
+        }
+
+        #About .card-title {
+            float: right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            color: white;
+            font: 19px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+
+        #About .title {
+            float: right;
+            width: 100%;
+            height: auto;
+            color: black;
+            font: 19px IRANSans-web, Tahoma;
+            direction: rtl;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        #About .desc {
+            float: right;
+            width: 100%;
+            height: auto;
+            color: black;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+            text-align: justify;
+        }
+
+        /****************************Contact-Page*********************************/
+        #Contact {
+            float: right;
+            width: 100%;
+            height: auto;
+            direction: rtl;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #Contact .card-header {
+            float: right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            background: #505bda;
+        }
+
+        #Contact .card-title {
+            float: right;
+            width: 100%;
+            height: auto;
+            text-align: right;
+            color: white;
+            font: 19px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+
+        #Contact .label {
+            float: right;
+            width: 100%;
+            color: black;
+            font: 14px IRANSans-web, Tahoma;
+            direction: rtl;
+            font-weight: bold;
+            text-align: right;
+
+        }
+
+        #Contact .data {
+            float: right;
+            width: 100%;
+            color: black;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+            text-align: right;
+
+        }
+
+        #Contact .Contact_Form {
+            float: right;
+            width: 100%;
+            color: black;
+            direction: rtl;
+            text-align: right;
+
+        }
+
+        #Contact .Contact_Form .lbl_name, #Contact .Contact_Form .lbl_email, #Contact .Contact_Form .lbl_desc {
+            float: right;
+            width: 100%;
+            color: black;
+            font: 14px IRANSans-web, Tahoma;
+            direction: rtl;
+            font-weight: bold;
+            text-align: right;
+
+        }
+
+        #Contact .Contact_Form .name, #Contact .Contact_Form .email {
+            float: right;
+            width: 30%;
+            color: black;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+        }
+
+        #Contact .Contact_Form .desc {
+            float: right;
+            width: 50%;
+            height: 250px;
+            color: black;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+        }
+
+        #Contact .Contact_Form .btn_send {
+            float: right;
+            width: auto;
+            height: auto;
+            font: 12px IRANSans-web, Tahoma;
+            direction: ltr;
+            padding: 10px;
+
         }
     }
 }

@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div id="About">
         <div class="card">
             <div class="card-header">
@@ -16,9 +15,6 @@
         </div>
 
     </div>
-=======
-
->>>>>>> Add Component About
 </template>
 
 <script>
