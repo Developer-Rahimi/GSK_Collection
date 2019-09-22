@@ -14,10 +14,10 @@
         data(){
             return {
                 Menues:[
-                    {Title:"اتوماسیون",Link:"#"},
-                    {Title:"محصولات جدید",Link:"#"},
-                    {Title:"آموزش",Link:"#"},
-                    {Title:"وبلاگ",Link:"#"},
+                    {Title:"اتوماسیون",Link:"#",icon:"tools"},
+                    {Title:"محصولات جدید",Link:"#",icon:"product-hunt"},
+                    {Title:"آموزش",Link:"#",icon:"school"},
+                    {Title:"وبلاگ",Link:"#",icon:"blog"},
                 ],
             }
         },

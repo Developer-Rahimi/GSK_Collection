@@ -11464,16 +11464,20 @@ __webpack_require__.r(__webpack_exports__);
     return {
       Menues: [{
         Title: "اتوماسیون",
-        Link: "#"
+        Link: "#",
+        icon: "tools"
       }, {
         Title: "محصولات جدید",
-        Link: "#"
+        Link: "#",
+        icon: "product-hunt"
       }, {
         Title: "آموزش",
-        Link: "#"
+        Link: "#",
+        icon: "school"
       }, {
         Title: "وبلاگ",
-        Link: "#"
+        Link: "#",
+        icon: "blog"
       }]
     };
   },
@@ -11504,22 +11508,28 @@ __webpack_require__.r(__webpack_exports__);
     return {
       Menues: [{
         Title: "صفحه اصلی",
-        Link: "/"
+        Link: "/",
+        icon: "home"
       }, {
         Title: "حساب من",
-        Link: "#"
+        Link: "#",
+        icon: "user"
       }, {
         Title: "مرکز دانلود",
-        Link: "#"
+        Link: "#",
+        icon: "download"
       }, {
         Title: "تماس با ما",
-        Link: "/Contact"
+        Link: "/Contact",
+        icon: "phone-square-alt"
       }, {
         Title: "در باره ما",
-        Link: "/About"
+        Link: "/About",
+        icon: "info-circle"
       }, {
         Title: "خروج",
-        Link: "#"
+        Link: "#",
+        icon: "sign-out-alt"
       }]
     };
   },
@@ -77687,9 +77697,15 @@ var render = function() {
     "div",
     { staticClass: "menu" },
     _vm._l(_vm.Menues, function(menu) {
-      return _c("a", { attrs: { href: menu.Link, title: menu.Title } }, [
-        _c("span", [_vm._v(_vm._s(menu.Title))])
-      ])
+      return _c(
+        "a",
+        { attrs: { href: menu.Link, title: menu.Title } },
+        [
+          _c("span", [_vm._v(_vm._s(menu.Title))]),
+          _c("font-awesome-icon", { attrs: { icon: menu.icon } })
+        ],
+        1
+      )
     }),
     0
   )
@@ -90359,7 +90375,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserSecret"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserSecret"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faHome"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faInfoCircle"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUser"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPhoneSquareAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faDownload"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignOutAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faTools"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faIndustry"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSchool"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBlog"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"]);
 
 
