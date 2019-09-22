@@ -65,7 +65,9 @@
             text-align: right;
             padding: 10px;
         }
-
+        #Header .menu a span{
+            margin-right: 5px;
+        }
         #Header .menu a:hover {
             background: #b063c5;
             color: #ffaac3;
