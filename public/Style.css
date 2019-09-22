@@ -418,7 +418,9 @@
             text-align: right;
             padding: 10px;
         }
-
+        #Header .menu a span{
+            margin-right: 5px;
+        }
         #Header .menu a:hover {
             background: #b063c5;
             color: #ffaac3;
@@ -439,20 +441,7 @@
             height: auto;
             background: #1a2849;
         }
-
-        #Footer .Access {
-            float: right;
-            width: 33.33%;
-            height: auto;
-        }
-
-        #Footer .About {
-            float: right;
-            width: 33.33%;
-            height: auto;
-        }
-
-        #Footer .About .title {
+        #Footer .title {
             float: right;
             width: 100%;
             font: 16px IRANSans-web, Tahoma;
@@ -461,6 +450,38 @@
             color: white;
             text-align: right;
         }
+        #Footer .Access {
+            float: right;
+            width: 30.0%;
+            height: auto;
+            margin-right: 3%;
+            direction: rtl;
+        }
+        #Footer .Access ul{
+            float:right;
+            width: 100%;
+            list-style: none;
+        }
+        #Footer .Access li a{
+            float:right;
+            width: 100%;
+            color: white;
+            text-align: right;
+            direction: rtl;
+            font: 12px IRANSans-web, Tahoma;
+            text-decoration: none;
+        }
+        #Footer .Access li a span{
+            margin-right: 5px;
+        }
+        #Footer .About {
+            float: right;
+            width: 30.0%;
+            height: auto;
+            margin-right: 3%;
+        }
+
+
 
         #Footer .About span {
             float: right;
@@ -473,8 +494,9 @@
 
         #Footer .Contact {
             float: right;
-            width: 33.33%;
+            width: 30%;
             height: auto;
+            margin-right: 3%;
         }
 
         #Footer .Designer {
