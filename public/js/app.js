@@ -11756,6 +11756,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -77981,27 +77984,47 @@ var render = function() {
         },
         _vm._l(_vm.Products, function(Product) {
           return _c("slide", { key: Product.ProductID }, [
-            _c("div", { staticClass: "item" }, [
+            _c("a", { attrs: { href: "#" } }, [
               _c("img", {
                 staticClass: "card-img",
                 attrs: { src: "Images/" + Product.ProductIamge }
               }),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "title",
-                domProps: { textContent: _vm._s(Product.ProductName) }
-              }),
+              _c(
+                "div",
+                { staticClass: "title" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                  _c("span", {
+                    domProps: { textContent: _vm._s(Product.ProductName) }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "price",
-                domProps: {
-                  textContent: _vm._s(Product.ProductPrice + " تومان")
-                }
-              }),
+              _c(
+                "div",
+                { staticClass: "price" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
+                  _c("span", {
+                    domProps: {
+                      textContent: _vm._s(Product.ProductPrice + " تومان")
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", { staticClass: "btn_add_cart" }, [
-                _vm._v("افزودن به سبد خرید")
-              ])
+              _c(
+                "div",
+                { staticClass: "btn_add_cart" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
+                  _c("span", [_vm._v("افزودن به سبد خرید")])
+                ],
+                1
+              )
             ])
           ])
         }),
@@ -78018,27 +78041,47 @@ var render = function() {
         },
         _vm._l(_vm.Products, function(Product) {
           return _c("slide", { key: Product.ProductID }, [
-            _c("div", { staticClass: "item" }, [
+            _c("a", { attrs: { href: "#" } }, [
               _c("img", {
                 staticClass: "card-img",
                 attrs: { src: "Images/" + Product.ProductIamge }
               }),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "title",
-                domProps: { textContent: _vm._s(Product.ProductName) }
-              }),
+              _c(
+                "div",
+                { staticClass: "title" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                  _c("span", {
+                    domProps: { textContent: _vm._s(Product.ProductName) }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "price",
-                domProps: {
-                  textContent: _vm._s(Product.ProductPrice + " تومان")
-                }
-              }),
+              _c(
+                "div",
+                { staticClass: "price" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
+                  _c("span", {
+                    domProps: {
+                      textContent: _vm._s(Product.ProductPrice + " تومان")
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", { staticClass: "btn_add_cart" }, [
-                _vm._v("افزودن به سبد خرید")
-              ])
+              _c(
+                "div",
+                { staticClass: "btn_add_cart" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
+                  _c("span", [_vm._v("افزودن به سبد خرید")])
+                ],
+                1
+              )
             ])
           ])
         }),
@@ -78055,27 +78098,47 @@ var render = function() {
         },
         _vm._l(_vm.Products, function(Product) {
           return _c("slide", { key: Product.ProductID }, [
-            _c("div", { staticClass: "item" }, [
+            _c("a", { attrs: { href: "#" } }, [
               _c("img", {
                 staticClass: "card-img",
                 attrs: { src: "Images/" + Product.ProductIamge }
               }),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "title",
-                domProps: { textContent: _vm._s(Product.ProductName) }
-              }),
+              _c(
+                "div",
+                { staticClass: "title" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                  _c("span", {
+                    domProps: { textContent: _vm._s(Product.ProductName) }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", {
-                staticClass: "price",
-                domProps: {
-                  textContent: _vm._s(Product.ProductPrice + " تومان")
-                }
-              }),
+              _c(
+                "div",
+                { staticClass: "price" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
+                  _c("span", {
+                    domProps: {
+                      textContent: _vm._s(Product.ProductPrice + " تومان")
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("span", { staticClass: "btn_add_cart" }, [
-                _vm._v("افزودن به سبد خرید")
-              ])
+              _c(
+                "div",
+                { staticClass: "btn_add_cart" },
+                [
+                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
+                  _c("span", [_vm._v("افزودن به سبد خرید")])
+                ],
+                1
+              )
             ])
           ])
         }),
@@ -90378,7 +90441,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserSecret"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faHome"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faInfoCircle"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUser"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPhoneSquareAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faDownload"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignOutAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faTools"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faIndustry"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSchool"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBlog"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserSecret"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faHome"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faInfoCircle"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUser"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPhoneSquareAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faDownload"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignOutAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faTools"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faIndustry"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSchool"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBlog"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faTag"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faMoneyBill"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faCartPlus"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"]);
 
 
