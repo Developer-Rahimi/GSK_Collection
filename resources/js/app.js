@@ -55,6 +55,10 @@ Vue.component('Access', require('./components/Menu/Access.vue').default);
 
 
 
+Vue.component('Product', require('./components/Object/Product.vue').default);
+
+
+
 
 Vue.component('SlideShow', require('./components/Slider/SlideShow.vue').default);
 
