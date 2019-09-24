@@ -4,10 +4,10 @@
         <carousel class="carousel"  :navigationEnabled="true" :per-page="5">
 
             <slide  v-for="Product in Products" v-bind:key="Product.ProductID">
-                <a href="#">
+                <a v-bind:href="'Show/Content/'+Product.ProductID">
 
                     <img class="card-img" v-bind:src="'Images/'+Product.ProductIamge">
-                    <div class="title" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
+                    <div class="name" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
                     <div class="price" ><font-awesome-icon  icon="money-bill" /><span v-text="Product.ProductPrice+' تومان'"></span></div>
                     <div class="btn_add_cart" ><font-awesome-icon  icon="cart-plus" /><span>افزودن به سبد خرید</span></div>
                 </a>
@@ -21,7 +21,7 @@
                 <a href="#">
 
                     <img class="card-img" v-bind:src="'Images/'+Product.ProductIamge">
-                    <div class="title" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
+                    <div class="name" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
                     <div class="price" ><font-awesome-icon  icon="money-bill" /><span v-text="Product.ProductPrice+' تومان'"></span></div>
                     <div class="btn_add_cart" ><font-awesome-icon  icon="cart-plus" /><span>افزودن به سبد خرید</span></div>
                 </a>
@@ -35,7 +35,7 @@
                 <a href="#">
 
                     <img class="card-img" v-bind:src="'Images/'+Product.ProductIamge">
-                    <div class="title" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
+                    <div class="name" ><font-awesome-icon  icon="tag" /><span v-text="Product.ProductName"></span></div>
                     <div class="price" ><font-awesome-icon  icon="money-bill" /><span v-text="Product.ProductPrice+' تومان'"></span></div>
                     <div class="btn_add_cart" ><font-awesome-icon  icon="cart-plus" /><span>افزودن به سبد خرید</span></div>
                 </a>

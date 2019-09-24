@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 class ShowContentController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view("Pages.ShowContent");
+        return view("Pages.ShowContent",compact('id'));
     }
 }

@@ -22,7 +22,9 @@ Route::group(['prefix' => '/'], function () {
 
     Route::group(['prefix' => '/Show'], function () {
     Route::get('/Page', 'ShowPageController@index');
+
     Route::get('/Content', 'ShowContentController@index');
+    Route::get('/Content/{id}', 'ShowContentController@index');
     });
 
     Route::group(['prefix' => '/api'], function () {
