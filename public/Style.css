@@ -237,7 +237,41 @@
             margin-bottom: 10px;
         }
 
-        /****************************About-Page*********************************/
+        /****************************Content-Page*********************************/
+        #Content {
+            float: right;
+            width: 100%;
+            direction: rtl;
+            text-align: right;
+        }
+        #Content .show {
+            float: right;
+            width: 400px;
+            height: 250px;
+        }
+        #Content .gallery {
+            float: right;
+            width: 100%;
+            direction: rtl;
+            background: #1f6fb2;
+            margin-top:30px ;
+        }
+        #Content img {
+            float:right;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+        }
+        #Content .info {
+            float: right;
+            width: 100%;
+            direction: rtl;
+        }
+        #Content .info .title{
+            font: 14px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+              /****************************About-Page*********************************/
         #About {
             float: right;
             width: 100%;
