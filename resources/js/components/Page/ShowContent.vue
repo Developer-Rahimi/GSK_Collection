@@ -26,7 +26,9 @@
                 </b-tabs>
             </div>
         </div>
+        <div id="Comment">
 
+        </div>
     </div>
 </template>
 

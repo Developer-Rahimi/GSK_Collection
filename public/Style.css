@@ -673,6 +673,12 @@
             font: 14px IRANSans-web, Tahoma;
             font-weight: bold;
         }
+        /****************************Coment*********************************/
+        #Comment {
+            display: block;
+            background-color: #fff;
+        }
+
         /****************************About-Page*********************************/
         #About {
             float: right;
