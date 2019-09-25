@@ -19,10 +19,18 @@
                     active-nav-item-class="font-weight-bold text-uppercase text-danger"
                     active-tab-class="font-weight-bold text-success"
                     content-class="mt-3 c-tabs"
+                    class="c-tabs"
                 >
-                    <b-tab title="مشخصات" active><p>I'm the first tab</p></b-tab>
-                    <b-tab title="نظرات"><p>I'm the second tab</p></b-tab>
-                    <b-tab title="برچسب ها" ><p>I'm a disabled tab!</p></b-tab>
+                    <b-tab  title="مشخصات فنی" active>
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="Specification in Specifications">
+                                <h3>{{Specification.SpecificationName}}</h3>
+                                <b-table striped hover :fields="subSpecificationsfields" :items="Specification.subSpecifications"></b-table>
+                            </li>
+                        </ul>
+                    </b-tab>
+                    <b-tab  title="نظرات"><p>I'm the second tab</p></b-tab>
+                    <b-tab  title="برچسب ها" ><p>I'm a disabled tab!</p></b-tab>
                 </b-tabs>
 
 
@@ -48,7 +56,37 @@
 
 <script>
     export default {
-        name: "ShowContent"
+        name: "ShowContent",
+        data(){
+            return {
+                subSpecificationsfields: [
+                    {
+                        key: 'subSpecificationName',
+                        label:"عنوان"
+                    },
+                    {
+                        key: 'subSpecificationDesc',
+                        label:"توضیحات"
+                    }
+                ],
+                Specifications:[
+                    {SpecificationID:1,SpecificationName:"فیزیکی",subSpecifications:[
+                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"عرض",subSpecificationDesc:"127cm"},
+                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"طول",subSpecificationDesc:"127cm"}
+                        ]},
+                    {SpecificationID:1,SpecificationName:"ویژگی ها",subSpecifications:[
+                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"5"},
+                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"10"}
+                        ]}
+                ]
+            }
+        },
+        mounted() {
+
+        },
+        methods:{
+
+        }
     }
 </script>
 <style scoped>

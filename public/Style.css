@@ -271,6 +271,9 @@
             font: 14px IRANSans-web, Tahoma;
             font-weight: bold;
         }
+        #Content .c-tabs{
+            font: 12px IRANSans-web, Tahoma;
+        }
               /****************************Comment*********************************/
         #Comment {
             float: right;
@@ -305,6 +308,7 @@
             font: 12px IRANSans-web, Tahoma;
 
         }
+
         #Comment .btn_custom{
             float:left;
             font: 12px IRANSans-web, Tahoma;
