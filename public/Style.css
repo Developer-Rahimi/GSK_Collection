@@ -274,6 +274,24 @@
         #Content .c-tabs{
             font: 12px IRANSans-web, Tahoma;
         }
+        #Content .c-list{
+            float:right;
+            width:100%;
+            height:auto;
+            list-style: none;
+        }
+        #Content .c-list-item{
+            float:right;
+            width:100%;
+            height:auto;
+        }
+        #Content .c-list-item .label{
+            background: #1f6fb2;
+            color:white;
+            font: 14px IRANSans-web, Tahoma;
+            padding:10px;
+            font-weight:bold ;
+        }
               /****************************Comment*********************************/
         #Comment {
             float: right;

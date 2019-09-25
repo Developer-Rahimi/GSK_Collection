@@ -22,9 +22,9 @@
                     class="c-tabs"
                 >
                     <b-tab  title="مشخصات فنی" active>
-                        <ul class="list-group">
-                            <li class="list-group-item" v-for="Specification in Specifications">
-                                <h3>{{Specification.SpecificationName}}</h3>
+                        <ul class="c-list">
+                            <li class="c-list-item" v-for="Specification in Specifications">
+                                <h3 class="label">{{Specification.SpecificationName}}</h3>
                                 <b-table striped hover :fields="subSpecificationsfields" :items="Specification.subSpecifications"></b-table>
                             </li>
                         </ul>
