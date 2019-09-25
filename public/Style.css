@@ -271,6 +271,47 @@
             font: 14px IRANSans-web, Tahoma;
             font-weight: bold;
         }
+              /****************************Comment*********************************/
+        #Comment {
+            float: right;
+            width: 100%;
+
+        }
+        #Comment .label {
+            padding-right: 20px;
+            border: 1px solid rgba(0,0,0,0.1) !important;
+            font: 13px IRANSans-web, Tahoma;
+            background: #1f6fb2;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: 10px;
+        }
+        #Comment .text{
+            display: block;
+            width: 100%;
+            height:150px;
+            padding: 5px 10px;
+            line-height: 1.42857143;
+            color: #555555;
+            background-color: #ffffff;
+            background-image: none;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            font: 12px IRANSans-web, Tahoma;
+
+        }
+        #Comment .btn_custom{
+            float:left;
+            font: 12px IRANSans-web, Tahoma;
+            margin-left:10px;
+            margin-bottom:10px;
+
+        }
               /****************************About-Page*********************************/
         #About {
             float: right;
