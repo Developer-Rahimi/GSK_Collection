@@ -262,6 +262,9 @@
             height: 100px;
             margin: 10px;
         }
+        #Content .Desc {
+            font: 12px IRANSans-web, Tahoma;
+        }
         #Content .info {
             float: right;
             width: 100%;

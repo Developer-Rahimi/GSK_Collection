@@ -9,7 +9,7 @@
             <h3 class="title" v-text="Content.ContentName"></h3>
             <span class="price" v-text="Content.ProductPrice"></span>
             <span><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
-           <p v-text="Content.Desc"></p>
+           <p class="Desc" v-text="Content.Desc"></p>
 
                 <b-tabs
                     active-nav-item-class="font-weight-bold text-uppercase text-danger"
