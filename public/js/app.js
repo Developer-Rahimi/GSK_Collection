@@ -11831,8 +11831,197 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ShowContent"
+  name: "ShowContent",
+  data: function data() {
+    return {
+      Content: {
+        ContentName: "Plc 12Sa2R",
+        ProductPrice: 35000,
+        Images: [{
+          ImageID: 1,
+          Imagename: "13.jpg"
+        }, {
+          ImageID: 2,
+          Imagename: "14.jpg"
+        }, {
+          ImageID: 3,
+          Imagename: "15.jpg"
+        }],
+        Desc: "اتریهای لیتیوم پلیمر یکی از بهترین راهها برای تامین انرژی الکتریکی و تغذیه مدارات الکتریکی است. این باتریها در مقایسه با دیگر انواع باتریها مزایای بسیاری دارند. کوچک هستند، به نسبت ولتاژ و انرژی ذخیره شده در خود ابعاد کوچکی دارند. متاسفانه شارژ بهترین باتریها هم تمام میشود و اغلب این اتفاق در بدترین زمان ممکن رخ میدهد. اگر میخواهید باتری لیتیم پلیمر با تمام شدن شارژ شما را غافلگیر نکند باید از مانیتورینگ ولتاژ باتری استفاده کنید . ویژگی ساختاری باتریهای لیتیم پلیمر بگونه ای است که ولتاژ آن تا تخلیه کامل شارژ باتری، تقریبا ثابت میماند. بنابر این تشخیص میزان شارژ باتری با استفاده از مانیتورینگ ولتاژ در روشهای معمول غیر ممکن است. اما این بورد با اتصال به باتری شما و با استفاده از الگوریتم پیچیده داخلی خود میتواند وضع نسبی شارژ باتری را مشخص نماید. همچنین یک پین اخطار روی بورد در نظر گرفته شده که با افت ولتاژ باتری در سطحی مشخص که توسط کاربر تعیین میگردد ، سطح منطقی ولتاژ Low شده و در صورت افت ولتاژ از مقدار تعیین شده اعلام آلارم مینماید. این ماژول توانایی چک کردن سطح ولتاژ تک به تک و همچنین کلی سل های باطری را به صورت جداگانه دارد . حد خطا در این ماژول در حد یک صدم ولت میباشد که بسیار عالیست . این ماژول برای کلیه باطری های لیتیوم پلیمر و لیتیوم یون و غیره قابل استفاده میباشد ."
+      },
+      Tags: [{
+        TagID: 1,
+        TagName: "برچسب",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "برچسب تست",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "تست",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "محصول",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "محصول تستی",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "محصول شماره یک",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "تگ",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "تست تگ",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "برچسب دوم",
+        ContentID: 1
+      }, {
+        TagID: 1,
+        TagName: "برچسب اول",
+        ContentID: 1
+      }],
+      subSpecificationsfields: [{
+        key: 'subSpecificationName',
+        label: "عنوان"
+      }, {
+        key: 'subSpecificationDesc',
+        label: "توضیحات"
+      }],
+      Specifications: [{
+        SpecificationID: 1,
+        SpecificationName: "فیزیکی",
+        subSpecifications: [{
+          subSpecificationID: 1,
+          SpecificationID: 1,
+          subSpecificationName: "عرض",
+          subSpecificationDesc: "127cm"
+        }, {
+          subSpecificationID: 1,
+          SpecificationID: 1,
+          subSpecificationName: "طول",
+          subSpecificationDesc: "127cm"
+        }]
+      }, {
+        SpecificationID: 1,
+        SpecificationName: "ویژگی ها",
+        subSpecifications: [{
+          subSpecificationID: 1,
+          SpecificationID: 1,
+          subSpecificationName: "تعداد خروجی",
+          subSpecificationDesc: "5"
+        }, {
+          subSpecificationID: 1,
+          SpecificationID: 1,
+          subSpecificationName: "تعداد خروجی",
+          subSpecificationDesc: "10"
+        }]
+      }],
+      Comments: [{
+        CommentID: 1,
+        CommentDate: "1398-05-06",
+        UserName: "علی قربانی",
+        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
+      }, {
+        CommentID: 1,
+        CommentDate: "1398-05-06",
+        UserName: "علی قربانی",
+        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
+      }, {
+        CommentID: 1,
+        CommentDate: "1398-05-06",
+        UserName: "علی قربانی",
+        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
+      }, {
+        CommentID: 1,
+        CommentDate: "1398-05-06",
+        UserName: "علی قربانی",
+        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
+      }, {
+        CommentID: 1,
+        CommentDate: "1398-05-06",
+        UserName: "علی قربانی",
+        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
+      }]
+    };
+  },
+  mounted: function mounted() {},
+  methods: {}
 });
 
 /***/ }),
@@ -78222,16 +78411,181 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "Content" } }, [
+    _c("img", {
+      staticClass: "show",
+      attrs: {
+        src: " ../../images/" + _vm.Content.Images[0].Imagename,
+        alt: ""
+      }
+    }),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "gallery" },
+      _vm._l(_vm.Content.Images, function(image) {
+        return _c("img", {
+          attrs: { src: " ../../images/" + image.Imagename, alt: "" }
+        })
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "info" },
+      [
+        _c("h3", {
+          staticClass: "title",
+          domProps: { textContent: _vm._s(_vm.Content.ContentName) }
+        }),
+        _vm._v(" "),
+        _c("span", {
+          staticClass: "price",
+          domProps: { textContent: _vm._s(_vm.Content.ProductPrice) }
+        }),
+        _vm._v(" "),
+        _c(
+          "span",
+          [
+            _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
+            _vm._v("افزودن به سبد خرید")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("p", {
+          staticClass: "Desc",
+          domProps: { textContent: _vm._s(_vm.Content.Desc) }
+        }),
+        _vm._v(" "),
+        _c(
+          "b-tabs",
+          {
+            staticClass: "c-tabs",
+            attrs: {
+              "active-nav-item-class":
+                "font-weight-bold text-uppercase text-danger",
+              "active-tab-class": "font-weight-bold text-success",
+              "content-class": "mt-3 c-tabs"
+            }
+          },
+          [
+            _c("b-tab", { attrs: { title: "مشخصات فنی", active: "" } }, [
+              _c(
+                "ul",
+                { staticClass: "c-list" },
+                _vm._l(_vm.Specifications, function(Specification) {
+                  return _c(
+                    "li",
+                    { staticClass: "c-list-item" },
+                    [
+                      _c("h3", { staticClass: "label" }, [
+                        _vm._v(_vm._s(Specification.SpecificationName))
+                      ]),
+                      _vm._v(" "),
+                      _c("b-table", {
+                        attrs: {
+                          striped: "",
+                          hover: "",
+                          fields: _vm.subSpecificationsfields,
+                          items: Specification.subSpecifications
+                        }
+                      })
+                    ],
+                    1
+                  )
+                }),
+                0
+              )
+            ]),
+            _vm._v(" "),
+            _c("b-tab", { attrs: { title: "نظرات(1)" } }, [
+              _c("div", { attrs: { id: "Comment" } }, [
+                _c(
+                  "ul",
+                  { staticClass: "c-list" },
+                  _vm._l(_vm.Comments, function(Comment) {
+                    return _c("li", { staticClass: "c-list-item" }, [
+                      _c("div", { staticClass: "avatar" }, [
+                        _c("img", {
+                          attrs: {
+                            src: " ../../icon/default.png",
+                            alt: Comment.UserName,
+                            title: Comment.UserName
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "body" }, [
+                        _c("span", {
+                          staticClass: "UserName",
+                          domProps: { textContent: _vm._s(Comment.UserName) }
+                        }),
+                        _vm._v(" "),
+                        _c("span", {
+                          staticClass: "Date",
+                          domProps: { textContent: _vm._s(Comment.CommentDate) }
+                        }),
+                        _vm._v(" "),
+                        _c("p", {
+                          staticClass: "Text",
+                          domProps: { textContent: _vm._s(Comment.CommentText) }
+                        })
+                      ])
+                    ])
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("div", [
+                    _c("h3", { staticClass: "label" }, [_vm._v("افزودن نظر")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("textarea", { staticClass: "text" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      staticClass: "btn btn-primary btn_custom",
+                      attrs: { type: "button", value: "ارسال نظر" }
+                    })
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("b-tab", { attrs: { title: "برچسب ها" } }, [
+              _c(
+                "div",
+                { attrs: { id: "Tag" } },
+                _vm._l(_vm.Tags, function(Tag) {
+                  return _c(
+                    "a",
+                    { attrs: { href: "#" } },
+                    [
+                      _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                      _c("span", {
+                        domProps: { textContent: _vm._s(Tag.TagName + " ") }
+                      })
+                    ],
+                    1
+                  )
+                }),
+                0
+              )
+            ])
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Show-Content")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
