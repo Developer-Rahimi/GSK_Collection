@@ -29,28 +29,44 @@
                             </li>
                         </ul>
                     </b-tab>
-                    <b-tab  title="نظرات"><p>I'm the second tab</p></b-tab>
+                    <b-tab  title="نظرات(1)">
+                        <div id="Comment">
+                            <ul class="c-list">
+                                <li class="c-list-item" v-for="Comment in Comments">
+                                    <div class="avatar">
+                                        <img src=" ../../icon/default.png" alt="efefe">
+                                    </div>
+                                    <div class="body">
+                                        <span v-text="Comment.UserName"></span>
+                                        <span v-text="Comment.CommentDate"></span>
+                                        <p v-text="Comment.CommentText">
+
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="card">
+                                <div>
+                                    <h3 class="label">نظرات(1)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <textarea class="text"></textarea>
+                                </div>
+                                <div >
+                                    <input type="button" class="btn btn-primary btn_custom" value="ارسال نظر">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </b-tab>
                     <b-tab  title="برچسب ها" ><p>I'm a disabled tab!</p></b-tab>
                 </b-tabs>
 
 
         </div>
-        <div id="Comment">
-            <div class="card">
-                <div>
-                    <h3 class="label">نظرات(1)</h3>
-                </div>
-                <div class="card-body">
-                    <textarea class="text" />
-                </div>
-                <div >
-                    <input type="button" class="btn btn-primary btn_custom" value="ارسال نظر">
-                </div>
-            </div>
 
-
-
-        </div>
     </div>
 </template>
 
@@ -78,6 +94,19 @@
                             {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"5"},
                             {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"10"}
                         ]}
+                ],
+                Comments:[
+                    {CommentID:1,CommentDate:"1398-05-06",UserName:"علی قربانی",CommentText:"سلام و خسته نباشید خدمت شما" +
+                            "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" +
+                            "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"},{CommentID:1,CommentDate:"1398-05-06",UserName:"علی قربانی",CommentText:"سلام و خسته نباشید خدمت شما" +
+                            "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" +
+                            "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"},{CommentID:1,CommentDate:"1398-05-06",UserName:"علی قربانی",CommentText:"سلام و خسته نباشید خدمت شما" +
+                            "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" +
+                            "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"},{CommentID:1,CommentDate:"1398-05-06",UserName:"علی قربانی",CommentText:"سلام و خسته نباشید خدمت شما" +
+                            "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" +
+                            "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"},{CommentID:1,CommentDate:"1398-05-06",UserName:"علی قربانی",CommentText:"سلام و خسته نباشید خدمت شما" +
+                            "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" +
+                            "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"},
                 ]
             }
         },
