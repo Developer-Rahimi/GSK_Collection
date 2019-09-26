@@ -34,12 +34,12 @@
                             <ul class="c-list">
                                 <li class="c-list-item" v-for="Comment in Comments">
                                     <div class="avatar">
-                                        <img src=" ../../icon/default.png" alt="efefe">
+                                        <img src=" ../../icon/default.png" v-bind:alt="Comment.UserName" v-bind:title="Comment.UserName">
                                     </div>
                                     <div class="body">
-                                        <span v-text="Comment.UserName"></span>
-                                        <span v-text="Comment.CommentDate"></span>
-                                        <p v-text="Comment.CommentText">
+                                        <span class="UserName" v-text="Comment.UserName"></span>
+                                        <span class="Date" v-text="Comment.CommentDate"></span>
+                                        <p class="Text" v-text="Comment.CommentText">
 
                                         </p>
                                     </div>
