@@ -57,7 +57,7 @@
                     </b-tab>
                     <b-tab  title="برچسب ها" >
                         <div id="Tag">
-                            <a href="#" v-for="Tag in Tags"><font-awesome-icon  icon="tag" /><span  v-text="Tag.TagName+' '"></span></a>
+                            <a class="item" href="#" v-for="Tag in Tags"><font-awesome-icon  icon="tag" /><span  v-text="Tag.TagName+' '"></span></a>
 
                         </div>
                     </b-tab>
