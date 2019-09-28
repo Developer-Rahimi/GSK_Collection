@@ -7,9 +7,10 @@
         </div>
         <div class="info">
             <h3 class="title" v-text="Content.ContentName"></h3>
-            <span class="price" v-text="Content.ProductPrice"></span>
-            <span><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
-           <p class="Desc" v-text="Content.Desc"></p>
+            <span class="price" v-text="'قیمت:'+Content.ProductPrice+' تومان'"></span>
+            <span class="add_to_cart"><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
+
+            <p class="Desc" v-text="Content.Desc"></p>
 
                 <b-tabs
                     active-nav-item-class="font-weight-bold text-uppercase text-danger"
@@ -75,7 +76,7 @@
         data(){
             return {
                 Content:{
-                    ContentName:"Plc 12Sa2R",ProductPrice:35000,
+                    ContentName:"نمایشگر ال سی دی گرافیکی آبی LCD 128*64",ProductPrice:35000,
                     Images:[
                         {ImageID:1,Imagename:"13.jpg"},
                         {ImageID:2,Imagename:"14.jpg"},
