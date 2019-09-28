@@ -45,6 +45,7 @@ Vue.component('Master', require('./components/Layout/Master.vue').default);
 Vue.component('Home', require('./components/Page/Home.vue').default);
 Vue.component('About', require('./components/Page/About.vue').default);
 Vue.component('Contact', require('./components/Page/Contact.vue').default);
+Vue.component('Cart', require('./components/Page/Cart.vue').default);
 Vue.component('ShowPage', require('./components/Page/ShowPage.vue').default);
 Vue.component('ShowContent', require('./components/Page/ShowContent.vue').default);
 
