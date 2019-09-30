@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <Cart></Cart>
+    <Cart
+        Url-Get-Cart="{{route('Get.Cart')}}"
+    ></Cart>
 @endsection
