@@ -1,6 +1,8 @@
 <template>
     <div class="container">
         <div id="Cart">
+            <h2 class="title">سبد خريد</h2>
+            <h3 class="head" v-text="'محتويات سبد خريد شما:  '+Carts.length +' محصول'"></h3>
             <b-table :items="Carts" :fields="CartFields">
                 <template v-slot:cell(CartID)="data">
                     {{ data.index + 1 }}
@@ -15,6 +17,26 @@
                     {{ data.item.Content.Product.ProductPrice * data.item.Quntity }}
                 </template>
             </b-table>
+            <div class="info">
+                <table>
+                    <tr>
+                        <td class="label">جمع محصولات:</td>
+                        <td>125000 تومان</td>
+                    </tr>
+                    <tr>
+                        <td class="label">هزینه بسته بندی و ارسال:</td>
+                        <td>12500 تومان</td>
+                    </tr>
+                    <tr>
+                        <td class="label">مجموع:</td>
+                        <td>135000 تومان</td>
+                    </tr>
+                    <tr>
+                        <td class="label"></td>
+                        <td><button class="btn btn-primary c-btn"><font-awesome-icon  icon="money-bill-alt" /><span>پرداخت</span></button></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </template>
