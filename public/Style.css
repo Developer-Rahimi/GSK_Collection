@@ -496,6 +496,12 @@
             z-index: 11;
             transition: 1s;
         }
+              /****************************Cart-Page*********************************/
+        #Cart {
+            float:right;
+            width: 100%;
+            font: 15px IRANSans-web, Tahoma;
+        }
               /****************************About-Page*********************************/
         #About {
             float: right;
