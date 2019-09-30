@@ -74,4 +74,61 @@ class ApiController extends Controller
         return response()->json($product, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
             JSON_UNESCAPED_UNICODE);
     }
+
+    public function Cart()
+    {
+        $cart= array(
+            [   'CartID' => 1,
+                "Quntity"=>3,
+                "Content" =>[
+                    "ContentName" =>"محصول اول",
+                    "Product" =>[
+                        "ProductPrice"=>5000
+                    ]
+                ]
+                ],[   'CartID' => 2,
+                "Quntity"=>2,
+                "Content" =>[
+                    "ContentName" =>"محصول دوم",
+                    "Product" =>[
+                        "ProductPrice"=>75000
+                    ]
+                ]
+                ],[   'CartID' => 3,
+                "Quntity"=>6,
+                "Content" =>[
+                    "ContentName" =>"محصول سوم",
+                    "Product" =>[
+                        "ProductPrice"=>36000
+                    ]
+                ]
+                ],[   'CartID' => 4,
+                "Quntity"=>1,
+                "Content" =>[
+                    "ContentName" =>"محصول چهارم",
+                    "Product" =>[
+                        "ProductPrice"=>28000
+                    ]
+                ]
+                ],[   'CartID' => 5,
+                "Quntity"=>9,
+                "Content" =>[
+                    "ContentName" =>"محصول پنجم",
+                    "Product" =>[
+                        "ProductPrice"=>13000
+                    ]
+                ]
+                ],[   'CartID' => 6,
+                "Quntity"=>3,
+                "Content" =>[
+                    "ContentName" =>"محصول ششم",
+                    "Product" =>[
+                        "ProductPrice"=>51000
+                    ]
+                ]
+                ],
+            );
+        return response()->json($cart, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+            JSON_UNESCAPED_UNICODE);
+    }
 }
