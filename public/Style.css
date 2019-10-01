@@ -816,6 +816,81 @@
             color: white;
         }
 
+        /****************************Product-Page*********************************/
+        #ProductPage {
+            float: right;
+            width: 90%;
+            margin-right: 5%;
+            height: auto;
+
+        }
+
+
+        /*#Product .title {
+            float: right;
+            width: 90%;
+            margin-right: 2%;
+            text-align: right;
+            font: 18px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }*/
+
+        #ProductPage  a {
+            float: right;
+            width: 22%;
+            margin-right: 3%;
+            height: auto;
+            min-height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: 1.5s;
+        }
+        #ProductPage   a:hover {
+            box-shadow: 0 2px 17px 0 rgba(0,0,0,.1);
+            z-index: 11;
+            transition: 1s;
+        }
+
+        #ProductPage .card-img {
+            float: right;
+            width: 90%;
+            margin-right: 5%;
+            margin-top: 10px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        #ProductPage  .name {
+            float: right;
+            width: 100%;
+            text-align: center;
+            font: 13px IRANSans-web, Tahoma;
+            margin-top: 10px;
+            color: #1a2849;
+            direction: rtl;
+        }
+        #ProductPage  .title span ,#Product  .price span ,#Product .btn_add_cart span{
+            margin-right: 5px;
+        }
+        #ProductPage .price {
+            float: right;
+            width: 50%;
+            text-align: center;
+            color: #1a2849;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+        }
+        #ProductPage .btn_add_cart {
+            float: right;
+            width: 50%;
+            text-align: center;
+            color: green;
+            font: 12px IRANSans-web, Tahoma;
+            direction: rtl;
+            margin-bottom: 10px;
+        }
         /****************************Home-Page*********************************/
         #Product {
             float: right;
@@ -888,7 +963,6 @@
             font: 12px IRANSans-web, Tahoma;
             direction: rtl;
         }
-
         #Product .btn_add_cart {
             float: right;
             width: 50%;
@@ -915,7 +989,6 @@
             float: right;
             width: 100%;
             direction: rtl;
-            background: #1f6fb2;
             margin-top:30px ;
         }
         #Content img {
@@ -924,21 +997,202 @@
             height: 100px;
             margin: 10px;
         }
+        #Content .Desc {
+            font: 12px IRANSans-web, Tahoma;
+        }
         #Content .info {
             float: right;
             width: 100%;
             direction: rtl;
         }
         #Content .info .title{
-            font: 14px IRANSans-web, Tahoma;
+            float: right;
+            width: 100%;
+            font: 15px IRANSans-web, Tahoma;
             font-weight: bold;
         }
-        /****************************Coment*********************************/
+        #Content .info .price{
+            float: right;
+            width: auto;
+            font: 13px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+        #Content .info .add_to_cart {
+            float: right;
+            width: auto;
+            font: 13px IRANSans-web, Tahoma;
+            font-weight: bold;
+            background: #1f6fb2;
+            padding:7px;
+            margin-right:7px;
+            color:white;
+            border-radius:7px;
+        }
+        #Content p{
+            float: right;
+            width: 100%;
+            margin-top:20px;
+        }
+        #Content .c-tabs{
+            font: 12px IRANSans-web, Tahoma;
+        }
+        #Content .c-list{
+            float:right;
+            width:100%;
+            height:auto;
+            list-style: none;
+        }
+        #Content .c-list-item{
+            float:right;
+            width:100%;
+            height:auto;
+        }
+        #Content .c-list-item .label{
+            background: #1f6fb2;
+            color:white;
+            font: 14px IRANSans-web, Tahoma;
+            padding:10px;
+            font-weight:bold ;
+        }
+        /****************************Comment*********************************/
         #Comment {
-            display: block;
-            background-color: #fff;
+            float: right;
+            width: 100%;
+            font: 12px IRANSans-web, Tahoma;
+        }
+        #Comment .c-list{
+            float: right;
+            width: 100%;
+        }
+        #Comment .c-list-item{
+            float: right;
+            width: 100%;
+            list-style: none;
+        }
+        #Comment .avatar{
+            float: right;
+            width: 100%;
+        }
+        #Comment .avatar img{
+            width: 35px;
+            height: 35px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        #Comment .UserName{
+            color: #54a1b5;
+            font-weight: bold;
+        }
+        #Comment .Date{
+            color: #aaa;
+            font-size: .9em;
+        }
+        #Comment .Text{
+            float: right;
+            width: 100%;
+            color: #1d2124;
         }
 
+        #Comment .label {
+            padding-right: 20px;
+            border: 1px solid rgba(0,0,0,0.1) !important;
+            font: 13px IRANSans-web, Tahoma;
+            background: #1f6fb2;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: 10px;
+        }
+        #Comment .text{
+            display: block;
+            width: 100%;
+            height:150px;
+            padding: 5px 10px;
+            line-height: 1.42857143;
+            color: #555555;
+            background-color: #ffffff;
+            background-image: none;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            font: 12px IRANSans-web, Tahoma;
+
+        }
+
+        #Comment .btn_custom{
+            float:left;
+            font: 12px IRANSans-web, Tahoma;
+            margin-left:10px;
+            margin-bottom:10px;
+
+        }
+        /****************************Tags*********************************/
+        #Tag {
+            float: right;
+            width: 100%;
+            height: auto;
+
+        }
+        #Tag a{
+            float: right;
+            width: auto;
+            height: auto;
+            color:#fff;
+            direction: rtl;
+            text-decoration: none;
+            margin-right: 10px;
+            background:#4d90fe ;
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 7px;
+        }
+        #Tag a span{
+            margin-right: 5px;
+        }
+        #Tag   a :hover {
+            box-shadow: 0 2px 17px 0 rgba(0,0,0,.1);
+            z-index: 11;
+            transition: 1s;
+        }
+        /****************************Cart-Page*********************************/
+        #Cart {
+            float:right;
+            width: 100%;
+            font: 14px IRANSans-web, Tahoma;
+        }
+        #Cart .title {
+            font: 24px IRANSans-web, Tahoma;
+            font-weight: bold;
+        }
+        #Cart .head {
+            font: 13px IRANSans-web, Tahoma;
+            margin-bottom:15px;
+            text-align:left;
+        }
+        #Cart .info {
+            float:right;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        #Cart .info .label {
+            font-weight: bold;
+            color:#aaa;
+        }
+        #Cart .info .c-btn {
+            font-weight: bold;
+            color:#fff;
+            background: #4d90fe;
+            margin-top: 50px;
+            font: 13px IRANSans-web, Tahoma;
+        }
+        #Cart .info .c-btn span {
+            margin-right: 10px;
+        }
         /****************************About-Page*********************************/
         #About {
             float: right;
