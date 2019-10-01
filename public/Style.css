@@ -1339,12 +1339,17 @@
             float: right;
             width: 100%;
             direction: rtl;
+            margin-top:10px;
+            margin-bottom:30px;
+        }
+        #Account .title{
+            font: 18px IRANSans-web, Tahoma;
+            font-weight: bold;
         }
         #Account .head{
             float: right;
             width: 100%;
             font: 12px IRANSans-web, Tahoma;
-
         }
         #Account ul {
             float: right;
@@ -1356,6 +1361,7 @@
             margin-right:3%;
             list-style:none;
             margin-bottom:25px;
+            cursor: pointer;
         }
         #Account li .icon{
             float: right;
