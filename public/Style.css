@@ -1334,5 +1334,39 @@
             padding: 10px;
 
         }
+        /****************************Account-Page*********************************/
+        #Account {
+            float: right;
+            width: 100%;
+            direction: rtl;
+        }
+        #Account .head{
+            float: right;
+            width: 100%;
+            font: 12px IRANSans-web, Tahoma;
+
+        }
+        #Account ul {
+            float: right;
+            width: 100%;
+        }
+        #Account li {
+            float: right;
+            width: 22%;
+            margin-right:3%;
+            list-style:none;
+            margin-bottom:25px;
+        }
+        #Account li .icon{
+            float: right;
+            width: 100%;
+        }
+        #Account li .name{
+            float: right;
+            width: 100%;
+            text-align:center;
+            margin-top:15px;
+            font: 12px IRANSans-web, Tahoma;
+        }
     }
 }
