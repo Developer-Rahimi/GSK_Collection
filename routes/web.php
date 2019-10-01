@@ -31,10 +31,15 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/Content/{id}', 'ShowContentController@index');
     });
 
+    Route::group(['prefix' => '/User'], function () {
+        Route::get('MyAccount', 'AccountController@index');
+    });
+
     Route::group(['prefix' => '/api'], function () {
         Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
 
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
         Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@Cart']);
     });
+
 });
