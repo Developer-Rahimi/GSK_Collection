@@ -10,10 +10,39 @@
                    <ul>
                        <li v-for="Item in Itemes">
                            <a href=""></a>
-                           <font-awesome-icon class="icon" style="font-size: 70px;color:#4d90fe"  v-bind:icon="Item.icon" />
+                           <font-awesome-icon class="icon" style="font-size: 50px;color:#4d90fe"  v-bind:icon="Item.icon" />
                            <span class="name" v-text="Item.Name"></span>
                        </li>
                    </ul>
+                   <div class="User">
+                       <span>اطلاعات شخصی شما</span>
+                       <span>اگر اطلاعات شخصی شما تغییر کرد، آن‌ها را در اسرع وقت بروز کنید.</span>
+                       <div class="field-form">
+                           <span class="label">عنوان اجتماعی </span>
+                           <br>
+                           <div>
+                               <input type="radio">
+                               <span>آقا</span>
+                               <input type="radio">
+                               <span>خانم</span>
+                           </div>
+
+                       </div>
+                       <div class="field-form">
+                           <span style="color:red;">*</span>
+                           <span class="label">نام</span>
+
+                           <br>
+                           <div>
+                               <input type="radio">
+                               <span>آقا</span>
+                               <input type="radio">
+                               <span>خانم</span>
+                           </div>
+
+                       </div>
+                   </div>
+
                </div>
            </div>
 

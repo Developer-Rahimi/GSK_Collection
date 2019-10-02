@@ -43,7 +43,7 @@ Vue.use(EasySlider)
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Master', require('./components/Layout/Master.vue').default);
 
-
+/*///////////////////////////////////////Pages////////////////////////////////*/
 Vue.component('Home', require('./components/Page/Home.vue').default);
 Vue.component('About', require('./components/Page/About.vue').default);
 Vue.component('Account', require('./components/Page/Account.vue').default);
@@ -51,6 +51,8 @@ Vue.component('Contact', require('./components/Page/Contact.vue').default);
 Vue.component('Cart', require('./components/Page/Cart.vue').default);
 Vue.component('ShowPage', require('./components/Page/ShowPage.vue').default);
 Vue.component('ShowContent', require('./components/Page/ShowContent.vue').default);
+Vue.component('ShowContent', require('./components/Page/ShowContent.vue').default);
+Vue.component('Test', require('./components/Page/Test.vue').default);
 
 
 
@@ -58,8 +60,9 @@ Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
 Vue.component('Access', require('./components/Menu/Access.vue').default);
 
 
-
+/*////////////////////////////Object////////////////////////////////////////////////*/
 Vue.component('Product', require('./components/Object/Product.vue').default);
+Vue.component('EditText', require('./components/Object/EditText.vue').default);
 
 
 
