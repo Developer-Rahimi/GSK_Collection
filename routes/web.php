@@ -19,7 +19,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/About', 'AboutController@index');
     Route::get('/Contact', 'ContactController@index');
     Route::get('/Cart', 'CartController@index');
-    Route::get('/test', 'TestController@test');
+    Route::get('/Test', 'TestController@index');
 
 
     Route::get('/Pay', 'PayController@Pay');
