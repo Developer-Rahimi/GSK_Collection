@@ -15,7 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle
 
 }
 from '@fortawesome/free-solid-svg-icons'
@@ -23,7 +23,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -53,7 +53,6 @@ Vue.component('ShowPage', require('./components/Page/ShowPage.vue').default);
 Vue.component('ShowContent', require('./components/Page/ShowContent.vue').default);
 Vue.component('ShowContent', require('./components/Page/ShowContent.vue').default);
 Vue.component('Test', require('./components/Page/Test.vue').default);
-
 
 
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
