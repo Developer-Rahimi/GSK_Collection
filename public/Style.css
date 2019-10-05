@@ -1377,5 +1377,9 @@
             margin-top:15px;
             font: 12px IRANSans-web, Tahoma;
         }
+        #Account .field-form {
+            width: 100%;
+            direction: rtl;
+        }
     }
 }

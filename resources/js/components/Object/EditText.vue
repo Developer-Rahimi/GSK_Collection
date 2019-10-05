@@ -2,7 +2,7 @@
     <div id="EditText">
         <div>
             <span class="required" v-show="required">*</span>
-            <span class="Name">نام</span>
+            <span class="Name" v-text="LabelName"></span>
             <br>
             <div class="main" v-show="!valid" >
                 <input  class="c-text" v-bind:type="TypeInput" v-model="Data" @change="Check()" >
@@ -19,6 +19,10 @@
     export default {
         name: "EditText",
         props: {
+            LabelName: {
+                type: String,
+                required: true,
+            },
             required: {
                 type: Boolean,
                 required: true,
@@ -60,6 +64,10 @@
 </script>
 
 <style scoped>
+    #EditText {
+        float:right;
+        width: 100%;
+    }
     #EditText .required {
         color:red;
     }
