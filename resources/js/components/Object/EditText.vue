@@ -4,11 +4,12 @@
             <span class="required" v-show="required">*</span>
             <span class="Name" v-text="LabelName"></span>
             <br>
+            <br>
             <div class="main" v-show="!valid" >
                 <input  class="c-text" v-bind:type="TypeInput" v-model="Data" @change="Check()" >
             </div>
             <div class="main" v-show="valid" >
-                <input  class="c-text valid-text"v-model="Data" type="text" >
+                <input  class="c-text valid-text"v-model="Data" v-bind:type="TypeInput" @change="Check()">
                 <font-awesome-icon class="icon"  icon="check-circle"   />
             </div>
         </div>

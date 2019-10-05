@@ -1381,5 +1381,36 @@
             width: 100%;
             direction: rtl;
         }
+        /****************************Login-Page*********************************/
+        #Login {
+            float:right;
+            width: 100%;
+            height: auto;
+            margin-bottom:50px;
+        }
+        #Login .register{
+            float:right;
+            width: 40%;
+            margin-right: 10%;
+            height: auto;
+            border-left:1px solid silver;
+            min-height: 300px;
+        }
+        #Login .enter{
+            float:right;
+            width: 40%;
+            margin-right: 10%;
+            height: auto;
+        }
+        #Login .field-form {
+            float:right;
+            width: 100%;
+            height: auto;
+        }
+        #Login button {
+            float: left;
+            margin-top: 30px;
+            margin-left: 15px;
+        }
     }
 }
