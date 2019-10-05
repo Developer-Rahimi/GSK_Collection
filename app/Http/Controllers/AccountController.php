@@ -11,4 +11,8 @@ class AccountController extends Controller
     {
         return view("Pages.Account");
     }
+    public function Login()
+    {
+        return view("Pages.Login");
+    }
 }
