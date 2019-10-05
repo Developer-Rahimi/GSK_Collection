@@ -62,6 +62,7 @@ Vue.component('Access', require('./components/Menu/Access.vue').default);
 /*////////////////////////////Object////////////////////////////////////////////////*/
 Vue.component('Product', require('./components/Object/Product.vue').default);
 Vue.component('EditText', require('./components/Object/EditText.vue').default);
+Vue.component('BigText', require('./components/Object/BigText.vue').default);
 
 
 

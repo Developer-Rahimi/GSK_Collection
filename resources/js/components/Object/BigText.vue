@@ -1,15 +1,15 @@
 <template>
-    <div id="EditText">
+    <div id="BigText">
         <div>
             <span class="required" v-show="required">*</span>
             <span class="Name">نام</span>
             <br>
             <div class="main" v-show="!valid" >
-                <input  class="c-text" v-bind:type="TypeInput" v-model="Data" @change="Check()" >
+                <textarea  class="c-text"  v-model="Data" @change="Check()" />
             </div>
             <div class="main" v-show="valid" >
-                <input  class="c-text valid-text"v-model="Data" type="text" >
-                <font-awesome-icon class="icon"  icon="check-circle"   />
+                <textarea  class="c-text valid-text" v-model="Data" type="text" @change="Check()"/>
+                <font-awesome-icon class="icon"  icon="check-circle"    />
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: "EditText",
+        name: "BigText",
         props: {
             required: {
                 type: Boolean,
@@ -31,16 +31,12 @@
                 type: Function,
                 required: false,
             },
-            TypeInput: {
-                type: String,
-                required: true,
-            },
+
         },
         data(){
             return {
                 valid:false,
                 Data:'',
-                Width:300,
             }
         },
         mounted() {
@@ -53,26 +49,26 @@
             Check(){
                 this.valid=this.Data.length>this.MinLength;
                 //console.log(this.Data);
-                this.Dat(this.Data);
+                this.Info(this.Data);
             }
         }
     }
 </script>
 
 <style scoped>
-    #EditText .required {
+    #BigText .required {
         color:red;
     }
-    #EditText .main {
+    #BigText .main {
         /*color:red;*/
         width:100%;
     }
-    #EditText .c-text {
+    #BigText .c-text {
         float:right;
         display: block;
         width:auto;
         min-width:250px;
-        height: 32px;
+        height: 150px;
         padding: 5px 10px;
         color: #555555;
         background-color: #ffffff;
@@ -83,12 +79,12 @@
         -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     }
-    #EditText .valid-text {
+    #BigText .valid-text {
         border: 1px solid #46a74e;
         color: #35b33f;
         background: #ddf9e1;
     }
-    #EditText .icon{
+    #BigText .icon{
         float:right;
         font-size:20px;
         color: #46a74e;

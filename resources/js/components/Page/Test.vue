@@ -1,12 +1,17 @@
 <template>
     <div>
-        {{Data}}
         <EditText
             :required="true"
             :MinLength=3
-            :Type="text"
-        :Info=ch
-        />
+            TypeInput="number"
+        :Info=ch>
+
+        </EditText>
+
+        <BigText
+            :required="false"
+            :MinLength=20
+            :Info=ch></BigText>
     </div>
 </template>
 
