@@ -143,9 +143,17 @@ class ApiController extends Controller
 
         return  $data;
     }
-    public function Content()
+    public function Contents()
     {
         $url=config('Constant.ServicePath.GetContent');
+       $data= GetDataFromServer::get($url,1,0);
+
+
+        return  $data;
+    }
+    public function Content($id)
+    {
+        $url=config('Constant.ServicePath.GetContent').'?index='.$id;
        $data= GetDataFromServer::get($url,1,0);
 
 

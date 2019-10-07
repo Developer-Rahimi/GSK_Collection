@@ -8,14 +8,6 @@ class GetDataFromServer {
         {
             $data=Cache::where('url',$url)->first();
             if($data){
-                /*$client = new \GuzzleHttp\Client();
-                $request = $client->get($url);
-                $response = $request->getBody()->getContents();
-                $data->data =$response;
-                $data->update_at =Carbon::now();
-                $data->save();*/
-
-                //return  $data->data;
                 $time=Carbon::now();
                 $valid=Carbon::create($data->update_at)->addDays($day)->addHours($hours);
                 if($time>$valid){
@@ -26,9 +18,9 @@ class GetDataFromServer {
                     $data->update_at =Carbon::now();
                     $data->save();
                 }
-                //if($data->update_at)
                 return  $data->data;
-            }else {
+            }
+            else {
                 $client = new \GuzzleHttp\Client();
                 $request = $client->get($url);
                 $response = $request->getBody()->getContents();
@@ -38,6 +30,7 @@ class GetDataFromServer {
                 $cache->created_at =Carbon::now();
                 $cache->update_at =Carbon::now();
                 $cache->save();
+                return  $cache->data;
             }
         }
     }
