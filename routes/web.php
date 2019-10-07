@@ -40,6 +40,7 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
         Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@Cart']);
+        Route::get('/User', ['as'=>'Get.Cart','uses'=>'ApiController@Users']);
     });
 
 });

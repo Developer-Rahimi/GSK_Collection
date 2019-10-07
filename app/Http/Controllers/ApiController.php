@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -86,7 +86,7 @@ class ApiController extends Controller
                         "ProductPrice"=>5000
                     ]
                 ]
-                ],[   'CartID' => 2,
+            ],[   'CartID' => 2,
                 "Quntity"=>2,
                 "Content" =>[
                     "ContentName" =>"محصول دوم",
@@ -94,7 +94,7 @@ class ApiController extends Controller
                         "ProductPrice"=>75000
                     ]
                 ]
-                ],[   'CartID' => 3,
+            ],[   'CartID' => 3,
                 "Quntity"=>6,
                 "Content" =>[
                     "ContentName" =>"محصول سوم",
@@ -102,7 +102,7 @@ class ApiController extends Controller
                         "ProductPrice"=>36000
                     ]
                 ]
-                ],[   'CartID' => 4,
+            ],[   'CartID' => 4,
                 "Quntity"=>1,
                 "Content" =>[
                     "ContentName" =>"محصول چهارم",
@@ -110,7 +110,7 @@ class ApiController extends Controller
                         "ProductPrice"=>28000
                     ]
                 ]
-                ],[   'CartID' => 5,
+            ],[   'CartID' => 5,
                 "Quntity"=>9,
                 "Content" =>[
                     "ContentName" =>"محصول پنجم",
@@ -118,7 +118,7 @@ class ApiController extends Controller
                         "ProductPrice"=>13000
                     ]
                 ]
-                ],[   'CartID' => 6,
+            ],[   'CartID' => 6,
                 "Quntity"=>3,
                 "Content" =>[
                     "ContentName" =>"محصول ششم",
@@ -126,9 +126,18 @@ class ApiController extends Controller
                         "ProductPrice"=>51000
                     ]
                 ]
-                ],
-            );
+            ],
+        );
         return response()->json($cart, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
             JSON_UNESCAPED_UNICODE);
+    }
+    public function Users()
+    {
+        $url=config('Constant.ServicePath.GetUser');
+        $client = new \GuzzleHttp\Client();
+        $request = $client->get($url);
+        $response = $request->getBody();
+
+        return ($response->getContents());
     }
 }

@@ -15,6 +15,7 @@ class CacheGSK extends Migration
     {
         Schema::create('Caches', function (Blueprint $table) {
             $table->string('id')->index();
+            $table->string('url');
             $table->string('data');
             $table->timestamp('created_at')->nullable();
         });
