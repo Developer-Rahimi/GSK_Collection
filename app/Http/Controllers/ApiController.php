@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cache;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Carbon\Traits\Date;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -134,10 +137,25 @@ class ApiController extends Controller
     public function Users()
     {
         $url=config('Constant.ServicePath.GetUser');
-        $client = new \GuzzleHttp\Client();
+        $data=Cache::where('url',$url)->first();
+        if($data){
+            $client = new \GuzzleHttp\Client();
+            $request = $client->get($url);
+            $response = $request->getBody()->getContents();
+            $data->data =$response;
+            $data->update_at =Carbon::now();
+            $data->save();
+        }
+        /*$client = new \GuzzleHttp\Client();
         $request = $client->get($url);
-        $response = $request->getBody();
+        $response = $request->getBody()->getContents();
+        $cache=new Cache();
+        $cache->url =$url;
+        $cache->data =$response;
+        $cache->created_at =Carbon::now();
+        $cache->update_at =Carbon::now();
+        $cache->save();*/
 
-        return ($response->getContents());
+        return response($data->data);
     }
 }
