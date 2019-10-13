@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <Home
-            Url-Get-Product="{{route('Get.Content')}}"
+            Url-Get-Content="{{route('Get.Content')}}"
     ></Home>
 </div>
 @endsection

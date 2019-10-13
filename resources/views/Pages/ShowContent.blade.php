@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-        <Show-Content></Show-Content>
+        <Show-Content
+            Url-Get-Content="{{route('Get.Content')}}"
+            Index="{{$id}}"
+        ></Show-Content>
         {{$id}}
     </div>
 @endsection

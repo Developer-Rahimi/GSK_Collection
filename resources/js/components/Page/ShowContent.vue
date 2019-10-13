@@ -1,16 +1,16 @@
 <template>
     <div id="Content">
-        <img class="show" v-bind:src="' ../../images/'+Content.Images[0].Imagename" alt="">
+        <img class="show" v-bind:src="' ../../images/'+Content.Images[0].ImageUrl" alt="">
         <div class="gallery">
-            <img v-for="image in Content.Images" v-bind:src="' ../../images/'+image.Imagename" alt="">
+            <img v-for="image in Content.Images" v-bind:src="' ../../images/'+image.ImageUrl" alt="">
 
         </div>
         <div class="info">
             <h3 class="title" v-text="Content.ContentName"></h3>
-            <span class="price" v-text="'قیمت:'+Content.ProductPrice+' تومان'"></span>
+            <span v-if="Content.Products[0]" class="price" v-text="'قیمت:'+Content.Products[0].ProductPrice+' تومان'"></span>
             <span class="add_to_cart"><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
 
-            <p class="Desc" v-text="Content.Desc"></p>
+            <p v-if="Content.Products[0]" class="Desc" v-text="Content.Desc"></p>
 
                 <b-tabs
                     active-nav-item-class="font-weight-bold text-uppercase text-danger"
@@ -73,9 +73,20 @@
 <script>
     export default {
         name: "ShowContent",
+        props: {
+            UrlGetContent: {
+                type: String,
+                required: true,
+            },
+            Index: {
+                type: String,
+                required: true,
+            },
+        },
         data(){
             return {
-                Content:{
+                Content:{},
+                Content1:{
                     ContentName:"نمایشگر ال سی دی گرافیکی آبی LCD 128*64",ProductPrice:35000,
                     Images:[
                         {ImageID:1,Imagename:"13.jpg"},
@@ -132,10 +143,19 @@
             }
         },
         mounted() {
-
+            this.GetContent(this.Index);
         },
         methods:{
+            GetContent(id){
+                axios
+                    .get(this.UrlGetContent+'/'+id)
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data) ;
+                        this.Content=data;
 
+                    })
+            },
         }
     }
 </script>
