@@ -10,7 +10,8 @@
             <span v-if="Content.Products[0]" class="price" v-text="'قیمت:'+Content.Products[0].ProductPrice+' تومان'"></span>
             <span class="add_to_cart"><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
 
-            <p v-if="Content.Products[0]" class="Desc" v-text="Content.Desc"></p>
+            <p v-for="Introduction in Content.Introductions" class="Desc" v-text="Introduction.IntroductionDesc"></p>
+<br><br><br><br>
 
                 <b-tabs
                     active-nav-item-class="font-weight-bold text-uppercase text-danger"
@@ -25,18 +26,18 @@
                                 <b-table striped hover :fields="subSpecificationsfields" :items="Specification.subSpecifications"></b-table>
                             </li>
                         </ul>
-                    </b-tab>
-                    <b-tab  title="نظرات(1)">
+                    </b-tab><!---->
+                    <b-tab  v-bind:title="'نظرات('+Content.Comments.length+')'">
                         <div id="Comment">
                             <ul class="c-list">
-                                <li class="c-list-item" v-for="Comment in Comments">
+                                <li class="c-list-item" v-for="Comment in Content.Comments">
                                     <div class="avatar">
                                         <img src=" ../../icon/default.png" v-bind:alt="Comment.UserName" v-bind:title="Comment.UserName">
                                     </div>
                                     <div class="body">
-                                        <span class="UserName" v-text="Comment.UserName"></span>
-                                        <span class="Date" v-text="Comment.CommentDate"></span>
-                                        <p class="Text" v-text="Comment.CommentText"></p>
+                                        <span class="UserName" v-text="Comment.User.UserName"></span>
+                                        <span class="Date" v-text="Comment.CommentCreateAt"></span>
+                                        <p class="Text" v-text="Comment.CommentDesc"></p>
                                     </div>
                                 </li>
                             </ul>
@@ -57,8 +58,9 @@
                         </div>
                     </b-tab>
                     <b-tab  title="برچسب ها" >
+
                         <div id="Tag">
-                            <a class="item" href="#" v-for="Tag in Tags"><font-awesome-icon  icon="tag" /><span  v-text="Tag.TagName+' '"></span></a>
+                            <a class="item" href="#" v-for="Tag in Content.Tags"><font-awesome-icon  icon="tag" /><span  v-text="Tag.TagName+' '"></span></a>
 
                         </div>
                     </b-tab>
