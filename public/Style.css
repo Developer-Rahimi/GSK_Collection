@@ -242,10 +242,11 @@
         }
 
         #Product .carousel {
-            float: right;
+            float: left;
             width: 100%;
             height: auto;
             margin-top: 20px;
+            direction: ltr;
         }
 
         #Product .title {
@@ -980,7 +981,7 @@
         #Content {
             float: right;
             width: 100%;
-            direction: rtl;
+            direction: ltr;
             text-align: right;
         }
         #Content .show {
