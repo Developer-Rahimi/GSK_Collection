@@ -39,11 +39,23 @@ Route::group(['prefix' => '/'], function () {
     Route::group(['prefix' => '/api'], function () {
         Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
+
+
         Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@Cart']);
-        Route::get('/User', ['as'=>'Get.User                  ','uses'=>'ApiController@Users']);
+
+
+        Route::get('/User', ['as'=>'Get.User','uses'=>'ApiController@Users']);
         Route::get('/User/{id}', ['as'=>'Get.Cart','uses'=>'ApiController@User']);
+
+
         Route::get('/Content', ['as'=>'Get.Content','uses'=>'ApiController@Contents']);
         Route::get('/Content/{id}', ['as'=>'Get.Cart','uses'=>'ApiController@Content']);
+
+
+        Route::post('/Comment', ['as'=>'Send.Comment','uses'=>'ApiController@SendComment']);
+
+
+        Route::post('/Contact', ['as'=>'Send.Contact','uses'=>'ApiController@SendContact']);
     });
 
 });

@@ -4,5 +4,7 @@
             "ServicePath"=> [
                 "GetUser"                   => $server."User",
                 "GetContent"                => $server."Contents",
+                "Comment"                => $server."Comment",
+                "Contact"                => $server."Contact",
             ],
         ];

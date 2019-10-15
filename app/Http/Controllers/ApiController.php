@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cache;
-use App\GetDataFromServer;
+use App\DataFromServer;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Carbon\Traits\Date;
@@ -20,65 +20,6 @@ class ApiController extends Controller
         return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
             JSON_UNESCAPED_UNICODE);
     }
-
-    public function Product()
-    {
-        $product = $array = array(
-            [   'ProductID' => 1,
-                'ProductName' => 'محصول اول',
-                'ProductIamge' => '1.jpg',
-                'ProductPrice' => '125000'],
-            [   'ProductID' => 2,
-                'ProductName' => 'محصول دوم',
-                'ProductIamge' => '2.jpg',
-                'ProductPrice' => '345000'],
-            [   'ProductID' => 3,
-                'ProductName' => 'محصول سوم',
-                'ProductIamge' => '3.jpg',
-                'ProductPrice' => '195000'],
-            [   'ProductID' => 4,
-                'ProductName' => 'محصول چهارم',
-                'ProductIamge' => '4.jpg',
-                'ProductPrice' => '325000'],
-            [   'ProductID' => 5,
-                'ProductName' => 'محصول پنجم',
-                'ProductIamge' => '5.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 6,
-                'ProductName' => 'محصول ششم',
-                'ProductIamge' => '6.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 7,
-                'ProductName' => 'محصول هفتم',
-                'ProductIamge' => '7.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 8,
-                'ProductName' => 'محصول هشتم',
-                'ProductIamge' => '8.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 9,
-                'ProductName' => 'محصول نهم',
-                'ProductIamge' => '9.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 10,
-                'ProductName' => 'محصول دهم',
-                'ProductIamge' => '10.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 11,
-                'ProductName' => 'محصول یازدهم',
-                'ProductIamge' => '11.jpg',
-                'ProductPrice' => '725000'],
-            [   'ProductID' => 12,
-                'ProductName' => 'محصول دوازدهم',
-                'ProductIamge' => '12.jpg',
-                'ProductPrice' => '725000'],
-
-
-        );
-        return response()->json($product, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
-            JSON_UNESCAPED_UNICODE);
-    }
-
     public function Cart()
     {
         $cart= array(
@@ -138,7 +79,7 @@ class ApiController extends Controller
     public function Users()
     {
         $url=config('Constant.ServicePath.GetUser');
-       $data= GetDataFromServer::get($url,1,0);
+       $data= DataFromServer::get($url,1,0);
 
 
         return  $data;
@@ -146,7 +87,7 @@ class ApiController extends Controller
     public function User($id)
     {
         $url=config('Constant.ServicePath.GetUser').'?index='.$id;
-       $data= GetDataFromServer::get($url,1,0);
+       $data= DataFromServer::get($url,1,0);
 
 
         return  $data;
@@ -154,7 +95,7 @@ class ApiController extends Controller
     public function Contents()
     {
         $url=config('Constant.ServicePath.GetContent');
-       $data= GetDataFromServer::get($url,1,0);
+       $data= DataFromServer::get($url,1,0);
 
 
         return  $data;
@@ -162,9 +103,34 @@ class ApiController extends Controller
     public function Content($id)
     {
         $url=config('Constant.ServicePath.GetContent').'?index='.$id;
-       $data= GetDataFromServer::get($url,0,0);
+       $data= DataFromServer::get($url,0,0);
 
 
         return  $data;
+    }
+/***************************************Comment**************************************/
+    public function SendComment(Request $request)
+    {
+        $url=config('Constant.ServicePath.Comment');
+        $data=['form_params' => [
+        'UserID' => $request->UserID,
+        'ContentID' => $request->ContentID,
+        'CommentSubject' => "CommentSubject",
+        'CommentDesc' => $request->CommentDesc,
+    ]];
+        $res=DataFromServer::SendData($url,$data);
+        return $res;
+    }
+    /***************************************Contact**************************************/
+    public function SendContact(Request $request)
+    {
+        $url=config('Constant.ServicePath.Contact');
+        $data=['form_params' => [
+        'ContactName' => $request->ContactName,
+        'ContactEmail' => $request->ContactEmail,
+        'ContactDesc' => $request->ContactDesc,
+    ]];
+        $res=DataFromServer::SendData($url,$data);
+        return $res;
     }
 }

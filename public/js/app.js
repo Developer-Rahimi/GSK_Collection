@@ -12161,6 +12161,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Contact",
@@ -12171,12 +12173,17 @@ __webpack_require__.r(__webpack_exports__);
     UrlGetContact: {
       type: String,
       required: true
+    },
+    UrlSendContact: {
+      type: String,
+      required: true
     }
   },
   data: function data() {
     return {
       Contact: {},
-      info: {}
+      info: {},
+      loading: false
     };
   },
   mounted: function mounted() {
@@ -12189,6 +12196,21 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.UrlGetContact).then(function (response) {
         console.log(response.data);
         _this.Contact = response.data;
+      });
+    },
+    SendContact: function SendContact() {
+      var _this2 = this;
+
+      this.loading = true;
+      axios.post(this.UrlSendContact, {
+        ContactName: this.info.ContactName,
+        ContactEmail: this.info.ContactEmail,
+        ContactDesc: this.info.ContactDesc
+      }).then(function (response) {
+        var data = response.data;
+        console.log(data);
+        _this2.info.ContactDesc = "";
+        _this2.loading = false;
       });
     }
   }
@@ -12248,14 +12270,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -12264,14 +12278,15 @@ __webpack_require__.r(__webpack_exports__);
     Slide: vue_carousel__WEBPACK_IMPORTED_MODULE_0__["Slide"]
   },
   props: {
-    UrlGetProduct: {
+    UrlGetContent: {
       type: String,
       required: true
     }
   },
   data: function data() {
     return {
-      Products: []
+      Contents: [],
+      Raw: -1
     };
   },
   mounted: function mounted() {
@@ -12281,11 +12296,15 @@ __webpack_require__.r(__webpack_exports__);
     GetProduct: function GetProduct() {
       var _this = this;
 
-      axios.get(this.UrlGetProduct).then(function (response) {
+      axios.get(this.UrlGetContent).then(function (response) {
         var data = response.data;
         console.log(data);
-        _this.Products = data;
+        _this.Contents = data;
       });
+    },
+    GetImage: function GetImage() {
+      //this.Raw++;
+      return this.Contents[0].Images[0].ImageUrl;
     }
   }
 });
@@ -12446,66 +12465,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShowContent",
+  props: {
+    UrlGetContent: {
+      type: String,
+      required: true
+    },
+    UrlSendComment: {
+      type: String,
+      required: true
+    },
+    Index: {
+      type: String,
+      required: true
+    }
+  },
   data: function data() {
     return {
-      Content: {
-        ContentName: "نمایشگر ال سی دی گرافیکی آبی LCD 128*64",
-        ProductPrice: 35000,
-        Images: [{
-          ImageID: 1,
-          Imagename: "13.jpg"
-        }, {
-          ImageID: 2,
-          Imagename: "14.jpg"
-        }, {
-          ImageID: 3,
-          Imagename: "15.jpg"
-        }],
-        Desc: "اتریهای لیتیوم پلیمر یکی از بهترین راهها برای تامین انرژی الکتریکی و تغذیه مدارات الکتریکی است. این باتریها در مقایسه با دیگر انواع باتریها مزایای بسیاری دارند. کوچک هستند، به نسبت ولتاژ و انرژی ذخیره شده در خود ابعاد کوچکی دارند. متاسفانه شارژ بهترین باتریها هم تمام میشود و اغلب این اتفاق در بدترین زمان ممکن رخ میدهد. اگر میخواهید باتری لیتیم پلیمر با تمام شدن شارژ شما را غافلگیر نکند باید از مانیتورینگ ولتاژ باتری استفاده کنید . ویژگی ساختاری باتریهای لیتیم پلیمر بگونه ای است که ولتاژ آن تا تخلیه کامل شارژ باتری، تقریبا ثابت میماند. بنابر این تشخیص میزان شارژ باتری با استفاده از مانیتورینگ ولتاژ در روشهای معمول غیر ممکن است. اما این بورد با اتصال به باتری شما و با استفاده از الگوریتم پیچیده داخلی خود میتواند وضع نسبی شارژ باتری را مشخص نماید. همچنین یک پین اخطار روی بورد در نظر گرفته شده که با افت ولتاژ باتری در سطحی مشخص که توسط کاربر تعیین میگردد ، سطح منطقی ولتاژ Low شده و در صورت افت ولتاژ از مقدار تعیین شده اعلام آلارم مینماید. این ماژول توانایی چک کردن سطح ولتاژ تک به تک و همچنین کلی سل های باطری را به صورت جداگانه دارد . حد خطا در این ماژول در حد یک صدم ولت میباشد که بسیار عالیست . این ماژول برای کلیه باطری های لیتیوم پلیمر و لیتیوم یون و غیره قابل استفاده میباشد ."
-      },
-      Tags: [{
-        TagID: 1,
-        TagName: "برچسب",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "برچسب تست",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "تست",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "محصول",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "محصول تستی",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "محصول شماره یک",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "تگ",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "تست تگ",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "برچسب دوم",
-        ContentID: 1
-      }, {
-        TagID: 1,
-        TagName: "برچسب اول",
-        ContentID: 1
-      }],
+      Content: {},
+      info: {},
       subSpecificationsfields: [{
         key: 'subSpecificationName',
         label: "عنوان"
@@ -12541,37 +12522,37 @@ __webpack_require__.r(__webpack_exports__);
           subSpecificationName: "تعداد خروجی",
           subSpecificationDesc: "10"
         }]
-      }],
-      Comments: [{
-        CommentID: 1,
-        CommentDate: "1398-05-06",
-        UserName: "علی قربانی",
-        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
-      }, {
-        CommentID: 1,
-        CommentDate: "1398-05-06",
-        UserName: "علی قربانی",
-        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
-      }, {
-        CommentID: 1,
-        CommentDate: "1398-05-06",
-        UserName: "علی قربانی",
-        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
-      }, {
-        CommentID: 1,
-        CommentDate: "1398-05-06",
-        UserName: "علی قربانی",
-        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
-      }, {
-        CommentID: 1,
-        CommentDate: "1398-05-06",
-        UserName: "علی قربانی",
-        CommentText: "سلام و خسته نباشید خدمت شما" + "ایا این ماژول خام هست و باید برنامه روش نصب کنیم؟\n" + "و این ماژول روش کارت هست؟یا باید خریداری کنم؟"
       }]
     };
   },
-  mounted: function mounted() {},
-  methods: {}
+  mounted: function mounted() {
+    this.GetContent(this.Index);
+  },
+  methods: {
+    GetContent: function GetContent(id) {
+      var _this = this;
+
+      axios.get(this.UrlGetContent + '/' + id).then(function (response) {
+        var data = response.data;
+        console.log(data);
+        _this.Content = data;
+      });
+    },
+    SendComment: function SendComment() {
+      var _this2 = this;
+
+      axios.post(this.UrlSendComment, {
+        UserID: 1,
+        ContentID: this.Index,
+        CommentSubject: "",
+        CommentDesc: this.info.CommentDesc
+      }).then(function (response) {
+        var data = response.data;
+        console.log(data);
+        _this2.info.CommentDesc = "";
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -79757,16 +79738,16 @@ var render = function() {
                 _c("b-form-input", {
                   staticClass: "name",
                   attrs: {
-                    type: "email",
+                    type: "text",
                     required: "",
                     placeholder: "برای مثال: علی"
                   },
                   model: {
-                    value: _vm.info.Name,
+                    value: _vm.info.ContactName,
                     callback: function($$v) {
-                      _vm.$set(_vm.info, "Name", $$v)
+                      _vm.$set(_vm.info, "ContactName", $$v)
                     },
-                    expression: "info.Name"
+                    expression: "info.ContactName"
                   }
                 })
               ],
@@ -79788,11 +79769,11 @@ var render = function() {
                     placeholder: "info@gskcollection"
                   },
                   model: {
-                    value: _vm.info.email,
+                    value: _vm.info.ContactEmail,
                     callback: function($$v) {
-                      _vm.$set(_vm.info, "email", $$v)
+                      _vm.$set(_vm.info, "ContactEmail", $$v)
                     },
-                    expression: "info.email"
+                    expression: "info.ContactEmail"
                   }
                 })
               ],
@@ -79809,16 +79790,16 @@ var render = function() {
                 _c("b-form-textarea", {
                   staticClass: "desc",
                   attrs: {
-                    type: "email",
+                    type: "text",
                     required: "",
                     placeholder: "اینجا بنویسید ...."
                   },
                   model: {
-                    value: _vm.info.desc,
+                    value: _vm.info.ContactDesc,
                     callback: function($$v) {
-                      _vm.$set(_vm.info, "desc", $$v)
+                      _vm.$set(_vm.info, "ContactDesc", $$v)
                     },
-                    expression: "info.desc"
+                    expression: "info.ContactDesc"
                   }
                 })
               ],
@@ -79827,20 +79808,29 @@ var render = function() {
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _c(
-              "VueButtonSpinner",
-              {
-                staticClass: "btn_send",
-                attrs: { "is-loading": true, disabled: true, status: true }
-              },
-              [
-                _c(
-                  "span",
-                  { staticStyle: { "margin-left": "4px", float: "right" } },
+            !_vm.loading
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-info",
+                    on: { click: _vm.SendContact }
+                  },
                   [_vm._v("ارسال")]
                 )
-              ]
-            )
+              : _c(
+                  "VueButtonSpinner",
+                  {
+                    staticClass: "btn_send",
+                    attrs: { "is-loading": true, disabled: true, status: true }
+                  },
+                  [
+                    _c(
+                      "span",
+                      { staticStyle: { "margin-left": "4px", float: "right" } },
+                      [_vm._v("ارسال")]
+                    )
+                  ]
+                )
           ],
           1
         )
@@ -79891,50 +79881,68 @@ var render = function() {
           staticClass: "carousel",
           attrs: { navigationEnabled: true, "per-page": 5 }
         },
-        _vm._l(_vm.Products, function(Product) {
-          return _c("slide", { key: Product.ProductID }, [
-            _c("a", { attrs: { href: "Show/Content/" + Product.ProductID } }, [
-              _c("img", {
-                staticClass: "card-img",
-                attrs: { src: "Images/" + Product.ProductIamge }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "name" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
-                  _c("span", {
-                    domProps: { textContent: _vm._s(Product.ProductName) }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "price" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
-                  _c("span", {
-                    domProps: {
-                      textContent: _vm._s(Product.ProductPrice + " تومان")
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "btn_add_cart" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
-                  _c("span", [_vm._v("افزودن به سبد خرید")])
-                ],
-                1
-              )
-            ])
+        _vm._l(_vm.Contents, function(Content) {
+          return _c("slide", { key: Content.ContentID }, [
+            Content.Images[0] != null
+              ? _c(
+                  "a",
+                  { attrs: { href: "Show/Content/" + Content.ContentID } },
+                  [
+                    _c("img", {
+                      staticClass: "card-img",
+                      attrs: {
+                        src:
+                          "http://gsk.whereapp.ir/Appdata/Images/" +
+                          Content.Images[0].ImageUrl
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "name" },
+                      [
+                        _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                        _c("span", {
+                          domProps: { textContent: _vm._s(Content.ContentName) }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    Content.Products[0] != null
+                      ? _c(
+                          "div",
+                          { staticClass: "price" },
+                          [
+                            _c("font-awesome-icon", {
+                              attrs: { icon: "money-bill" }
+                            }),
+                            _c("span", {
+                              domProps: {
+                                textContent: _vm._s(
+                                  Content.Products[0].ProductPrice + " تومان"
+                                )
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "btn_add_cart" },
+                      [
+                        _c("font-awesome-icon", {
+                          attrs: { icon: "cart-plus" }
+                        }),
+                        _c("span", [_vm._v("افزودن به سبد خرید")])
+                      ],
+                      1
+                    )
+                  ]
+                )
+              : _vm._e()
           ])
         }),
         1
@@ -79946,52 +79954,70 @@ var render = function() {
         "carousel",
         {
           staticClass: "carousel",
-          attrs: { navigationEnabled: "true", "per-page": 5 }
+          attrs: { navigationEnabled: true, "per-page": 5 }
         },
-        _vm._l(_vm.Products, function(Product) {
-          return _c("slide", { key: Product.ProductID }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("img", {
-                staticClass: "card-img",
-                attrs: { src: "Images/" + Product.ProductIamge }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "name" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
-                  _c("span", {
-                    domProps: { textContent: _vm._s(Product.ProductName) }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "price" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
-                  _c("span", {
-                    domProps: {
-                      textContent: _vm._s(Product.ProductPrice + " تومان")
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "btn_add_cart" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
-                  _c("span", [_vm._v("افزودن به سبد خرید")])
-                ],
-                1
-              )
-            ])
+        _vm._l(_vm.Contents, function(Content) {
+          return _c("slide", { key: Content.ContentID }, [
+            Content.Images[0] != null
+              ? _c(
+                  "a",
+                  { attrs: { href: "Show/Content/" + Content.ContentID } },
+                  [
+                    _c("img", {
+                      staticClass: "card-img",
+                      attrs: {
+                        src:
+                          "http://gsk.whereapp.ir/Appdata/Images/" +
+                          Content.Images[0].ImageUrl
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "name" },
+                      [
+                        _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                        _c("span", {
+                          domProps: { textContent: _vm._s(Content.ContentName) }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    Content.Products[0] != null
+                      ? _c(
+                          "div",
+                          { staticClass: "price" },
+                          [
+                            _c("font-awesome-icon", {
+                              attrs: { icon: "money-bill" }
+                            }),
+                            _c("span", {
+                              domProps: {
+                                textContent: _vm._s(
+                                  Content.Products[0].ProductPrice + " تومان"
+                                )
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "btn_add_cart" },
+                      [
+                        _c("font-awesome-icon", {
+                          attrs: { icon: "cart-plus" }
+                        }),
+                        _c("span", [_vm._v("افزودن به سبد خرید")])
+                      ],
+                      1
+                    )
+                  ]
+                )
+              : _vm._e()
           ])
         }),
         1
@@ -80003,52 +80029,70 @@ var render = function() {
         "carousel",
         {
           staticClass: "carousel",
-          attrs: { navigationEnabled: "true", "per-page": 5 }
+          attrs: { navigationEnabled: true, "per-page": 5 }
         },
-        _vm._l(_vm.Products, function(Product) {
-          return _c("slide", { key: Product.ProductID }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("img", {
-                staticClass: "card-img",
-                attrs: { src: "Images/" + Product.ProductIamge }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "name" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "tag" } }),
-                  _c("span", {
-                    domProps: { textContent: _vm._s(Product.ProductName) }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "price" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "money-bill" } }),
-                  _c("span", {
-                    domProps: {
-                      textContent: _vm._s(Product.ProductPrice + " تومان")
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "btn_add_cart" },
-                [
-                  _c("font-awesome-icon", { attrs: { icon: "cart-plus" } }),
-                  _c("span", [_vm._v("افزودن به سبد خرید")])
-                ],
-                1
-              )
-            ])
+        _vm._l(_vm.Contents, function(Content) {
+          return _c("slide", { key: Content.ContentID }, [
+            Content.Images[0] != null
+              ? _c(
+                  "a",
+                  { attrs: { href: "Show/Content/" + Content.ContentID } },
+                  [
+                    _c("img", {
+                      staticClass: "card-img",
+                      attrs: {
+                        src:
+                          "http://gsk.whereapp.ir/Appdata/Images/" +
+                          Content.Images[0].ImageUrl
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "name" },
+                      [
+                        _c("font-awesome-icon", { attrs: { icon: "tag" } }),
+                        _c("span", {
+                          domProps: { textContent: _vm._s(Content.ContentName) }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    Content.Products[0] != null
+                      ? _c(
+                          "div",
+                          { staticClass: "price" },
+                          [
+                            _c("font-awesome-icon", {
+                              attrs: { icon: "money-bill" }
+                            }),
+                            _c("span", {
+                              domProps: {
+                                textContent: _vm._s(
+                                  Content.Products[0].ProductPrice + " تومان"
+                                )
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "btn_add_cart" },
+                      [
+                        _c("font-awesome-icon", {
+                          attrs: { icon: "cart-plus" }
+                        }),
+                        _c("span", [_vm._v("افزودن به سبد خرید")])
+                      ],
+                      1
+                    )
+                  ]
+                )
+              : _vm._e()
           ])
         }),
         1
@@ -80214,10 +80258,7 @@ var render = function() {
   return _c("div", { attrs: { id: "Content" } }, [
     _c("img", {
       staticClass: "show",
-      attrs: {
-        src: " ../../images/" + _vm.Content.Images[0].Imagename,
-        alt: ""
-      }
+      attrs: { src: " ../../images/" + _vm.Content.Images[0].ImageUrl, alt: "" }
     }),
     _vm._v(" "),
     _c(
@@ -80225,7 +80266,7 @@ var render = function() {
       { staticClass: "gallery" },
       _vm._l(_vm.Content.Images, function(image) {
         return _c("img", {
-          attrs: { src: " ../../images/" + image.Imagename, alt: "" }
+          attrs: { src: " ../../images/" + image.ImageUrl, alt: "" }
         })
       }),
       0
@@ -80240,12 +80281,16 @@ var render = function() {
           domProps: { textContent: _vm._s(_vm.Content.ContentName) }
         }),
         _vm._v(" "),
-        _c("span", {
-          staticClass: "price",
-          domProps: {
-            textContent: _vm._s("قیمت:" + _vm.Content.ProductPrice + " تومان")
-          }
-        }),
+        _vm.Content.Products[0]
+          ? _c("span", {
+              staticClass: "price",
+              domProps: {
+                textContent: _vm._s(
+                  "قیمت:" + _vm.Content.Products[0].ProductPrice + " تومان"
+                )
+              }
+            })
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "span",
@@ -80257,10 +80302,17 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("p", {
-          staticClass: "Desc",
-          domProps: { textContent: _vm._s(_vm.Content.Desc) }
+        _vm._l(_vm.Content.Introductions, function(Introduction) {
+          return _c("p", {
+            staticClass: "Desc",
+            domProps: { textContent: _vm._s(Introduction.IntroductionDesc) }
+          })
         }),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
         _vm._v(" "),
         _c(
           "b-tabs",
@@ -80303,68 +80355,104 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("b-tab", { attrs: { title: "نظرات(1)" } }, [
-              _c("div", { attrs: { id: "Comment" } }, [
-                _c(
-                  "ul",
-                  { staticClass: "c-list" },
-                  _vm._l(_vm.Comments, function(Comment) {
-                    return _c("li", { staticClass: "c-list-item" }, [
-                      _c("div", { staticClass: "avatar" }, [
-                        _c("img", {
-                          attrs: {
-                            src: " ../../icon/default.png",
-                            alt: Comment.UserName,
-                            title: Comment.UserName
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "body" }, [
-                        _c("span", {
-                          staticClass: "UserName",
-                          domProps: { textContent: _vm._s(Comment.UserName) }
-                        }),
+            _c(
+              "b-tab",
+              {
+                attrs: { title: "نظرات(" + _vm.Content.Comments.length + ")" }
+              },
+              [
+                _c("div", { attrs: { id: "Comment" } }, [
+                  _c(
+                    "ul",
+                    { staticClass: "c-list" },
+                    _vm._l(_vm.Content.Comments, function(Comment) {
+                      return _c("li", { staticClass: "c-list-item" }, [
+                        _c("div", { staticClass: "avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src: " ../../icon/default.png",
+                              alt: Comment.UserName,
+                              title: Comment.UserName
+                            }
+                          })
+                        ]),
                         _vm._v(" "),
-                        _c("span", {
-                          staticClass: "Date",
-                          domProps: { textContent: _vm._s(Comment.CommentDate) }
-                        }),
-                        _vm._v(" "),
-                        _c("p", {
-                          staticClass: "Text",
-                          domProps: { textContent: _vm._s(Comment.CommentText) }
-                        })
+                        _c("div", { staticClass: "body" }, [
+                          _c("span", {
+                            staticClass: "UserName",
+                            domProps: {
+                              textContent: _vm._s(Comment.User.UserName)
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "Date",
+                            domProps: {
+                              textContent: _vm._s(Comment.CommentCreateAt)
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass: "Text",
+                            domProps: {
+                              textContent: _vm._s(Comment.CommentDesc)
+                            }
+                          })
+                        ])
                       ])
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card" }, [
+                    _c("div", [
+                      _c("h3", { staticClass: "label" }, [_vm._v("افزودن نظر")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.info.CommentDesc,
+                            expression: "info.CommentDesc"
+                          }
+                        ],
+                        staticClass: "text",
+                        domProps: { value: _vm.info.CommentDesc },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.info,
+                              "CommentDesc",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("input", {
+                        staticClass: "btn btn-primary btn_custom",
+                        attrs: { type: "button", value: "ارسال نظر" },
+                        on: { click: _vm.SendComment }
+                      })
                     ])
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c("div", [
-                    _c("h3", { staticClass: "label" }, [_vm._v("افزودن نظر")])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("textarea", { staticClass: "text" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "btn btn-primary btn_custom",
-                      attrs: { type: "button", value: "ارسال نظر" }
-                    })
                   ])
                 ])
-              ])
-            ]),
+              ]
+            ),
             _vm._v(" "),
             _c("b-tab", { attrs: { title: "برچسب ها" } }, [
               _c(
                 "div",
                 { attrs: { id: "Tag" } },
-                _vm._l(_vm.Tags, function(Tag) {
+                _vm._l(_vm.Content.Tags, function(Tag) {
                   return _c(
                     "a",
                     { staticClass: "item", attrs: { href: "#" } },
@@ -80384,7 +80472,7 @@ var render = function() {
           1
         )
       ],
-      1
+      2
     )
   ])
 }
@@ -94052,8 +94140,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\GSK\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\GSK\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Developer\Desktop\Site\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Developer\Desktop\Site\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
