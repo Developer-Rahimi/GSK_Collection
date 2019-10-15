@@ -30,9 +30,9 @@
                         description=""
                 >
                     <b-form-input
-                            v-model="info.Name"
+                            v-model="info.ContactName"
                             class="name"
-                            type="email"
+                            type="text"
                             required
                             placeholder="برای مثال: علی"
                     ></b-form-input>
@@ -43,7 +43,7 @@
                         description=""
                 >
                     <b-form-input
-                            v-model="info.email"
+                            v-model="info.ContactEmail"
                             type="email"
                             class="email"
                             required
@@ -56,20 +56,22 @@
                         description=""
                 >
                     <b-form-textarea
-                            v-model="info.desc"
-                            type="email"
+                            v-model="info.ContactDesc"
+                            type="text"
                             class="desc"
                             required
                             placeholder="اینجا بنویسید ...."
                     ></b-form-textarea>
                 </b-form-group>
                 <br>
+                <button class="btn btn-info" v-if="!loading"    @click="SendContact">ارسال</button>
                 <VueButtonSpinner
+                    v-else
                         class="btn_send"
                         :is-loading="true"
                         :disabled="true"
                         :status="true">
-                    <span  style="margin-left:4px;float: right ">ارسال</span>
+                    <span  style="margin-left:4px;float: right " >ارسال</span>
                 </VueButtonSpinner>
 
             </div>
@@ -90,11 +92,16 @@
                 type: String,
                 required: true,
             },
+            UrlSendContact: {
+                type: String,
+                required: true,
+            },
         },
         data(){
             return {
                 Contact:{},
-                info:{}
+                info:{},
+                loading:false,
             }
         },
         mounted() {
@@ -107,6 +114,21 @@
                     .then(response => {
                        console.log(response.data) ;
                        this.Contact=response.data;
+                    })
+            },
+            SendContact(){
+                this.loading=true;
+                axios
+                    .post(this.UrlSendContact,{
+                        ContactName:this.info.ContactName,
+                        ContactEmail:this.info.ContactEmail,
+                        ContactDesc:this.info.ContactDesc
+                    })
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data) ;
+                        this.info.ContactDesc="";
+                        this.loading=false;
                     })
             }
         }

@@ -3,7 +3,7 @@ namespace App;
 use App\Cache;
 use Carbon\Carbon;
 
-class GetDataFromServer {
+class DataFromServer {
         public static function get($url,$day,$hours)
         {
             $data=Cache::where('url',$url)->first();
@@ -33,4 +33,13 @@ class GetDataFromServer {
                 return  $cache->data;
             }
         }
+
+    public static function  SendData($url,$data)
+    {
+        $client = new \GuzzleHttp\Client();
+       $response = $client->request('POST', $url,
+            $data
+        );
+        return $response->getBody()->getContents();
     }
+}
