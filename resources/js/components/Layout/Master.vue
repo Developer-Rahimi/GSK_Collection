@@ -1,6 +1,7 @@
 <template>
     <div id="Wrapper">
         <div id="Header">
+            <Top></Top>
             <h1 class="SiteName">نام سایت</h1>
             <br>
             <h4 class="SiteBanner">شعار سایت</h4>

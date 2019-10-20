@@ -11,11 +11,11 @@
             return {
                 Menues:[
                     {Title:"صفحه اصلی",Link:"/",icon:"home"},
-                    {Title:"حساب من",Link:"#",icon:"user"},
+                    /*{Title:"حساب من",Link:"/User/MyAccount",icon:"user"},*/
                     {Title:"مرکز دانلود",Link:"#",icon:"download"},
                     {Title:"تماس با ما",Link:"/Contact",icon:"phone-square-alt"},
                     {Title:"در باره ما",Link:"/About",icon:"info-circle"},
-                    {Title:"خروج",Link:"#",icon:"sign-out-alt"},
+                    /*{Title:"خروج",Link:"#",icon:"sign-out-alt"},*/
                 ],
             }
         },

@@ -20,62 +20,7 @@ class ApiController extends Controller
         return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
             JSON_UNESCAPED_UNICODE);
     }
-    public function Cart()
-    {
-        $cart= array(
-            [   'CartID' => 1,
-                "Quntity"=>3,
-                "Content" =>[
-                    "ContentName" =>"محصول اول",
-                    "Product" =>[
-                        "ProductPrice"=>5000
-                    ]
-                ]
-            ],[   'CartID' => 2,
-                "Quntity"=>2,
-                "Content" =>[
-                    "ContentName" =>"محصول دوم",
-                    "Product" =>[
-                        "ProductPrice"=>75000
-                    ]
-                ]
-            ],[   'CartID' => 3,
-                "Quntity"=>6,
-                "Content" =>[
-                    "ContentName" =>"محصول سوم",
-                    "Product" =>[
-                        "ProductPrice"=>36000
-                    ]
-                ]
-            ],[   'CartID' => 4,
-                "Quntity"=>1,
-                "Content" =>[
-                    "ContentName" =>"محصول چهارم",
-                    "Product" =>[
-                        "ProductPrice"=>28000
-                    ]
-                ]
-            ],[   'CartID' => 5,
-                "Quntity"=>9,
-                "Content" =>[
-                    "ContentName" =>"محصول پنجم",
-                    "Product" =>[
-                        "ProductPrice"=>13000
-                    ]
-                ]
-            ],[   'CartID' => 6,
-                "Quntity"=>3,
-                "Content" =>[
-                    "ContentName" =>"محصول ششم",
-                    "Product" =>[
-                        "ProductPrice"=>51000
-                    ]
-                ]
-            ],
-        );
-        return response()->json($cart, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
-            JSON_UNESCAPED_UNICODE);
-    }
+    /*////////////////////////////User/////////////////////////////////*/
     public function Users()
     {
         $url=config('Constant.ServicePath.GetUser');
@@ -87,11 +32,47 @@ class ApiController extends Controller
     public function User($id)
     {
         $url=config('Constant.ServicePath.GetUser').'?index='.$id;
-       $data= DataFromServer::get($url,1,0);
+       $data= DataFromServer::get($url,0,0);
 
 
         return  $data;
     }
+    public function Login(Request $request)
+    {
+        $url=config('Constant.ServicePath.Login');
+        $data=['form_params' => [
+            'UserEmail' => $request->UserEmail,
+            'UserPassword' => $request->UserPassword,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+
+
+        return  $res;
+    }
+    public function CheckEmail(Request $request)
+    {
+        $url=config('Constant.ServicePath.EmailCheck');
+        $data=['form_params' => [
+            'UserEmail' => $request->UserEmail,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+
+
+        return  $res;
+    }
+    public function Register(Request $request)
+    {
+        $url=config('Constant.ServicePath.Register');
+        $data=['form_params' => [
+            'UserName' => $request->UserName,
+            'UserPhone' => $request->UserPhone,
+            'UserEmail' => $request->UserEmail,
+            'UserPassword' => $request->UserPassword,
+        ]];
+        $res=DataFromServer::SendData($url,$data);
+        return $res;
+    }
+
     public function Contents()
     {
         $url=config('Constant.ServicePath.GetContent');
@@ -132,5 +113,25 @@ class ApiController extends Controller
     ]];
         $res=DataFromServer::SendData($url,$data);
         return $res;
+    }
+    /***************************************Cart**************************************/
+    public function GetCart()
+    {
+        $UserID=1;
+        $url=config('Constant.ServicePath.Cart').'?index='.$UserID;
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    public function AddCart(Request $request)
+    {
+        $url=config('Constant.ServicePath.Cart');
+        $UserID=1;
+        $data=['form_params' => [
+            'UserID' => $UserID,
+            'ContentID' => $request->ContentID,
+            'Quantity' => $request->Quantity,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
     }
 }

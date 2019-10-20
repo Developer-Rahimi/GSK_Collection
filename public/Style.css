@@ -687,8 +687,33 @@
             height: auto;
             background: #FBFFFF;
         }
+        /*********************Top****************************/
+        #Top {
+            float: right;
+            width: 100%;
+            font: 14px IRANSans-web, Tahoma;
+            text-align: right;
+            background: #505bda;
 
+        }
+        #Top a{
+            float: left;
+            width: auto;
+            font: 12px IRANSans-web, Tahoma;
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+        #Top  a span{
+            margin-right: 5px;
+        }
+        #Top  a:hover {
+            background: #b063c5;
+            color: #ffaac3;
+            text-decoration: none;
+        }
         /*****************************Header************************/
+
         #Header {
             float: right;
             width: 100%;
@@ -1342,7 +1367,6 @@
         #Account {
             float: right;
             width: 100%;
-            direction: rtl;
             margin-top:10px;
             margin-bottom:30px;
         }
@@ -1378,9 +1402,9 @@
             margin-top:15px;
             font: 12px IRANSans-web, Tahoma;
         }
-        #Account .field-form {
+        #Account .User{
+            float: right;
             width: 100%;
-            direction: rtl;
         }
         /****************************Login-Page*********************************/
         #Login {
@@ -1413,5 +1437,49 @@
             margin-top: 30px;
             margin-left: 15px;
         }
+        /*Edit text*/
+        .field-form {
+            float: right;
+            width: 100%;
+            margin-bottom: 15px;
+            height: auto;
+            direction: rtl;
+        }
+        .field-form .required {
+            color:red;
+        }
+        .field-form .main {
+            float: right;
+            width:100%;
+        }
+        .field-form .c-text {
+            float:right;
+            display: block;
+            width:auto;
+            min-width:250px;
+            height: 32px;
+            padding: 5px 10px;
+            color: #555555;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .field-form .valid-text {
+            border: 1px solid #46a74e;
+            color: #35b33f;
+            background: #ddf9e1;
+        }
+        .field-form .icon{
+            float:right;
+            font-size:20px;
+            color: #46a74e;
+            margin-right:10px;
+            margin-top: 7px;
+        }
     }
+
 }

@@ -1,39 +1,43 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div class="container">
         <div id="Cart">
             <h2 class="title">سبد خريد</h2>
             <h3 class="head" v-text="'محتويات سبد خريد شما:  '+Carts.length +' محصول'"></h3>
-            <b-table :items="Carts" :fields="CartFields">
+            <b-table :items="Carts" :fields="CartFields" class="table" style="direction: rtl">
                 <template v-slot:cell(CartID)="data">
                     {{ data.index + 1 }}
                 </template>
-                <template v-slot:cell(ProductName)="data">
+                <template v-slot:cell(ContentName)="data">
                     {{ data.item.Content.ContentName}}
                 </template>
                 <template v-slot:cell(ProductPrice)="data">
-                    {{ data.item.Content.Product.ProductPrice}}
+                    <span v-if="data.item.Content.Products[0]"> {{ data.item.Content.Products[0].ProductPrice}}</span>
+
+                </template>
+                <template v-slot:cell(Quntity)="data">
+                    {{ data.item.Quantity}}
                 </template>
                 <template v-slot:cell(Total)="data">
-                    {{ data.item.Content.Product.ProductPrice * data.item.Quntity }}
+                    <span v-if="data.item.Content.Products[0]"> {{ data.item.Content.Products[0].ProductPrice * data.item.Quantity }}</span>
                 </template>
             </b-table>
             <div class="info">
                 <table>
                     <tr>
                         <td class="label">جمع محصولات:</td>
-                        <td>125000 تومان</td>
+                        <td>{{Tot}}</td>
                     </tr>
                     <tr>
                         <td class="label">هزینه بسته بندی و ارسال:</td>
-                        <td>12500 تومان</td>
+                        <td>{{post}}</td>
                     </tr>
                     <tr>
                         <td class="label">مجموع:</td>
-                        <td>135000 تومان</td>
+                        <td>{{Total}}</td>
                     </tr>
                     <tr>
                         <td class="label"></td>
-                        <td><button class="btn btn-primary c-btn"><font-awesome-icon  icon="money-bill-alt" /><span>پرداخت</span></button></td>
+                        <td><button class="btn btn-primary c-btn" @click="SendPay()"><font-awesome-icon  icon="money-bill-alt" /><span>پرداخت</span></button></td>
                     </tr>
                 </table>
             </div>
@@ -49,17 +53,24 @@
                 type: String,
                 required: true,
             },
+            UrlSendPay: {
+                type: String,
+                required: true,
+            },
         },
         data(){
             return{
                 Carts:[],
                 CartFields:[
                     { key: 'CartID', label: 'ردیف' },
-                    { key: 'ProductName', label: 'نام کالا' },
+                    { key: 'ContentName', label: 'نام کالا' },
                     { key: 'ProductPrice', label: 'قیمت(تومان)' },
                     { key: 'Quntity', label: 'تعداد' },
                     { key: 'Total', label: 'جمع(تومان)' },
                 ],
+                Tot:null,
+                Total:null,
+                post:12500
             }
         },
         mounted() {
@@ -73,7 +84,35 @@
                         var data=response.data;
                         console.log(data) ;
                         this.Carts=data;
+                        this.total(data);
                     })
+            },
+            SendPay(){
+                axios
+                    .post(this.UrlSendPay,{
+                        PayPrice:100,
+                        PayDesc:'خرید',
+                        PayEmail:"moosarahimi8@gmail.com",
+                        PayPhone:'09107608438',
+                        PayOrder:4,
+
+                    })
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data) ;
+                        window.location.replace(data);
+                    })
+            },
+            total(data){/*data.length*/
+                var tot=0;
+                for(var i=0;i<2;i++){
+                    tot += (data[i].Quantity *   data[i].Content.Products[0].ProductPrice);
+                    console.log(data[i].Content.Products[0].ProductPrice) ;
+                    console.log(data[i].Quantity *   data[i].Content.Products[0].ProductPrice) ;
+                }
+                console.log(tot) ;
+                this.Tot=tot;
+                this.Total=tot+this.post;
             }
 
         }

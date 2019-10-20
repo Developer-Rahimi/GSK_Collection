@@ -6,10 +6,10 @@
             <br>
             <br>
             <div class="main" v-show="!valid" >
-                <input  class="c-text" v-bind:type="TypeInput" v-model="Data" @change="Check()" >
+                <input  class="c-text" v-bind:type="TypeInput" v-model="Text" @change="Check()" >
             </div>
             <div class="main" v-show="valid" >
-                <input  class="c-text valid-text"v-model="Data" v-bind:type="TypeInput" @change="Check()">
+                <input  class="c-text valid-text"v-model="Text" v-bind:type="TypeInput" @change="Check()">
                 <font-awesome-icon class="icon"  icon="check-circle"   />
             </div>
         </div>
@@ -39,6 +39,10 @@
             TypeInput: {
                 type: String,
                 required: true,
+            },
+            Text: {
+                type: String,
+                required: false,
             },
         },
         data(){

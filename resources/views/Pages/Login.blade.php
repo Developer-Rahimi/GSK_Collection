@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container">
-        <Login></Login>
+        <Login
+            Url-Login="{{route('User.Login')}}"
+            Url-Check-Email="{{route('User.CheckEmail')}}"
+            Url-Check-Register="{{route('User.Register')}}"
+        ></Login>
     </div>
 
 @endsection

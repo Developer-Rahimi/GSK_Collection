@@ -9,7 +9,8 @@ class AccountController extends Controller
 {
     public function index()
     {
-        return view("Pages.Account");
+        $Index=1;
+        return view("Pages.Account",compact('Index'));
     }
     public function Login()
     {

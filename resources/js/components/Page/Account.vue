@@ -30,39 +30,79 @@
 
                        </div>
                        <div class="field-form">
-                           <EditText
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >نام ونام خانوادگی</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
 
-                               :required="true"
-                               LabelName="نام"
-                               :MinLength=3
-                               TypeInput="text"
-                           >
-
-                           </EditText>
+                           <div class="main" v-if="User.UserName.length<3">
+                               <input  class="c-text" type="text" v-model="User.UserName"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
                            </div>
                        <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >ایمیل</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="User.UserEmail.length<3">
+                               <input  class="c-text" type="text" v-model="User.UserEmail"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserEmail"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                           </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >تاریخ تولد</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <date-picker v-model="User.UserDateBorn"></date-picker>
+                           </div>
+                    <!--   <div class="field-form">
                            <EditText
 
                                :required="true"
-                               LabelName="نام خانوادگی"
+                               LabelName=""
                                :MinLength=3
                                TypeInput="text"
                                >
 
                            </EditText>
-                           </div>
-                       <div class="field-form">
+                           </div>-->
+                       <!--<div class="field-form">
                            <EditText
 
                                :required="true"
                                LabelName="ایمیل"
                                :MinLength=3
                                TypeInput="email"
+                               :Text="User.UserEmail"
                            >
 
                            </EditText>
                            </div>
                        <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" ></span>
+                           <br>
+                           <br>
+                           <div class="main" v-show="!valid" >
+                               <input  class="c-text" v-bind:type="User" v-model="Text" @change="Check()" >
+                           </div>
+                           <div class="main" v-show="valid" >
+                               <input  class="c-text valid-text"v-model="Text" v-bind:type="TypeInput" @change="Check()">
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                           </div>-->
+
+                       <!--<div class="field-form">
                            <span class="required" style="color: red">*</span>
                            <span class="Name" >تاریخ تولد</span>
                            <br>
@@ -164,10 +204,10 @@
                                <option value="1396">1356</option>
                                <option value="1397">1357</option>
                                <option value="1398">1358</option>
-                               <!--<option value="1399">1359</option>-->
+                               &lt;!&ndash;<option value="1399">1359</option>&ndash;&gt;
 
                            </select>
-                       </div>
+                       </div>-->
                        <div class="field-form">
                            <button class="btn btn-success c-save" value="ذخیره" style="margin-top:20px">
                              ذخیره
@@ -181,12 +221,25 @@
 
 
        </div>
-   </div>
 </template>
 
 <script>
+    import VuePersianDatetimePicker from 'vue-persian-datetime-picker'
     export default {
         name: "Account",
+        components: {
+            datePicker: VuePersianDatetimePicker
+        },
+        props:{
+            UrlGetUser: {
+                type: String,
+                required: true,
+            },
+            Index: {
+                type: String,
+                required: true,
+            },
+        },
         data(){
             return {
                 Itemes:[
@@ -197,7 +250,11 @@
                     {Name:"آدرس های من",icon:"map-marker-alt",link:"#"},
                     {Name:"تخفیف های من",icon:"barcode",link:"#"},
                 ],
-                User:{},
+                User:{
+                    UserName:"",
+                    UserEmail:"",
+                },
+               /* date: '1397/02/02'*/
             };
         },
         mounted() {
@@ -205,8 +262,14 @@
         },
         methods:{
             GetInfoUser(){
-
+                axios
+                    .get(this.UrlGetUser+'/'+this.Index)
+                    .then(response => {
+                        console.log(response.data) ;
+                        this.User=response.data;
+                    })
             }
+
         }
     }
 </script>

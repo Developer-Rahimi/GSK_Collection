@@ -22,7 +22,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/Test', 'TestController@index');
 
 
-    Route::get('/Pay', 'PayController@Pay');
+    Route::get('/Pay',  ['as'=>'Send.Pay','uses'=>'PayController@Pay']);
 
     Route::group(['prefix' => '/Show'], function () {
     Route::get('/Page', 'ShowPageController@index');
@@ -41,11 +41,15 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
 
 
-        Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@Cart']);
+        Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@GetCart']);
+        Route::post('/Cart', ['as'=>'Send.Cart','uses'=>'ApiController@AddCart']);
 
 
-        Route::get('/User', ['as'=>'Get.User','uses'=>'ApiController@Users']);
-        Route::get('/User/{id}', ['as'=>'Get.Cart','uses'=>'ApiController@User']);
+        Route::get('/User', ['as'=>'Get.Users','uses'=>'ApiController@Users']);
+        Route::get('/User/{id}', ['as'=>'Get.User','uses'=>'ApiController@User']);
+        Route::post('/Login', ['as'=>'User.Login','uses'=>'ApiController@Login']);
+        Route::post('/CheckEmail', ['as'=>'User.CheckEmail','uses'=>'ApiController@CheckEmail']);
+        Route::post('/Register', ['as'=>'User.Register','uses'=>'ApiController@Register']);
 
 
         Route::get('/Content', ['as'=>'Get.Content','uses'=>'ApiController@Contents']);

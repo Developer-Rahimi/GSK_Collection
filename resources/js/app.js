@@ -15,7 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt
 
 }
 from '@fortawesome/free-solid-svg-icons'
@@ -23,7 +23,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -33,7 +33,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueCarousel from 'vue-carousel';
-
+import VuePersianDatetimePicker from 'vue-persian-datetime-picker';
+Vue.component('date-picker', VuePersianDatetimePicker);
 Vue.use(VueCarousel);
 Vue.use(BootstrapVue)
 Vue.use(EasySlider)
@@ -56,6 +57,7 @@ Vue.component('ShowContent', require('./components/Page/ShowContent.vue').defaul
 Vue.component('Test', require('./components/Page/Test.vue').default);
 
 
+Vue.component('Top', require('./components/Menu/Top.vue').default);
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
 Vue.component('Access', require('./components/Menu/Access.vue').default);
 
