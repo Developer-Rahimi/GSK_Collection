@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
 class MainServiceProvider extends ServiceProvider
@@ -13,8 +14,8 @@ class MainServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $moosa="kjkjk";
-        view()->composer('view', compact('moosa'));
+
+
     }
 
     /**
@@ -24,7 +25,14 @@ class MainServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
+        view()->composer('*', function ($view)
+        {
+            $view->with('User', \Session::get('Login') );
+            $view->with('Login', true);
+        });
+       // $User = $this->itemRepo->getItems(session("Login"));
+       // $User=$request->session()->get('Login');
+        //view()->share('User', $User);
+        ;
     }
 }

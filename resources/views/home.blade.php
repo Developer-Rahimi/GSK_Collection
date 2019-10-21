@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    {{$moosa}}
+    {{$User}}{{$Login}}
     <Home
             Url-Get-Content="{{route('Get.Content')}}"
     ></Home>
