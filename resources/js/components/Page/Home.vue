@@ -29,12 +29,14 @@
                     <img class="card-img" v-bind:src="'http://gsk.whereapp.ir/Appdata/Images/'+Content.Images[0].ImageUrl">
                     <div class="name" ><font-awesome-icon  icon="tag" /><span v-text="Content.ContentName"></span></div>
                     <div class="price" v-if="Content.Products[0]!=null"><font-awesome-icon  icon="money-bill" /><span v-text="Content.Products[0].ProductPrice+' تومان'"></span></div>
-                    <div class="btn_add_cart" ><font-awesome-icon  icon="cart-plus" /><span>افزودن به سبد خرید</span></div>
+                    <div class="btn_add_cart" v-b-modal.Quantity><font-awesome-icon  icon="cart-plus" /><span>افزودن به سبد خرید</span></div>
                 </a>
             </slide>
 
         </carousel>
-
+        <b-modal id="Quantity" centered title="BootstrapVue">
+        <p class="my-4">Vertically centered modal!</p>
+    </b-modal>
     </div>
 
 </template>

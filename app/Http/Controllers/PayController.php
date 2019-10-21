@@ -10,7 +10,7 @@ class PayController extends Controller
 {
     public function Pay(Request $request)
     {
-        $MerchantID = '9269fa72-ce05-11e9-ab9e-000c295eb8fc'; //Required
+        $MerchantID = '876a6918-f335-11e9-be5f-000c295eb8fc'; //Required
         $Amount =$request->PayPrice; //Amount will be based on Toman - Required
         $Description =$request->PayDesc; /*'توضیحات تراکنش تستی'; // Required*/
         $Email = $request->PayEmail; // Optional

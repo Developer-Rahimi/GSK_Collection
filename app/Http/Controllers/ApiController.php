@@ -45,10 +45,15 @@ class ApiController extends Controller
             'UserPassword' => $request->UserPassword,
         ]];
         $res= DataFromServer::SendData($url,$data);
+       /* if($res['Status'] ==='OK'){
 
-
+        }*/
+        $json=json_decode($res);
+        if($json->Status==='OK')
+            $request->session()->put('Login', $json->ID);
         return  $res;
     }
+
     public function CheckEmail(Request $request)
     {
         $url=config('Constant.ServicePath.EmailCheck');
@@ -102,7 +107,7 @@ class ApiController extends Controller
         $res=DataFromServer::SendData($url,$data);
         return $res;
     }
-    /***************************************Contact**************************************/
+/***************************************Contact**************************************/
     public function SendContact(Request $request)
     {
         $url=config('Constant.ServicePath.Contact');

@@ -34,6 +34,7 @@ Route::group(['prefix' => '/'], function () {
     Route::group(['prefix' => '/User'], function () {
         Route::get('MyAccount', 'AccountController@index');
         Route::get('Login', 'AccountController@Login');
+        Route::post('/LogOut', ['as'=>'User.Logout','uses'=>'AccountController@LogOut']);
     });
 
     Route::group(['prefix' => '/api'], function () {
@@ -50,6 +51,7 @@ Route::group(['prefix' => '/'], function () {
         Route::post('/Login', ['as'=>'User.Login','uses'=>'ApiController@Login']);
         Route::post('/CheckEmail', ['as'=>'User.CheckEmail','uses'=>'ApiController@CheckEmail']);
         Route::post('/Register', ['as'=>'User.Register','uses'=>'ApiController@Register']);
+
 
 
         Route::get('/Content', ['as'=>'Get.Content','uses'=>'ApiController@Contents']);

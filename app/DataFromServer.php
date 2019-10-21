@@ -2,6 +2,7 @@
 namespace App;
 use App\Cache;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class DataFromServer {
         public static function get($url,$day,$hours)
@@ -41,5 +42,8 @@ class DataFromServer {
             $data
         );
         return $response->getBody()->getContents();
+    }
+    public static function Login($id,Request $request){
+        $request->session()->get('Login');
     }
 }
