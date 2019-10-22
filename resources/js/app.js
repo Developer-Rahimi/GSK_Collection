@@ -43,6 +43,7 @@ Vue.use(EasySlider)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Master', require('./components/Layout/Master.vue').default);
+Vue.component('AdminMaster', require('./components/Layout/AdminMaster.vue').default);
 
 /*///////////////////////////////////////Pages////////////////////////////////*/
 Vue.component('Home', require('./components/Page/Home.vue').default);
@@ -59,7 +60,15 @@ Vue.component('Test', require('./components/Page/Test.vue').default);
 
 Vue.component('Top', require('./components/Menu/Top.vue').default);
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
-Vue.component('Access', require('./components/Menu/Access.vue').default);
+
+
+
+/*////////////////////////////Admin////////////////////////////////////////////////*/
+Vue.component('Admin', require('./components/Admin/Admin.vue').default);
+Vue.component('Contents', require('./components/Admin/Content.vue').default);
+Vue.component('User', require('./components/Admin/User.vue').default);
+
+
 
 
 /*////////////////////////////Object////////////////////////////////////////////////*/

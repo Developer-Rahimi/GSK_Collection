@@ -63,5 +63,9 @@ Route::group(['prefix' => '/'], function () {
 
         Route::post('/Contact', ['as'=>'Send.Contact','uses'=>'ApiController@SendContact']);
     });
-
+    Route::group(['prefix' => '/Admin'], function () {
+        Route::get('/', ['as'=>'Admin','uses'=>'AdminController@index']);
+        Route::get('/Content', ['as'=>'Admin','uses'=>'AdminController@Content']);
+        Route::get('/User', ['as'=>'Admin','uses'=>'AdminController@User']);
+    });
 });
