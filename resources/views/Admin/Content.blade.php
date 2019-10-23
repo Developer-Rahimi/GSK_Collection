@@ -2,6 +2,8 @@
 
 @section('content')
     <div>
-        <Contents></Contents>
+        <Contents
+            Url-Get-Content="{{route('Admin.api.Contents')}}"
+        ></Contents>
     </div>
 @endsection

@@ -2,6 +2,8 @@
 
 @section('content')
     <div>
-        <User></User>
+        <User
+            Url-Get-User="{{route('Admin.api.Users')}}"
+        ></User>
     </div>
 @endsection

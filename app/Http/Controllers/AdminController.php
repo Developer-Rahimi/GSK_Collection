@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataFromServer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,4 +20,56 @@ class AdminController extends Controller
     {
         return  View('Admin.Content');
     }
+    public function Order()
+    {
+        return  View('Admin.Order');
+    }
+    /*api*/
+    public function Contents()
+    {
+        $url=config('Constant.ServicePath.GetContent');
+        $data= DataFromServer::get($url,0,0);
+
+
+        return  $data;
+    }
+    public function ContentID($id)
+    {
+        $url=config('Constant.ServicePath.GetContent').'?index='.$id;
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    public function users()
+    {
+        $url=config('Constant.ServicePath.GetUser');
+        $data= DataFromServer::get($url,0,0);
+
+
+        return  $data;
+    }
+    public function userID($index)
+    {
+        $url=config('Constant.ServicePath.GetUser')."?index=".$index;
+        $data= DataFromServer::get($url,0,0);
+
+
+        return  $data;
+    }
+    public function Orders()
+    {
+        $url=config('Constant.ServicePath.GetUser');
+        $data= DataFromServer::get($url,0,0);
+
+
+        return  $data;
+    }
+    public function OrderID($index)
+    {
+        $url=config('Constant.ServicePath.GetUser')."?index=".$index;
+        $data= DataFromServer::get($url,0,0);
+
+
+        return  $data;
+    }
+
 }

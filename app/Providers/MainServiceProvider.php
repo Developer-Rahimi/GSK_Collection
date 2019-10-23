@@ -30,9 +30,6 @@ class MainServiceProvider extends ServiceProvider
             $view->with('User', \Session::get('Login') );
             $view->with('Login', true);
         });
-       // $User = $this->itemRepo->getItems(session("Login"));
-       // $User=$request->session()->get('Login');
-        //view()->share('User', $User);
-        ;
+
     }
 }

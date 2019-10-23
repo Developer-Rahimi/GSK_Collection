@@ -24,6 +24,7 @@
                 Menues:[
                     {Name:"محتوا",Link:"/Admin/Content",icon:""},
                     {Name:"کاربران",Link:"/Admin/User",icon:"user"},
+                    {Name:"سفارش ها",Link:"/Admin/Order",icon:"user"},
                 ]
             }
         },

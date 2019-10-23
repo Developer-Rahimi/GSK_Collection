@@ -65,7 +65,17 @@ Route::group(['prefix' => '/'], function () {
     });
     Route::group(['prefix' => '/Admin'], function () {
         Route::get('/', ['as'=>'Admin','uses'=>'AdminController@index']);
-        Route::get('/Content', ['as'=>'Admin','uses'=>'AdminController@Content']);
-        Route::get('/User', ['as'=>'Admin','uses'=>'AdminController@User']);
+        Route::get('/Content', ['as'=>'Admin.Content','uses'=>'AdminController@Content']);
+        Route::get('/User', ['as'=>'Admin.User','uses'=>'AdminController@User']);
+        Route::get('/Order', ['as'=>'Admin.User','uses'=>'AdminController@Order']);
+        Route::group(['prefix' => '/api'], function () {
+            Route::get('/User', ['as'=>'Admin.api.Users','uses'=>'AdminController@Users']);
+            Route::get('/User/{id}', ['as'=>'Admin.api.User','uses'=>'AdminController@UserID']);
+            Route::get('/Content', ['as'=>'Admin.api.Contents','uses'=>'AdminController@Contents']);
+            Route::get('/Content/{id}', ['as'=>'Admin.api.Content','uses'=>'AdminController@ContentID']);
+            Route::get('/Order', ['as'=>'Admin.api.Contents','uses'=>'AdminController@Orders']);
+            Route::get('/Order/{id}', ['as'=>'Admin.api.Content','uses'=>'AdminController@OrderID']);
+
+        });
     });
 });
