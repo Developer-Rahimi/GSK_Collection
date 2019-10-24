@@ -5,7 +5,7 @@
                 <h2 class="title">تائید هویت</h2>
             </div>
             <div class="card-body">
-                <div class="register"   v-show="!ShowForm">
+                <div class="register"   v-show="!ShowForm &!Loading">
                     <span>ایجاد حساب کاربری</span>
                     <br>
                     <br>
@@ -26,11 +26,12 @@
                     </div>
                     <br>
                     <br>
+                    <p style="color: red;text-align: right" v-show="WrongEmail">با این ایمیل قبلا ثبت نام شده است</p>
                     <br>
                     <br>
                     <button class="btn btn-warning" @click=" CheckEmail()">ایجاد حساب کاربری</button>
                 </div>
-                <div class="enter" v-show="!ShowForm">
+                <div class="enter" v-show="!ShowForm &!Loading">
                 <span>آیا ثبت نام کرده اید؟</span>
                 <br>
                 <br>
@@ -62,6 +63,10 @@
                             <font-awesome-icon class="icon"  icon="check-circle"   />
                         </div>
                     </div>
+                    <div class="field-form">
+                        <p style="color: red;text-align: right" v-show="WrongUser">نام کاربری یا کلمه عبور صحیح نیست</p>
+
+                    </div>
                     <br>
                     <br>
                     <br>
@@ -71,7 +76,7 @@
                     </div>
 
 
-                <div class="registerForm" v-show="ShowForm">
+                <div class="registerForm" v-show="ShowForm &!Loading">
                     <div class="field-form">
                         <span class="required" v-show="true">*</span>
                         <span class="Name" >نام ونام خانوادگی</span>
@@ -128,10 +133,26 @@
                     </div>
                     <div class="field-form">
                         <button class="btn btn-success" @click="Logup">ثبت نام</button>
+                        <button class="btn btn-warning" @click="ShowForm=false">بازگشت به صفحه ورود</button>
                     </div>
                 </div>
                 </div>
             </div>
+        <div v-show="Loading">
+            <center>
+                <div style="width: 150px">
+                    <div class="loader" >
+
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
         </div>
 </template>
 
@@ -163,12 +184,16 @@
                     RePassword:''
                 },
                 ShowForm:false,
+                Loading:false,
+                WrongUser:false,
+                WrongEmail:false,
             }
         },
         mounted() {
         },
         methods:{
             Login(){
+                this.Loading = true;
                 axios
                     .post(this.UrlLogin,{
                         UserEmail:this.InfoLogin.UserEmail,
@@ -177,9 +202,13 @@
                     .then(response => {
                         var data=response.data;
                         console.log(data) ;
-                    })
+                        if(data.Status==="NO"){
+                            this.WrongUser=true;
+                        }
+                    }).finally(() => this.Loading = false)
             },
             CheckEmail(){
+                this.Loading = true;
                 axios
                     .post(this.UrlCheckEmail,{
                         UserEmail:this.Register.UserEmail,
@@ -189,10 +218,13 @@
                         console.log(data) ;
                         if(data.Status==="NO"){
                             this.ShowForm=true;
+                        }else{
+                            this.WrongEmail=true;
                         }
-                    })
+                    }).finally(() => this.Loading = false)
             },
             Logup(){
+                this.Loading = true;
                 axios
                     .post(this.UrlCheckRegister,{
                         UserName:this.Register.UserName,
@@ -207,7 +239,7 @@
                             this.ShowForm=false;
                             this.InfoLogin.UserEmail=this.Register.UserEmail;
                         }
-                    })
+                    }).finally(() => this.Loading = false)
             }
         }
 
