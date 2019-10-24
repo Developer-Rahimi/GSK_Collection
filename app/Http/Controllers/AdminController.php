@@ -1,5 +1,5 @@
 <?php
-
+/*SL4A*/
 namespace App\Http\Controllers;
 
 use App\DataFromServer;

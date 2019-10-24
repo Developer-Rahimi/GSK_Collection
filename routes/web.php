@@ -30,7 +30,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/Content', 'ShowContentController@index');
     Route::get('/Content/{id}', 'ShowContentController@index');
     });
-
+    /*/////////////////////////////////////////Api//////////////////////////////////////////*/
     Route::group(['prefix' => '/User'], function () {
         Route::get('MyAccount', 'AccountController@index');
         Route::get('Login', 'AccountController@Login');
@@ -63,6 +63,14 @@ Route::group(['prefix' => '/'], function () {
 
         Route::post('/Contact', ['as'=>'Send.Contact','uses'=>'ApiController@SendContact']);
     });
+    /*/////////////////////////////////////////Session//////////////////////////////////////////*/
+    Route::group(['prefix' => '/Session'], function () {
+        Route::get('/Login', ['as'=>'Admin','uses'=>'SessionController@SetLogin']);
+        Route::get('/Login/{id}', ['as'=>'Admin','uses'=>'SessionController@SetLogin']);
+        Route::get('/Logout', ['as'=>'Admin','uses'=>'SessionController@Logout']);
+        Route::get('/CheckLogin', ['as'=>'Admin','uses'=>'SessionController@CheckLogin']);
+    });
+    /*/////////////////////////////////////////Admin//////////////////////////////////////////*/
     Route::group(['prefix' => '/Admin'], function () {
         Route::get('/', ['as'=>'Admin','uses'=>'AdminController@index']);
         Route::get('/Content', ['as'=>'Admin.Content','uses'=>'AdminController@Content']);
