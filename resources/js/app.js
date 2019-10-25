@@ -67,6 +67,7 @@ Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
 Vue.component('Admin', require('./components/Admin/Admin.vue').default);
 Vue.component('Contents', require('./components/Admin/Content.vue').default);
 Vue.component('User', require('./components/Admin/User.vue').default);
+Vue.component('Order', require('./components/Admin/Order.vue').default);
 
 
 

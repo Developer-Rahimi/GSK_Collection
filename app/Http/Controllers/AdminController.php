@@ -71,5 +71,18 @@ class AdminController extends Controller
 
         return  $data;
     }
+    public function SendTag(Request $request)
+    {
+
+        $url=config('Constant.ServicePath.Tag');
+        $data=['form_params' => [
+            'ContentID' => $request->ContentID,
+            'TagName' => $request->TagName,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+
+
+        return  $res;
+    }
 
 }

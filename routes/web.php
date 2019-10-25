@@ -81,8 +81,10 @@ Route::group(['prefix' => '/'], function () {
             Route::get('/User/{id}', ['as'=>'Admin.api.User','uses'=>'AdminController@UserID']);
             Route::get('/Content', ['as'=>'Admin.api.Contents','uses'=>'AdminController@Contents']);
             Route::get('/Content/{id}', ['as'=>'Admin.api.Content','uses'=>'AdminController@ContentID']);
-            Route::get('/Order', ['as'=>'Admin.api.Contents','uses'=>'AdminController@Orders']);
-            Route::get('/Order/{id}', ['as'=>'Admin.api.Content','uses'=>'AdminController@OrderID']);
+            Route::get('/Order', ['as'=>'Admin.api.Order','uses'=>'AdminController@Orders']);
+            Route::get('/Order/{id}', ['as'=>'Admin.api.OrderID','uses'=>'AdminController@OrderID']);
+
+            Route::post('/SendTag', ['as'=>'Admin.api.SendTag','uses'=>'AdminController@SendTag']);
 
         });
     });

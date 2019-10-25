@@ -5,6 +5,8 @@
         {{--<User
             Url-Get-User="{{route('Admin.api.Users')}}"
         ></User>--}}
-        <h1>sdsdsdsd</h1>
+        <Order
+                UrlGetOrder="{{route('Admin.api.Order')}}"
+        ></Order>
     </div>
 @endsection

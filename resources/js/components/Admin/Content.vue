@@ -1,6 +1,6 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div class="container">
-    <div id="Content">
+    <div id="Content" v-show="!Loading &!ShowContent">
         <div class="card">
             <div class="card-header">
                 <h3>محتوای سایت</h3>
@@ -26,7 +26,22 @@
             </div>
         </div>
     </div>
-    <div id="ShowContent">
+        <div v-show="Loading">
+            <center>
+                <div style="width: 150px">
+                    <div class="loader" >
+
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    <div id="ShowContent" v-show="!Loading&ShowContent">
         <div class="card">
             <div class="card-header">
                 <h3>محصول انتخاب شده</h3>
@@ -99,14 +114,14 @@
                     <ul v-if="Content.Specifications">
                         <li v-for="Specification in Content.Specifications">
                             <h4>{{Specification.SpecificationName}}</h4>
-                            <!--<b-table striped hover :items="Content.Images" :fields="ImageFields" @row-selected="onRowSelected">
-                                <template v-slot:cell(id)="data">
+                            <b-table striped hover :items="Specification.SubSpecifications" :fields="SubSpecificationFields">
+                                <template v-slot:cell(SubSpecificationID)="data">
                                     {{ data.index + 1 }}
                                 </template>
-                                &lt;!&ndash; <template v-slot:cell(ContentStatus)="data">
+                                <!-- <template v-slot:cell(ContentStatus)="data">
                                      {{ data.item.ContentStatus.ContentStateTitle }}
-                                 </template>&ndash;&gt;
-                            </b-table>-->
+                                 </template>-->
+                            </b-table>
                         </li>
                     </ul>
                     <p v-else>چیزی برای نمایش وجود ندارد</p>
@@ -216,15 +231,15 @@
                     <br><!--v-show="User.UserName.length()<3"-->
 
                     <div class="main" v-if="true">
-                        <input  class="c-text" type="text"  >
+                        <input  class="c-text" type="text" v-model="Info.TagName" >
                     </div>
                     <div class="main" v-else>
-                        <input  class="c-text valid-text"     type="text" >
+                        <input  class="c-text valid-text"  v-model="Info.TagName"    type="text" >
                         <font-awesome-icon class="icon"  icon="check-circle"   />
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success"  @click="$bvModal.hide('AddTag')">ذخیره</button>
+            <button class="btn btn-success"  @click="SendTag">ذخیره</button>
             <button class="btn btn-danger"  @click="$bvModal.hide('AddTag')">انصراف</button>
         </b-modal>
     </div>
@@ -238,12 +253,18 @@
                 type: String,
                 required: true,
             },
+            UrlSendTag: {
+                type: String,
+                required: true,
+            },
         },
         data(){
             return {
                 Contents:[],
-                Content:[],
-
+                Content:{},
+                Loading:false,
+                ShowContent:false,
+                ID:null,
                 ContentFields:[
                     { key: 'ContentID', label: 'ردیف' },
                     { key: 'ContentName', label: 'نام محتوا' },
@@ -254,7 +275,13 @@
                 ImageFields:[
                     { key: 'id', label: 'ردیف' },
                     { key: 'ImageUrl', label: 'نام عکس' },
-                ]
+                ],
+                SubSpecificationFields:[
+                    { key: 'SubSpecificationID', label: 'ردیف' },
+                    { key: 'SubSpecificationName', label: 'نام ' },
+                    { key: 'SubSpecificationDesc', label: 'توضیحات ' },
+                ],
+                Info:{},
             }
         },
         mounted() {
@@ -262,23 +289,80 @@
         },
         methods:{
             GetContents(){
+                this.Loading=true;
                 axios
                     .get(this.UrlGetContent)
                     .then(response => {
                         var data=response.data;
                         console.log(data) ;
                         this.Contents=data;
-                    })
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
             },
             onRowSelected(items) {
+                this.Loading=true;
+                this.ShowContent=true;
                 console.log(items[0].ContentID);
+                this.ID=items[0].ContentID;
                 axios
                     .get(this.UrlGetContent+'/'+items[0].ContentID)
                     .then(response => {
                         var data=response.data;
                         console.log(data) ;
                         this.Content=data;
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
+            },
+            SendTag(){
+                this.Loading=true;
+                axios
+                    .post(this.UrlSendTag,{
+                        ContentID:this.Content.ContentID,
+                        TagName:this.Info.TagName,
+
                     })
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data);
+                        if(data.Status==='OK'){
+                            this.shCnt(this.ID);
+                        }
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
+            },
+            SendSpecification(){
+                this.Loading=true;
+                axios
+                    .post(this.UrlSendTag,{
+                        ContentID:this.Content.ContentID,
+                        TagName:this.Info.TagName,
+
+                    })
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data);
+                        if(data.Status==='OK'){
+                            this.shCnt(this.ID);
+                        }
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
+            },
+            shCnt(id) {
+                this.Loading=true;
+                this.ShowContent=true;
+                axios
+                    .get(this.UrlGetContent+'/'+id)
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data) ;
+                        this.Content=data;
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
             },
         }
     }
