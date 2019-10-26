@@ -22,9 +22,9 @@ class SessionController extends Controller
     }
     public function CheckLogin(Request $request)
     {
-        $res=Null;
+        /*$res=Null;
         $check=$request->session()->has('Login');
-        if($check)
+        if($check)*/
         $res=$request->session()->get('Login');
         return $res;
 

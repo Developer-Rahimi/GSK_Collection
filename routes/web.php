@@ -20,6 +20,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/Contact', 'ContactController@index');
     Route::get('/Cart', 'CartController@index');
     Route::get('/Test', 'TestController@index');
+    Route::get('/Access', 'ErrorController@Access');
 
 
     Route::get('/Pay',  ['as'=>'Send.Pay','uses'=>'PayController@Pay']);
@@ -85,6 +86,9 @@ Route::group(['prefix' => '/'], function () {
             Route::get('/Order/{id}', ['as'=>'Admin.api.OrderID','uses'=>'AdminController@OrderID']);
 
             Route::post('/SendTag', ['as'=>'Admin.api.SendTag','uses'=>'AdminController@SendTag']);
+            Route::post('/SendSpecification', ['as'=>'Admin.api.SendSpecification','uses'=>'AdminController@SendSpecification']);
+            Route::post('/SendIntroduction', ['as'=>'Admin.api.SendIntroduction','uses'=>'AdminController@SendIntroduction']);
+            Route::post('/SendIamge', ['as'=>'Admin.api.SendIamge','uses'=>'AdminController@SendIamge']);
 
         });
     });

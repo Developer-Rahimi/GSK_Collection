@@ -10,6 +10,7 @@
                 "EmailCheck"                => $server."User/Email/Check",
                 "Register"                  => $server."User/Register",
                 "Tag"                       => $server."Tag",
-                "Specification"             => $server."Specification",
+                "Specification"            => $server."Specification",
+                "Introduction"            => $server."Introduction",
             ],
         ];

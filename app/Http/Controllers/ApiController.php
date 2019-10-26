@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Carbon\Traits\Date;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class ApiController extends Controller
 {
@@ -44,13 +45,14 @@ class ApiController extends Controller
             'UserEmail' => $request->UserEmail,
             'UserPassword' => $request->UserPassword,
         ]];
+        $user=null;
         $res= DataFromServer::SendData($url,$data);
-       /* if($res['Status'] ==='OK'){
-
-        }*/
         $json=json_decode($res);
-        if($json->Status==='OK')
-            $request->session()->put('Login', $json->ID);
+        if($json->Status==='OK'){
+            $url=config('Constant.ServicePath.GetUser').'?index=1';
+      $user= DataFromServer::get($url,1,0);
+            $request->session()->put('Login', $user);
+        }
         return  $res;
     }
 

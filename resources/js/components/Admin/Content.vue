@@ -93,6 +93,9 @@
                 <div class="card-header">
                     <h3>مشخصات محصول</h3>
                     <span  @click="$bvModal.show('AddProduct')">افزودن محصول</span>
+
+                </div>
+                <div class="card-body">
                     <table v-if="Content.Products">
                         <tr>
                             <th>عنوان</th>
@@ -105,8 +108,18 @@
                     </table>
                     <p v-else>چیزی برای نمایش وجود ندارد</p>
                 </div>
-                <div class="card-body">
+                <div class="card-header">
+                    <h3>معرفی</h3>
+                    <span  @click="$bvModal.show('AddIntroduction')">افزودن معرفی</span>
 
+                </div>
+                <div class="card-body">
+                    <ul v-if="Content.Introductions">
+                        <li v-for="Introduction in Content.Introductions">
+                            <p v-text="Introduction.IntroductionDesc"></p>
+                        </li>
+                    </ul>
+                    <p v-else>چیزی برای نمایش وجود ندارد</p>
                 </div>
                 <div class="card-header">
                     <h3>ویژگی ها</h3>
@@ -118,9 +131,6 @@
                                 <template v-slot:cell(SubSpecificationID)="data">
                                     {{ data.index + 1 }}
                                 </template>
-                                <!-- <template v-slot:cell(ContentStatus)="data">
-                                     {{ data.item.ContentStatus.ContentStateTitle }}
-                                 </template>-->
                             </b-table>
                         </li>
                     </ul>
@@ -143,6 +153,7 @@
         </div>
 
 
+
         <b-modal id="AddContent" hide-footer>
             <template v-slot:modal-title>
                 <h3>افزودن محتوا</h3>
@@ -157,10 +168,13 @@
             <template v-slot:modal-title>
                 <h3>افزودن تصویر</h3>
             </template>
-            <div class="d-block text-center">
-                <h3>Hello From This Modal!</h3>
+            <div class="field-form">
+
+            <label>File<!--v-on:change="handleFileUpload()"-->
+                <input type="file" id="file" ref="file" />
+            </label>
             </div>
-            <button class="btn btn-success"  @click="$bvModal.hide('AddImage')">ذخیره</button>
+            <button class="btn btn-success"  @click="SendImage">ذخیره</button>
             <button class="btn btn-danger"  @click="$bvModal.hide('AddImage')">انصراف</button>
         </b-modal>
         <b-modal id="AddProduct" hide-footer>
@@ -198,15 +212,15 @@
                     <br><!--v-show="User.UserName.length()<3"-->
 
                     <div class="main" v-if="true">
-                        <input  class="c-text" type="text"  >
+                        <input  class="c-text" type="text" v-model="Info.SpecificationName" >
                     </div>
                     <div class="main" v-else>
-                        <input  class="c-text valid-text"     type="text" >
+                        <input  class="c-text valid-text"  v-model="Info.SpecificationName"    type="text" >
                         <font-awesome-icon class="icon"  icon="check-circle"   />
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success"  @click="$bvModal.hide('AddSpecifications')">ذخیره</button>
+            <button class="btn btn-success" @click="SendSpecification" >ذخیره</button>
             <button class="btn btn-danger"  @click="$bvModal.hide('AddSpecifications')">انصراف</button>
         </b-modal>
         <b-modal id="AddSubSpecifications" hide-footer>
@@ -242,6 +256,43 @@
             <button class="btn btn-success"  @click="SendTag">ذخیره</button>
             <button class="btn btn-danger"  @click="$bvModal.hide('AddTag')">انصراف</button>
         </b-modal>
+        <b-modal id="AddIntroduction" hide-footer>
+            <template v-slot:modal-title>
+                <h3>افزودن معرفی</h3>
+            </template>
+            <div class="c-body">
+                <div class="field-form">
+                    <span class="required" v-show="true">*</span>
+                    <span class="Name" >موضوع</span>
+                    <br>
+                    <br><!--v-show="User.UserName.length()<3"-->
+
+                    <div class="main" v-if="true">
+                        <input  class="c-text" type="text" v-model="Info.IntroductionTitle" >
+                    </div>
+                    <div class="main" v-else>
+                        <input  class="c-text valid-text"  v-model="Info.IntroductionTitle"    type="text" >
+                        <font-awesome-icon class="icon"  icon="check-circle"   />
+                    </div>
+                </div>
+                <div class="field-form">
+                    <span class="required" v-show="true">*</span>
+                    <span class="Name" >متن</span>
+                    <br>
+                    <br><!--v-show="User.UserName.length()<3"-->
+
+                    <div class="main" v-if="true">
+                        <textarea  class="c-text" type="text" v-model="Info.IntroductionDesc" />
+                    </div>
+                    <div class="main" v-else>
+                        <textarea  class="c-text valid-text"  v-model="Info.IntroductionDesc"    type="text" />
+                        <font-awesome-icon class="icon"  icon="check-circle"   />
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success"  @click="SendIntroduction">ذخیره</button>
+            <button class="btn btn-danger"  @click="$bvModal.hide('AddTag')">انصراف</button>
+        </b-modal>
     </div>
 </template>
 
@@ -249,11 +300,27 @@
     export default {
         name: "Contents",
         props:{
+            UserInfo: {
+                type: String,
+                required: true,
+            },
             UrlGetContent: {
                 type: String,
                 required: true,
             },
             UrlSendTag: {
+                type: String,
+                required: true,
+            },
+            UrlSendSpecification: {
+                type: String,
+                required: true,
+            },
+            UrlSendIntroduction: {
+                type: String,
+                required: true,
+            },
+            UrlSendIamge: {
                 type: String,
                 required: true,
             },
@@ -282,9 +349,13 @@
                     { key: 'SubSpecificationDesc', label: 'توضیحات ' },
                 ],
                 Info:{},
+                User:{},
+                image: ''
             }
         },
         mounted() {
+            this.User=JSON.parse(this.UserInfo)
+            console.log(this.User.id)
             this.GetContents();
         },
         methods:{
@@ -336,20 +407,68 @@
             SendSpecification(){
                 this.Loading=true;
                 axios
-                    .post(this.UrlSendTag,{
+                    .post(this.UrlSendSpecification,{
                         ContentID:this.Content.ContentID,
-                        TagName:this.Info.TagName,
+                        SpecificationName:this.Info.SpecificationName,
 
                     })
                     .then(response => {
                         var data=response.data;
                         console.log(data);
                         if(data.Status==='OK'){
+                            this.$bvModal.hide('AddSpecifications');
                             this.shCnt(this.ID);
                         }
                     }).finally(()=>{
                     this.Loading=false;
                 });
+            },
+
+            SendIntroduction(){
+                this.Loading=true;
+                axios
+                    .post(this.UrlSendIntroduction,{
+                        ContentID:this.Content.ContentID,
+                        UserID:this.User.id,
+                        IntroductionTitle:this.Info.IntroductionTitle,
+                        IntroductionDesc:this.Info.IntroductionDesc,
+
+                    })
+                    .then(response => {
+                        var data=response.data;
+                        console.log(data);
+                        if(data.Status==='OK'){
+                            this.$bvModal.hide('AddIntroduction');
+                            this.shCnt(this.ID);
+                        }
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
+            },
+            handleFileUpload(){
+                this.image = this.$refs.file.files[0];
+            },
+            SendImage(){
+                var that=this;
+                this.Loading=true;
+                let formData = new FormData();
+                formData.append('image', this.image);
+                axios.post( that.UrlSendIamge,
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                ).then(function(){
+                    console.log('SUCCESS!!');
+                    that.Loading=false;
+                    this.$bvModal.hide('AddImage');
+                })
+                    .catch(function(){
+                        console.log('FAILURE!!');
+                        that.Loading=false;
+                    });
             },
             shCnt(id) {
                 this.Loading=true;
