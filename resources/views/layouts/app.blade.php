@@ -8,26 +8,26 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <link rel="shortcut icon" type="image/ico" href="{{ asset('icon/favicon.ico') }}"/>
     <!-- Fonts -->
-    {{--<link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
-    {{--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
+{{--<link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
 
-    <!-- Styles -->
+<!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('head')
 </head>
 <body>
-    <div id="app">
-        <Master
-                User-Info="{{$User}}"
-                Home="{{route('Home')}}">
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </Master>
+<div id="app">
+    <Master
+            User-Info="{{$User}}"
+            Home="{{route('Home')}}">
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </Master>
 
-    </div>
-    <link href="{{ asset('Style.css') }}" rel="stylesheet">
+</div>
+<link href="{{ asset('Style.css') }}" rel="stylesheet">
 </body>
 </html>
