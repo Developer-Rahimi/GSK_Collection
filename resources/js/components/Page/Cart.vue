@@ -1,6 +1,13 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div class="container">
-        <div id="Cart">
+        <div class="card">
+            <div class="card-header">
+                <h3>سبد خرید</h3>
+            </div>
+            <div class="card-body">
+
+
+        <div id="Cart" v-show="!Loading" v-if="Carts.length">
             <h2 class="title">سبد خريد</h2>
             <h3 class="head" v-text="'محتويات سبد خريد شما:  '+Carts.length +' محصول'"></h3>
             <b-table :items="Carts" :fields="CartFields" class="table" style="direction: rtl">
@@ -42,6 +49,32 @@
                 </table>
             </div>
         </div>
+        <div v-else v-show="!Loading">
+            <center>
+                <!--<img src=" ../../icon/basket.png" alt="">-->
+                <font-awesome-icon  icon="shopping-cart" style="font-size: 50px"/>
+                <br><br>
+                <h3>سبد خرید شما خالی است</h3>
+            </center>
+
+        </div>
+        <div v-show="Loading">
+            <center>
+                <div style="width: 150px">
+                    <div class="loader" >
+
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -70,6 +103,7 @@
                 ],
                 Tot:null,
                 Total:null,
+                Loading:false,
                 post:12500
             }
         },
@@ -78,16 +112,20 @@
         },
         methods:{
             GetCart(){
+                this.Loading=true;
                 axios
                     .get(this.UrlGetCart)
                     .then(response => {
                         var data=response.data;
-                        console.log(data) ;
-                        this.Carts=data;
-                        this.total(data);
-                    })
+                        if(data.length>0){
+                        console.log(data[0]) ;
+                        this.Carts=data[0];
+                        this.total(data[0]);
+                        }
+                    }).finally(() => this.Loading = false);
             },
             SendPay(){
+                this.Loading=true;
                 axios
                     .post(this.UrlSendPay,{
                         PayPrice:100,
@@ -101,7 +139,7 @@
                         var data=response.data;
                         console.log(data) ;
                         window.location.replace(data);
-                    })
+                    }).finally(() => this.Loading = false);
             },
             total(data){/*data.length*/
                 var tot=0;

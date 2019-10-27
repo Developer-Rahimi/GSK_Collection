@@ -21,7 +21,9 @@
 </head>
 <body>
     <div id="app">
-        <Master>
+        <Master
+                User-Info="{{$User}}"
+                Home="{{route('Home')}}">
             <main class="py-4">
                 @yield('content')
             </main>

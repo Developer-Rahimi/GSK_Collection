@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'ftp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,19 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'ftp' => [
+            'driver'   => 'ftp',
+            'host'     => '185.55.224.212',
+            'username' => 'whereapp',
+            'password' => 'Engineer@8438',
 
+            // Optional FTP Settings...
+            // 'port'     => 21,
+            // 'root'     => '',
+            // 'passive'  => true,
+            // 'ssl'      => true,
+            // 'timeout'  => 30,
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

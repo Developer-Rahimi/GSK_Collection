@@ -1,11 +1,12 @@
 <template>
     <div id="Wrapper">
         <div id="Header">
-            <Top></Top>
-            <h1 class="SiteName">نام سایت</h1>
+            <Top :UserInfo="UserInfo"></Top>
+            <img v-bind:src="Home+'/icon/logo.png'" style="float:right;width:280px;height:200px;">
+            <h1 class="SiteName">گروه صنعتی کریمی</h1>
             <br>
-            <h4 class="SiteBanner">شعار سایت</h4>
-            <MainMenu></MainMenu>
+            <h4 class="SiteBanner">پیشرو در صنعت کنترل و ابزار دقیق</h4>
+            <MainMenu ></MainMenu>
         </div>
         <div id="Content">
             <SlideShow></SlideShow>
@@ -34,7 +35,28 @@
 
 <script>
     export default {
-        name: "Master"
+        name: "Master",
+        props:{
+            Home:{
+                type: String,
+                required: true,
+            },
+            UserInfo:{
+                type: String,
+                required: true,
+            }
+        },
+        data(){
+            return {
+                User:{}
+            }
+        },
+        mounted() {
+           // this.User=JSON.parse(this.UserInfo);
+        },
+        methods:{
+
+        }
     }
 </script>
 

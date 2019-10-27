@@ -1,21 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 
 
 Auth::routes();
 Route::group(['prefix' => '/'], function () {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', ['as'=>'Home','uses'=>'HomeController@index']);
     Route::get('/About', 'AboutController@index');
     Route::get('/Contact', 'ContactController@index');
     Route::get('/Cart', 'CartController@index');
@@ -23,19 +13,19 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/Access', 'ErrorController@Access');
 
 
-    Route::get('/Pay',  ['as'=>'Send.Pay','uses'=>'PayController@Pay']);
+    Route::post('/Pay',  ['as'=>'Send.Pay','uses'=>'PayController@Pay']);
 
     Route::group(['prefix' => '/Show'], function () {
-    Route::get('/Page', 'ShowPageController@index');
+        Route::get('/Page', 'ShowPageController@index');
 
-    Route::get('/Content', 'ShowContentController@index');
-    Route::get('/Content/{id}', 'ShowContentController@index');
+        Route::get('/Content', 'ShowContentController@index');
+        Route::get('/Content/{id}', 'ShowContentController@index');
     });
     /*/////////////////////////////////////////Api//////////////////////////////////////////*/
     Route::group(['prefix' => '/User'], function () {
         Route::get('MyAccount', 'AccountController@index');
         Route::get('Login', 'AccountController@Login');
-        Route::post('/LogOut', ['as'=>'User.Logout','uses'=>'AccountController@LogOut']);
+        Route::get('/LogOut', ['as'=>'User.Logout','uses'=>'AccountController@LogOut']);
     });
 
     Route::group(['prefix' => '/api'], function () {
@@ -45,6 +35,8 @@ Route::group(['prefix' => '/'], function () {
 
         Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@GetCart']);
         Route::post('/Cart', ['as'=>'Send.Cart','uses'=>'ApiController@AddCart']);
+
+        Route::get('/Order', ['as'=>'Get.Orders','uses'=>'ApiController@GetOrder']);
 
 
         Route::get('/User', ['as'=>'Get.Users','uses'=>'ApiController@Users']);
@@ -56,7 +48,7 @@ Route::group(['prefix' => '/'], function () {
 
 
         Route::get('/Content', ['as'=>'Get.Content','uses'=>'ApiController@Contents']);
-        Route::get('/Content/{id}', ['as'=>'Get.Cart','uses'=>'ApiController@Content']);
+        Route::get('/Content/{id}', ['as'=>'Get.ContentID','uses'=>'ApiController@Content']);
 
 
         Route::post('/Comment', ['as'=>'Send.Comment','uses'=>'ApiController@SendComment']);
@@ -85,10 +77,13 @@ Route::group(['prefix' => '/'], function () {
             Route::get('/Order', ['as'=>'Admin.api.Order','uses'=>'AdminController@Orders']);
             Route::get('/Order/{id}', ['as'=>'Admin.api.OrderID','uses'=>'AdminController@OrderID']);
 
+            Route::post('/SendContent', ['as'=>'Admin.api.SendContent','uses'=>'AdminController@SendContent']);
+            Route::post('/SendProduct', ['as'=>'Admin.api.SendProduct','uses'=>'AdminController@SendProduct']);
             Route::post('/SendTag', ['as'=>'Admin.api.SendTag','uses'=>'AdminController@SendTag']);
             Route::post('/SendSpecification', ['as'=>'Admin.api.SendSpecification','uses'=>'AdminController@SendSpecification']);
             Route::post('/SendIntroduction', ['as'=>'Admin.api.SendIntroduction','uses'=>'AdminController@SendIntroduction']);
-            Route::post('/SendIamge', ['as'=>'Admin.api.SendIamge','uses'=>'AdminController@SendIamge']);
+            Route::post('/SendIamge', ['as'=>'Admin.api.SendIamge','uses'=>'AdminController@SendImage']);
+            Route::post('/SendSubSpecification', ['as'=>'Admin.api.SendSubSpecification','uses'=>'AdminController@SendSubSpecification']);
 
         });
     });

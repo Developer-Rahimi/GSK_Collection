@@ -7,16 +7,36 @@
 <script>
     export default {
         name: "Top",
+           props:{
+                  UserInfo:{
+                         type: String,
+                         required: true,
+                  }
+           },
         data(){
             return{
-                Menues:[
-                    {Title:"ورود",Link:"/User/Login",icon:"sign-in-alt"},
-                    {Title:"حساب من",Link:"/User/MyAccount",icon:"user"},
-                    {Title:"خروج",Link:"/User/LogOut",icon:"sign-out-alt"},
-                    {Title:"سبد خرید",Link:"/Cart",icon:"cart-plus"},
-                ],
-            }
+                Menues:[],
+                User:{},
         }
+        },
+           mounted(){
+                 // this.User=JSON.parse(this.UserInfo);
+                  this.InitMenu();
+           },
+           methods:{
+                  InitMenu(){
+                         if(this.UserInfo){
+                                this.Menues.push({Title:"حساب من",Link:"/User/MyAccount",icon:"user"});
+                                this.Menues.push({Title:"خروج",Link:"/User/LogOut",icon:"sign-out-alt"});
+                                this.Menues.push({Title:"سبد خرید",Link:"/Cart",icon:"cart-plus"});
+                         }else{
+                                this.Menues.push({Title:"ورود",Link:"/User/Login",icon:"sign-in-alt"});
+                                this.Menues.push({Title:"ثبت نام",Link:"/User/Login",icon:"user"});
+                         }
+
+
+                  }
+           }
     }
 </script>
 

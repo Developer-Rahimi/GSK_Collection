@@ -6,6 +6,7 @@ use App\DataFromServer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -88,6 +89,29 @@ class AdminController extends Controller
 
         return  $data;
     }
+    public function SendProduct(Request $request)
+    {
+
+        $url=config('Constant.ServicePath.Product');
+        $data=['form_params' => [
+            'ContentID' => $request->ContentID,
+            'ProductPrice' => $request->ProductPrice,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
+    }
+    public function SendContent(Request $request)
+    {
+
+        $url=config('Constant.ServicePath.GetContent');
+        $data=['form_params' => [
+            'UserID' => $request->UserID,
+            'ContentName' => $request->ContentName,
+            'ContentTypeID' => 1,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
+    }
     public function SendTag(Request $request)
     {
 
@@ -110,6 +134,18 @@ class AdminController extends Controller
         $res= DataFromServer::SendData($url,$data);
         return  $res;
     }
+    public function SendSubSpecification(Request $request)
+    {
+
+        $url=config('Constant.ServicePath.SubSpecification');
+        $data=['form_params' => [
+            'SpecificationID'                 => $request->SpecificationID,
+            'SubSpecificationName'        => $request->SubSpecificationName,
+            'SubSpecificationDesc'        => $request->SubSpecificationDesc,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
+    }
     public function SendIntroduction(Request $request)
     {
 
@@ -125,29 +161,22 @@ class AdminController extends Controller
     }
     public function SendImage(Request $request)
     {
+        $url=config('Constant.ServicePath.Image');
+        $file="No";
+        if ($request->hasFile('image')) {
+            $file="Yes";
+            $image = $request->file('image');
+            $path=$image->store('gsk/Appdata/images');
+            $data=['form_params' => [
+                'ContentID'                 => $request->ContentID,
+                'ImageUrl'        => $path,
+            ]];
+            $res= DataFromServer::SendData($url,$data);
+            return $res;
+        }else return "Error";
 
-        /*$url=config('Constant.ServicePath.Introduction');
-        $data=['form_params' => [
-            'ContentID'                 => $request->ContentID,
-            'UserID'        => $request->UserID,
-            'IntroductionTitle'        => $request->IntroductionTitle,
-            'IntroductionDesc'        => $request->IntroductionDesc,
-        ]];
-        $response = $client->request('POST', 'http://www.example.com/files/post', [
-            'multipart' => [
-                [
-                    'name'     => 'file_name',
-                    'contents' => fopen('/path/to/file', 'r')
-                ],
-                [
-                    'name'     => 'csv_header',
-                    'contents' => 'First Name, Last Name, Username',
-                    'filename' => 'csv_header.csv'
-                ]
-            ]
-        ]);
-        $res= DataFromServer::SendData($url,$data);*/
-        return  $request;
+
+
     }
 
 }

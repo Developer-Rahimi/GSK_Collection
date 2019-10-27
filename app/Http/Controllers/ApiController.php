@@ -141,4 +141,13 @@ class ApiController extends Controller
         $res= DataFromServer::SendData($url,$data);
         return  $res;
     }
+    /***************************************Order**************************************/
+    public function GetOrder(Request $request)
+    {
+        $res=$request->session()->get('Login');
+        $json=json_decode($res);
+        $url=config('Constant.ServicePath.Order').'?index='. $json->id;
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
 }

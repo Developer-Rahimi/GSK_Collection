@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    {{$User}}{{$Login}}
+   {{-- {{$User}}{{$Login}}--}}
     <Home
             Url-Get-Content="{{route('Get.Content')}}"
     ></Home>

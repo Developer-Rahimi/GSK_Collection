@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataFromServer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use SoapClient;
 
 class PayController extends Controller
 {
@@ -12,7 +13,7 @@ class PayController extends Controller
     {
         $MerchantID = '876a6918-f335-11e9-be5f-000c295eb8fc'; //Required
         $Amount =$request->PayPrice; //Amount will be based on Toman - Required
-        $Description =$request->PayDesc; /*'توضیحات تراکنش تستی'; // Required*/
+        $Description =$request->PayDesc; 'توضیحات تراکنش تستی'; // Required
         $Email = $request->PayEmail; // Optional
         $Mobile = $request->PayPhone; // Optional
         $CallbackURL = 'http://gskcollection.com/redi_pay'; // Required

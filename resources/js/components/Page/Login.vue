@@ -204,6 +204,8 @@
                         console.log(data) ;
                         if(data.Status==="NO"){
                             this.WrongUser=true;
+                        }else if(data.Status==="OK"){
+                            window.location.href = "/";
                         }
                     }).finally(() => this.Loading = false)
             },
