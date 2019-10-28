@@ -3,11 +3,8 @@
         <div class="card">
             <div class="card-header">
                 <h3>سبد خرید</h3>
-                {{Carts}}
             </div>
             <div class="card-body">
-
-
         <div id="Cart" v-show="!Loading" v-if="Carts.length">
             <h2 class="title">سبد خريد</h2>
             <h3 class="head" v-text="'محتويات سبد خريد شما:  '+Carts.length +' محصول'"></h3>
@@ -98,9 +95,9 @@
                 CartFields:[
                     { key: 'CartID', label: 'ردیف' },
                     { key: 'ContentName', label: 'نام کالا' },
-                    { key: 'ProductPrice', label: 'قیمت(تومان)' },
+                    /*{ key: 'ProductPrice', label: 'قیمت(تومان)' },*/
                     { key: 'Quntity', label: 'تعداد' },
-                    { key: 'Total', label: 'جمع(تومان)' },
+                   /* { key: 'Total', label: 'جمع(تومان)' },*/
                 ],
                 Tot:null,
                 Total:null,
