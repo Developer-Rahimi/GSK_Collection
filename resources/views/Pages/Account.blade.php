@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('head')
+    <title>{{ config('app.account', 'SiteName') }}</title>
+@endsection
 @section('content')
 
     <Account

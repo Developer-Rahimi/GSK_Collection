@@ -3,6 +3,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>سبد خرید</h3>
+                {{Carts}}
             </div>
             <div class="card-body">
 
@@ -118,9 +119,9 @@
                     .then(response => {
                         var data=response.data;
                         if(data.length>0){
-                        console.log(data[0]) ;
-                        this.Carts=data[0];
-                        this.total(data[0]);
+                        console.log(data[0].Carts) ;
+                        this.Carts=data[0].Carts;
+                       // this.total(data[0].Carts);
                         }
                     }).finally(() => this.Loading = false);
             },

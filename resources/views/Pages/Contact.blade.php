@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('head')
+    <title>{{ config('app.contact', 'SiteName') }}</title>
+@endsection
 @section('content')
     <div class="container">
        <Contact
