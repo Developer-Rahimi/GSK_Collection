@@ -13,10 +13,17 @@ class AdminController extends Controller
     public function index()
     {
         $check=Session::exists('Login');
+        $user=Session::get('Login');
         if(!$check)
             return redirect('/User/Login');
-        else
-        return  View('Admin.index');
+        else{
+            $json=json_decode($user);
+            if ($json->Permission->id<5)
+            return  View('Admin.index');
+            else
+                return  View('Access');
+        }
+
     }
     public function User()
     {

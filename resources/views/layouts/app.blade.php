@@ -28,6 +28,6 @@
     </Master>
 
 </div>
-<link href="{{ asset('Style.css') }}" rel="stylesheet">
+<link href="{{ asset('css/Style.css') }}" rel="stylesheet">
 </body>
 </html>

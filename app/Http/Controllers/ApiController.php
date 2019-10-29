@@ -49,8 +49,8 @@ class ApiController extends Controller
         $res= DataFromServer::SendData($url,$data);
         $json=json_decode($res);
         if($json->Status==='OK'){
-            $url=config('Constant.ServicePath.GetUser').'?index=1';
-      $user= DataFromServer::get($url,1,0);
+            $url=config('Constant.ServicePath.GetUser').'?index='.$json->ID;
+            $user= DataFromServer::get($url,0,0);
             $request->session()->put('Login', $user);
         }
         return  $res;
