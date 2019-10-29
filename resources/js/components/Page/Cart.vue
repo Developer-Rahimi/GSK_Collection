@@ -95,13 +95,14 @@
                 CartFields:[
                     { key: 'CartID', label: 'ردیف' },
                     { key: 'ContentName', label: 'نام کالا' },
-                    /*{ key: 'ProductPrice', label: 'قیمت(تومان)' },*/
+                    { key: 'ProductPrice', label: 'قیمت(تومان)' },
                     { key: 'Quntity', label: 'تعداد' },
-                   /* { key: 'Total', label: 'جمع(تومان)' },*/
+                    { key: 'Total', label: 'جمع(تومان)' },
                 ],
                 Tot:null,
                 Total:null,
                 Loading:false,
+                PayOrder:0,
                 post:12500
             }
         },
@@ -118,7 +119,9 @@
                         if(data.length>0){
                         console.log(data[0].Carts) ;
                         this.Carts=data[0].Carts;
-                       // this.total(data[0].Carts);
+                       this.total(data[0].Carts);
+                       this.PayOrder=data[0].OrderID;
+                       console.log(this.PayOrder);
                         }
                     }).finally(() => this.Loading = false);
             },
@@ -126,11 +129,11 @@
                 this.Loading=true;
                 axios
                     .post(this.UrlSendPay,{
-                        PayPrice:100,
+                        PayPrice:500,
                         PayDesc:'خرید',
                         PayEmail:"moosarahimi8@gmail.com",
                         PayPhone:'09107608438',
-                        PayOrder:4,
+                        PayOrder:this.PayOrder,
 
                     })
                     .then(response => {
@@ -139,9 +142,9 @@
                         window.location.replace(data);
                     }).finally(() => this.Loading = false);
             },
-            total(data){/*data.length*/
+            total(data){/**/
                 var tot=0;
-                for(var i=0;i<2;i++){
+                for(var i=0;i<data.length;i++){
                     tot += (data[i].Quantity *   data[i].Content.Products[0].ProductPrice);
                     console.log(data[i].Content.Products[0].ProductPrice) ;
                     console.log(data[i].Quantity *   data[i].Content.Products[0].ProductPrice) ;
