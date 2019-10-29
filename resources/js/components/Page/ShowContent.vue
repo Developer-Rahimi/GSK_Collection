@@ -1,7 +1,10 @@
 <template>
-    <div id="Content">
-        <img class="show" v-bind:src="'http://gsk.whereapp.ir/Appdata/Images/'+Content.Images[0].ImageUrl" alt="">
-        <div class="gallery">
+    <div>
+        <div    id="Content" v-if="!Loading">
+
+
+        <img class="show" v-if="Content.Images.length>0" v-bind:src="'http://gsk.whereapp.ir/Appdata/Images/'+Content.Images[0].ImageUrl" alt="">
+        <div class="gallery" v-if="Content.Images.length>0">
             <img v-for="image in Content.Images" v-bind:src="'http://gsk.whereapp.ir/Appdata/Images/'+image.ImageUrl" alt="">
 
         </div>
@@ -21,12 +24,12 @@
             >
                 <b-tab  title="مشخصات فنی" active>
                     <ul class="c-list">
-                        <li class="c-list-item" v-for="Specification in Specifications">
+                        <li class="c-list-item" v-for="Specification in Content.Specifications">
                             <h3 class="label">{{Specification.SpecificationName}}</h3>
-                            <b-table striped hover :fields="subSpecificationsfields" :items="Specification.subSpecifications"></b-table>
+                            <b-table striped hover :fields="subSpecificationsfields" :items="Specification.SubSpecifications"></b-table>
                         </li>
                     </ul>
-                </b-tab><!---->
+                </b-tab>
                 <b-tab  v-bind:title="'نظرات('+Content.Comments.length+')'">
                     <div id="Comment">
                         <ul class="c-list">
@@ -68,10 +71,10 @@
 
 
         </div>
-        <b-modal id="Quantity" hide-footer="false" hide-header="false"centered title="افزودن به سبد خرید">
+        <b-modal id="Quantity" hide-footer hide-header centered title="افزودن به سبد خرید">
             <div id="Qua">
                 <p>لطفا تعداد را وارد نمایید:</p>
-                <span class="required" v-show="required">*</span>
+                <span class="required" v-show="true">*</span>
                 <span class="Name" v-text="'تعداد:'"></span>
                 <br>
                 <br>
@@ -83,6 +86,22 @@
                 </div>
             </div>
         </b-modal>
+        </div>
+        <div v-show="Loading">
+            <center>
+                <div style="width: 150px">
+                    <div class="loader" >
+
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="face">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
     </div>
 </template>
 
@@ -109,27 +128,25 @@
         },
         data(){
             return {
-                Content:{},
+                Content:{
+                    Comments:[],
+                    Tags:[],
+                    Specifications:[],
+                    subSpecifications:[],
+                    Products:[],
+                    Images:[],
+                },
                 info:{},
+                Loading:false,
                 subSpecificationsfields: [
                     {
-                        key: 'subSpecificationName',
+                        key: 'SubSpecificationName',
                         label:"عنوان"
                     },
                     {
-                        key: 'subSpecificationDesc',
+                        key: 'SubSpecificationDesc',
                         label:"توضیحات"
                     }
-                ],
-                Specifications:[
-                    {SpecificationID:1,SpecificationName:"فیزیکی",subSpecifications:[
-                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"عرض",subSpecificationDesc:"127cm"},
-                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"طول",subSpecificationDesc:"127cm"}
-                        ]},
-                    {SpecificationID:1,SpecificationName:"ویژگی ها",subSpecifications:[
-                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"5"},
-                            {subSpecificationID:1,SpecificationID:1,subSpecificationName:"تعداد خروجی",subSpecificationDesc:"10"}
-                        ]}
                 ],
                 Quantity:1,
 
@@ -139,7 +156,9 @@
             this.GetContent(this.Index);
         },
         methods:{
+
             GetContent(id){
+                this.Loading=true;
                 axios
                     .get(this.UrlGetContent+'/'+id)
                     .then(response => {
@@ -147,7 +166,9 @@
                         console.log(data) ;
                         this.Content=data;
 
-                    })
+                    }).finally(()=>{
+                    this.Loading=false;
+                });
             },
             SendComment(){
                 axios
@@ -172,6 +193,7 @@
                     .then(response => {
                         var data=response.data;
                         console.log(data) ;
+                        this.$bvModal.hide('Quantity');
                     });
             }
         }
