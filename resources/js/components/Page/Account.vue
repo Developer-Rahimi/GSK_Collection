@@ -22,17 +22,6 @@
                        <span style="color:red">اطلاعات شخصی شما</span>
                        <br>
                        <span>اگر اطلاعات شخصی شما تغییر کرد، آن‌ها را در اسرع وقت بروز کنید.</span>
-                       <!--<div class="field-form">
-                           <span class="label">عنوان اجتماعی </span>
-                           <br>
-                           <div>
-                               <input type="radio">
-                               <span>آقا</span>
-                               <input type="radio">
-                               <span>خانم</span>
-                           </div>
-
-                       </div>-->
                        <div class="field-form">
                            <span class="required" v-show="true">*</span>
                            <span class="Name" >نام ونام خانوادگی</span>
@@ -46,7 +35,7 @@
                                <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
                                <font-awesome-icon class="icon"  icon="check-circle"   />
                            </div>
-                           </div>
+                       </div>
                        <div class="field-form">
                            <span class="required" v-show="true">*</span>
                            <span class="Name" >ایمیل</span>
@@ -87,6 +76,103 @@
                             </template>
                         </b-table>
                     </div>
+
+
+                   <div  v-else-if="Link==='Address'" class="User">
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >استان</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="true">
+                               <select name="cars" class="c-text">
+                                   <option value="volvo">Volvo</option>
+                                   <option value="saab">Saab</option>
+                                   <option value="fiat">Fiat</option>
+                                   <option value="audi">Audi</option>
+                               </select>
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >شهر</span>
+                           <br>
+                           <br>
+                           <div class="main" v-if="true">
+                               <select name="cars" class="c-text">
+                                   <option value="volvo">Volvo</option>
+                                   <option value="saab">Saab</option>
+                                   <option value="fiat">Fiat</option>
+                                   <option value="audi">Audi</option>
+                               </select>
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text"     type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >خیابان</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="true">
+                               <input  class="c-text" type="text" v-model="User.UserName"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >کوچه</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="true">
+                               <input  class="c-text" type="text" v-model="User.UserName"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >پلاک</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="true">
+                               <input  class="c-text" type="text" v-model="User.UserName"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                       <div class="field-form">
+                           <span class="required" v-show="true">*</span>
+                           <span class="Name" >کدپستی</span>
+                           <br>
+                           <br><!--v-show="User.UserName.length()<3"-->
+
+                           <div class="main" v-if="true">
+                               <input  class="c-text" type="text" v-model="User.UserName"  >
+                           </div>
+                           <div class="main" v-else>
+                               <input  class="c-text valid-text" v-model="User.UserName"    type="text" >
+                               <font-awesome-icon class="icon"  icon="check-circle"   />
+                           </div>
+                       </div>
+                   </div>
                </div>
            </div>
        </div>
@@ -141,7 +227,7 @@
                     {Name:"محصولات مورد علاقه",icon:"heart",link:"Fav"},
                     {Name:"تاریخچه و جزییات سفارش",icon:"history",link:"order"},
                     {Name:"صورت های مالی من",icon:"money-bill-alt",link:"#"},
-                    {Name:"آدرس های من",icon:"map-marker-alt",link:"#"},
+                    {Name:"آدرس های من",icon:"map-marker-alt",link:"Address"},
                     {Name:"تخفیف های من",icon:"barcode",link:"#"},
                 ],
                 User:{

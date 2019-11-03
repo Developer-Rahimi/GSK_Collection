@@ -14,6 +14,7 @@ Route::group(['prefix' => '/'], function () {
 
 
     Route::post('/Pay',  ['as'=>'Send.Pay','uses'=>'PayController@Pay']);
+    Route::get('/redi_pay',  ['as'=>'Send.Pay2','uses'=>'PayController@redi_pay']);
 
     Route::group(['prefix' => '/Show'], function () {
         Route::get('/Page', 'ShowPageController@index');
