@@ -26,8 +26,6 @@ class ApiController extends Controller
     {
         $url=config('Constant.ServicePath.GetUser');
        $data= DataFromServer::get($url,1,0);
-
-
         return  $data;
     }
     public function User($id)

@@ -5,7 +5,7 @@
                 <h2 class="title">تائید هویت</h2>
             </div>
             <div class="card-body">
-                <div class="register"   v-show="!ShowForm &!Loading">
+                <div class="register"   v-show="!ShowForm">
                     <span>ایجاد حساب کاربری</span>
                     <br>
                     <br>
@@ -76,7 +76,7 @@
                     </div>
 
 
-                <div class="registerForm" v-show="ShowForm &!Loading">
+                <div class="registerForm" v-show="ShowForm ">
                     <div class="field-form">
                         <span class="required" v-show="true">*</span>
                         <span class="Name" >نام ونام خانوادگی</span>
@@ -138,9 +138,9 @@
                 </div>
                 </div>
             </div>
-        <div v-show="Loading">
+        <div v-show="Loading" class="Loading">
             <center>
-                <div style="width: 150px">
+                <div style="width: 150px;margin-top: 210px;">
                     <div class="loader" >
 
                         <div class="face">

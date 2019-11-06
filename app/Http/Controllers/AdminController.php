@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DataFromServer;
+use App\Statistic;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -82,7 +84,7 @@ class AdminController extends Controller
     }
     public function Orders()
     {
-        $url=config('Constant.ServicePath.GetUser');
+        $url=config('Constant.ServicePath.Order');
         $data= DataFromServer::get($url,0,0);
 
 
@@ -185,5 +187,61 @@ class AdminController extends Controller
 
 
     }
-
+/*************************************Statistics**************************************/
+    public function Statistics()
+    {
+        $date=Carbon::today();
+        $data1=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data1){
+            $data1=new Statistic();
+            $data1->Review=0;
+        }
+        $date=Carbon::today()->addDays(-1);
+        $data2=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data2){
+            $data2=new Statistic();
+            $data2->Review=0;
+        }
+        $date=Carbon::today()->addDays(-2);
+        $data3=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data3){
+            $data3=new Statistic();
+            $data3->Review=0;
+        }
+        $date=Carbon::today()->addDays(-3);
+        $data4=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data4){
+            $data4=new Statistic();
+            $data4->Review=0;
+        }
+        $date=Carbon::today()->addDays(-4);
+        $data5=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data5){
+            $data5=new Statistic();
+            $data5->Review=0;
+        }
+        $date=Carbon::today()->addDays(-5);
+        $data6=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data6){
+            $data6=new Statistic();
+            $data6->Review=0;
+        }
+        $date=Carbon::today()->addDays(-6);
+        if(!$data6)$data6->Review=0;
+        $data7=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+        if(!$data7){
+            $data7=new Statistic();
+            $data7->Review=0;
+        }
+        $da=['data' => [
+            'day1' => $data1->Review,
+            'day2' => $data2->Review,
+            'day3' => $data3->Review,
+            'day4' => $data4->Review,
+            'day5' => $data5->Review,
+            'day6' => $data6->Review,
+            'day7' => $data7->Review,
+        ]];
+        return $da;
+    }
 }

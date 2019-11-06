@@ -2,6 +2,8 @@
 
 @section('content')
     <div>
-        <Admin></Admin>
+        <Admin
+                Url-Statistics="{{route('Admin.api.Statistics')}}"
+        ></Admin>
     </div>
 @endsection
