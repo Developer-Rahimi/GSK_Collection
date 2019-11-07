@@ -7,7 +7,7 @@ Auth::routes();
 Route::group(['prefix' => '/'], function () {
     Route::get('/', ['as'=>'Home','uses'=>'HomeController@index']);
     Route::get('/About', 'AboutController@index');
-    Route::get('/Contact', 'ContactController@index');
+    Route::get('/Contacts', 'ContactController@index');
     Route::get('/Cart', 'CartController@index');
     Route::get('/Test', 'TestController@index');
     Route::get('/Access', 'ErrorController@Access');

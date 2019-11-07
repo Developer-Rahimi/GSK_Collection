@@ -33,6 +33,6 @@
 
 </div>
 <link href="{{ asset('css/Style.css') }}" rel="stylesheet">
-
+@yield('footer')
 </body>
 </html>
