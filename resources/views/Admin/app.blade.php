@@ -24,5 +24,6 @@
 
 </div>
 {{--<link href="{{ asset('Style.css') }}" rel="stylesheet">--}}
+
 </body>
 </html>

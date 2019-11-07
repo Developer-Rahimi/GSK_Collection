@@ -8,7 +8,7 @@ class TestController extends Controller
 {
     public function index(Request $request)
     {
-        //return view("Pages.Test");
-        return  $request->session()->get('Login');
+        return view("Pages.Test");
+        //return  $request->session()->get('Login');
     }
 }

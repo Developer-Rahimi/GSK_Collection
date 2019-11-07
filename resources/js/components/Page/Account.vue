@@ -78,7 +78,8 @@
                     </div>
 
 
-                   <div  v-else-if="Link==='Address'" class="User">
+                   <div   class="User">
+                       <div v-show="Link==='Address'">
                        <div class="field-form">
                            <span class="required" v-show="true">*</span>
                            <span class="Name" >استان</span>
@@ -172,10 +173,27 @@
                                <font-awesome-icon class="icon"  icon="check-circle"   />
                            </div>
                        </div>
+
+                   </div>
+                       <div >
+                           <div v-show="Link==='Address'">
+                               <span class="required" v-show="true">*</span>
+                               <span class="Name" >لوکیشن</span>
+                               <br>
+                               <br>
+                           </div>
+
+
+
+                           <div id="mapid" style="width: 100%; height: 700px;"></div>
+
+
+                       </div>
                    </div>
                </div>
            </div>
        </div>
+
        <div v-show="Loading">
            <center>
                <div style="width: 150px">
@@ -233,6 +251,7 @@
                 User:{
                     UserName:"",
                     UserEmail:"",
+                    mymaps:null,
                 },
                 Orders:[],
                 OrderFields:[
@@ -245,6 +264,7 @@
             };
         },
         mounted() {
+
         },
         methods:{
             GetInfoUser(){
@@ -277,6 +297,24 @@
                 else if(Link==='order'){
                     this.GetOrder();
                 }
+                else if(Link==='Address'){
+                   /* var map = L.map('map').setView([35.70163, 51.39211], 12);*/
+                    //var map = L.map('map').setView([35.70163, 51.39211], 12);
+                   /* L.tileLayer('https://developers.parsijoo.ir/web-service/v1/map/?type=tile&x={x}&y={y}&z={z}&apikey=627973149c2041b184e31259821d1306', {
+                        maxZoom: 21,
+                    }).addTo(map);*/
+                   this.InitMap();
+                }
+            },
+            InitMap(){
+                this.mymaps = L.map('mapid').setView({
+                    lat: 35.708309,
+                    lng: 51.380730
+                }, 8);
+               // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(this.mymaps);
+                L.tileLayer('https://developers.parsijoo.ir/web-service/v1/map/?type=tile&x={x}&y={y}&z={z}&apikey=8094f78f11c44097816ebef3d6d08c9a', {
+                    maxZoom: 21,
+                }).addTo(this.mymaps);
             }
 
         }

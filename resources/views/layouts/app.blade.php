@@ -15,6 +15,10 @@
 
 <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('Map/leaflet.js') }}" ></script>
+    <link href="{{ asset('Map/Map.css') }}" rel="stylesheet">
+    {{--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>--}}
     @yield('head')
 </head>
 <body>
@@ -29,5 +33,6 @@
 
 </div>
 <link href="{{ asset('css/Style.css') }}" rel="stylesheet">
+
 </body>
 </html>
