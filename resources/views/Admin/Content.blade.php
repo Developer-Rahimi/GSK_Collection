@@ -7,6 +7,7 @@
             User-Info="{{$User}}"
             Url-Get-Content="{{route('Admin.api.Contents')}}"
             Url-Send-Content="{{route('Admin.api.SendContent')}}"
+            Url-Get-Product="{{route('Admin.api.GetProduct')}}"
             Url-Send-Tag="{{route('Admin.api.SendTag')}}"
             Url-Send-Product="{{route('Admin.api.SendProduct')}}"
             Url-Send-Specification="{{route('Admin.api.SendSpecification')}}"

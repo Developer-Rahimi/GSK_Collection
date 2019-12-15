@@ -41,6 +41,8 @@
                     {Name:"محتوا",Link:"/Admin/Content",icon:""},
                     {Name:"کاربران",Link:"/Admin/User",icon:"user"},
                     {Name:"سفارش ها",Link:"/Admin/Order",icon:"user"},
+                    {Name:"محصولات",Link:"/Admin/Product",icon:"user"},
+                    {Name:"انبار",Link:"/Admin/Store",icon:"user"},
                 ],
                 Statistics:{},
                 Loading:false,

@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div id="mapid" style="width: 100%; height: 700px;"></div>
+        <!--<div id="mapid" style="width: 100%; height: 700px;"></div>-->
+
     </div>
 </template>
 
@@ -18,7 +19,7 @@
             ch(d){
                console.log(d) ;
             },
-            InitMap(){
+           /* InitMap(){
                 this.mymaps = L.map('mapid').setView({
                     lat: 35.708309,
                     lng: 51.380730
@@ -26,7 +27,7 @@
                 L.tileLayer('https://developers.parsijoo.ir/web-service/v1/map/?type=tile&x={x}&y={y}&z={z}&apikey=8094f78f11c44097816ebef3d6d08c9a', {
                     maxZoom: 21,
                 }).addTo(this.mymaps);
-            }
+            }*/
         }
     }
 </script>

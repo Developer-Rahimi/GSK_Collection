@@ -22,13 +22,13 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Content', 'ShowContentController@index');
         Route::get('/Content/{id}', 'ShowContentController@index');
     });
-    /*/////////////////////////////////////////Api//////////////////////////////////////////*/
+
     Route::group(['prefix' => '/User'], function () {
         Route::get('MyAccount', 'AccountController@index');
         Route::get('Login', 'AccountController@Login');
         Route::get('/LogOut', ['as'=>'User.Logout','uses'=>'AccountController@LogOut']);
     });
-
+    /*/////////////////////////////////////////Api//////////////////////////////////////////*/
     Route::group(['prefix' => '/api'], function () {
         Route::get('/Contact', ['as'=>'Get.Contact','uses'=>'ApiController@Contact']);
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
@@ -56,6 +56,14 @@ Route::group(['prefix' => '/'], function () {
 
 
         Route::post('/Contact', ['as'=>'Send.Contact','uses'=>'ApiController@SendContact']);
+
+        Route::get('/Category', ['as'=>'Get.Category','uses'=>'ApiController@GetCategory']);
+
+        Route::get('/State', ['as'=>'Get.State','uses'=>'ApiController@GetState']);
+
+        Route::get('/Address', ['as'=>'Address','uses'=>'ApiController@GetAddress']);
+        Route::get('/Address/{id}', ['as'=>'AddressID','uses'=>'ApiController@GetAddress']);
+        Route::post('/Address', ['as'=>'Send.Address','uses'=>'ApiController@SendAddress']);
     });
     /*/////////////////////////////////////////Session//////////////////////////////////////////*/
     Route::group(['prefix' => '/Session'], function () {
@@ -70,6 +78,8 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Content', ['as'=>'Admin.Content','uses'=>'AdminController@Content']);
         Route::get('/User', ['as'=>'Admin.User','uses'=>'AdminController@User']);
         Route::get('/Order', ['as'=>'Admin.User','uses'=>'AdminController@Order']);
+        Route::get('/Product', ['as'=>'Admin.Product','uses'=>'AdminController@Product']);
+        Route::get('/Store', ['as'=>'Admin.Store','uses'=>'AdminController@Store']);
         Route::group(['prefix' => '/api'], function () {
             Route::get('/User', ['as'=>'Admin.api.Users','uses'=>'AdminController@Users']);
             Route::get('/User/{id}', ['as'=>'Admin.api.User','uses'=>'AdminController@UserID']);
@@ -87,6 +97,12 @@ Route::group(['prefix' => '/'], function () {
             Route::post('/SendIntroduction', ['as'=>'Admin.api.SendIntroduction','uses'=>'AdminController@SendIntroduction']);
             Route::post('/SendIamge', ['as'=>'Admin.api.SendIamge','uses'=>'AdminController@SendImage']);
             Route::post('/SendSubSpecification', ['as'=>'Admin.api.SendSubSpecification','uses'=>'AdminController@SendSubSpecification']);
+
+            Route::get('/Store', ['as'=>'Admin.api.GetStore','uses'=>'AdminController@GetStore']);
+            Route::post('/Store', ['as'=>'Admin.api.SendStore','uses'=>'AdminController@SendStore']);
+
+            Route::get('/Product/Get', ['as'=>'Admin.api.GetProduct','uses'=>'AdminController@GetProduct']);
+            Route::Post('/Product/Add', ['as'=>'Admin.api.SendProduct','uses'=>'AdminController@SendProducts']);
 
         });
     });

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div    id="Content" v-if="!Loading">
+        <div id="Content" v-if="!Loading">
 
 
         <img class="show" v-if="Content.Images.length>0" v-bind:src="'http://gsk.whereapp.ir/Appdata/Images/'+Content.Images[0].ImageUrl" alt="">
@@ -10,9 +10,15 @@
         </div>
         <div class="info">
             <h3 class="title" v-text="Content.ContentName"></h3>
-            <span v-if="Content.Products[0]" class="price" v-text="'قیمت:'+Content.Products[0].ProductPrice+' تومان'"></span>
-            <span class="add_to_cart"   v-b-modal.Quantity><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
-
+            <span v-if="Content.Product" class="price" v-text="'قیمت:'+Content.Product.ProductPrice+' تومان'"></span>
+            <br>
+            <br>
+            <br>
+            <span v-if="Content.Product.Stores.length!==0 & Content.Product.Stores.Quantity!==0" class="price" v-text="'تعداد موجود: '+Content.Product.Stores[0].Quantity +' '"></span>
+            <span v-else class="price" >نا موجود</span>
+            <br><br>
+            <span v-if="Content.Product.Stores.length!==0 & Content.Product.Stores.Quantity!==0" class="add_to_cart"   v-b-modal.Quantity><font-awesome-icon  icon="cart-plus" />افزودن به سبد خرید</span>
+            <!--v-if="Content.Product.Stores.length!==0 & Content.Product.Stores.Quantity!==0"-->
             <p v-for="Introduction in Content.Introductions" class="Desc" v-text="Introduction.IntroductionDesc"></p>
             <br><br><br><br>
 

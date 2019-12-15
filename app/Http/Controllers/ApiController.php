@@ -80,15 +80,15 @@ class ApiController extends Controller
 
     public function Contents()
     {
-        $url=config('Constant.ServicePath.GetContent');
-       $data= DataFromServer::get($url,1,0);
+        $url=config('Constant.ServicePath.Contents');
+       $data= DataFromServer::get($url,0,0);
 
 
         return  $data;
     }
     public function Content($id)
     {
-        $url=config('Constant.ServicePath.GetContent').'?index='.$id;
+        $url=config('Constant.ServicePath.Contents').'?index='.$id;
        $data= DataFromServer::get($url,0,0);
 
 
@@ -145,6 +145,42 @@ class ApiController extends Controller
         $res=$request->session()->get('Login');
         $json=json_decode($res);
         $url=config('Constant.ServicePath.Order').'?index='. $json->id;
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    /***************************************Category**************************************/
+    public function GetCategory()
+    {
+        $url=config('Constant.ServicePath.Category');
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    /***************************************Category**************************************/
+    public function GetAddress($id)
+    {
+        $url=config('Constant.ServicePath.Address')."?UserID=".$id;
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    public function SendAddress(Request $request)
+    {
+        $url=config('Constant.ServicePath.Address');
+        $data=['form_params' => [
+            'UserID' => $request->UserID,
+            'AddressName' => $request->AddressName,
+            'StateID' => $request->StateID,
+            'CityID' => $request->CityID,
+            'Street' => $request->Street,
+            'Alley' => $request->Alley,
+            'Plaque' => $request->Plaque,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
+    }
+    /***************************************Category**************************************/
+    public function GetState()
+    {
+        $url=config('Constant.ServicePath.State');
         $data= DataFromServer::get($url,0,0);
         return  $data;
     }

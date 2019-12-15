@@ -60,19 +60,19 @@
                             <th>عنوان</th>
                             <th>توضیحات</th>
                         </tr>
-                        <tr><!--v-if="Content.Products[0]"-->
+                        <tr>
                             <td >نام محتوا</td>
                             <td v-if="Content">{{Content.ContentName}}</td>
                         </tr>
-                        <tr><!--v-if="Content.Products[0]"-->
+                        <tr>
                             <td >وضعیت </td>
                             <td v-if="Content"><div v-if="Content.ContentStatus">{{Content.ContentStatus.ContentStateTitle}}</div></td>
                         </tr>
-                        <tr><!--v-if="Content.Products[0]"-->
+                        <tr>
                             <td >نوع </td>
                             <td v-if="Content"><div v-if="Content.ContentType">{{Content.ContentType.TypeName}}</div></td>
                         </tr>
-                        <tr><!--v-if="Content.Products[0]"-->
+                        <tr>
                             <td >تاریخ ایجاد</td>
                             <td v-if="Content">{{Content.ContentCreateAt}}</td>
                         </tr>
@@ -92,31 +92,10 @@
                         <template v-slot:cell(id)="data">
                             {{ data.index + 1 }}
                         </template>
-                        <!-- <template v-slot:cell(ContentStatus)="data">
+                        &lt;!&ndash; <template v-slot:cell(ContentStatus)="data">
                              {{ data.item.ContentStatus.ContentStateTitle }}
-                         </template>-->
+                         </template>&ndash;&gt;
                     </b-table>
-                    <p v-else class="alert alert-warning">چیزی برای نمایش وجود ندارد</p>
-                </div>
-                </div>
-                <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title c-title">مشخصات محصول</h3>
-                    <div>
-                        <div class="btn btn-info" style="float:left" @click="$bvModal.show('AddProduct')"><span style="margin-left: 7px">افزودن محصول  </span><font-awesome-icon icon="pen" /></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table v-if="Content.Products.length">
-                        <tr>
-                            <th>عنوان</th>
-                            <th>توضیحات</th>
-                        </tr>
-                        <tr><!--v-if="Content.Products[0]"-->
-                            <td >قیمت محصول</td>
-                            <td v-if="Content.Products"><div v-if="Content.Products[0]">{{Content.Products[0].ProductPrice}}</div></td>
-                        </tr>
-                    </table>
                     <p v-else class="alert alert-warning">چیزی برای نمایش وجود ندارد</p>
                 </div>
                 </div>
@@ -195,6 +174,18 @@
                 <div class="main" v-else>
                     <input  class="c-text valid-text"     type="text" v-model="Info.ContentName">
                     <font-awesome-icon class="icon"  icon="check-circle"   />
+                </div>
+            </div>
+            <div class="field-form">
+                <span class="required" v-show="true">*</span>
+                <span class="Name" >محصول</span>
+                <br>
+                <br><!--v-show="User.UserName.length()<3"-->
+                <div class="main">
+                    <select class="c-text" v-model="Info.ProductID">
+                        <option disabled value="">لطفا انتخاب کنید</option>
+                        <option v-for="Product in Products" v-bind:value="Product.ProductID">{{Product.ProductName}}</option>
+                    </select>
                 </div>
             </div>
             <button class="btn btn-success"  @click="SendContent">ذخیره</button>
@@ -397,6 +388,10 @@
                 type: String,
                 required: true,
             },
+            UrlGetProduct: {
+                type: String,
+                required: true,
+            },
         },
         data(){
             return {
@@ -427,15 +422,19 @@
                     { key: 'SubSpecificationName', label: 'نام ' },
                     { key: 'SubSpecificationDesc', label: 'توضیحات ' },
                 ],
-                Info:{},
+                Info:{
+                    ProductID:""
+                },
                 User:{},
                 image: '',
+                Products:null,
                 SubID: 0,
             }
         },
         mounted() {
             this.User=JSON.parse(this.UserInfo);
-            console.log(this.User.id)
+            console.log(this.User.id);
+            this.GetProduct();
             this.GetContents();
         },
         methods:{
@@ -467,12 +466,13 @@
                 });
             },
             SendContent(){
+                console.log(this.Info.ProductID)
                 this.Loading=true;
                 axios
                     .post(this.UrlSendContent,{
                         UserID:this.User.id,
                         ContentName:this.Info.ContentName,
-
+                        ProductID:this.Info.ProductID
                     })
                     .then(response => {
                         var data=response.data;
@@ -566,7 +566,6 @@
                     this.Loading=false;
                 });
             },
-
             SendIntroduction(){
                 this.Loading=true;
                 axios
@@ -614,6 +613,15 @@
                         console.log('FAILURE!!');
                         that.Loading=false;
                     });
+            },
+            GetProduct(){
+                this.Loading=true;
+                axios
+                    .get(this.UrlGetProduct)
+                    .then(response => {
+                        var data=response.data;
+                        this.Products=data;
+                    }).finally(() => this.Loading = false);
             },
             shCnt(id) {
                 this.Loading=true;

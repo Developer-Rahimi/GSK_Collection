@@ -16,7 +16,9 @@
 </head>
 <body>
 <div id="app">
-    <Admin-Master>
+    <Admin-Master
+            Url-Admin="{{route('Admin')}}"
+    >
         <main class="py-4">
             @yield('content')
         </main>

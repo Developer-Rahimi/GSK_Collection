@@ -1,7 +1,10 @@
 <template>
-<div id="Top">
-       <a v-for="menu in Menues" v-bind:href="menu.Link" v-bind:title="menu.Title"><span >{{menu.Title}}</span><font-awesome-icon  v-bind:icon="menu.icon" /></a>
-</div>
+       <div id="Top">
+              <div class="container">
+                     <a  v-for="Menu in Menues" href="#"><font-awesome-icon  v-bind:icon="Menu.Icon" /><span v-text="Menu.Name"></span></a>
+              </div>
+
+       </div>
 </template>
 
 <script>
@@ -26,12 +29,13 @@
            methods:{
                   InitMenu(){
                          if(this.UserInfo){
-                                this.Menues.push({Title:"حساب من",Link:"/User/MyAccount",icon:"user"});
-                                this.Menues.push({Title:"خروج",Link:"/User/LogOut",icon:"sign-out-alt"});
-                                this.Menues.push({Title:"سبد خرید",Link:"/Cart",icon:"cart-plus"});
+                                this.Menues.push({Name:"حساب من",Link:"/User/MyAccount",Icon:"user"});
+                                this.Menues.push({Name:"خروج",Link:"/User/LogOut",Icon:"sign-out-alt"});
+                                this.Menues.push({Name:"سبد خرید",Link:"/Cart",Icon:"shopping-cart"});
+                                this.Menues.push({Name:"لیست علاقه مندیها",Link:"#",Icon:"heart"});
                          }else{
-                                this.Menues.push({Title:"ورود",Link:"/User/Login",icon:"sign-in-alt"});
-                                this.Menues.push({Title:"ثبت نام",Link:"/User/Login",icon:"user"});
+                                this.Menues.push({Name:"ورود",Link:"/User/Login",Icon:"sign-in-alt"});
+                                this.Menues.push({Name:"ثبت نام",Link:"/User/Login",Icon:"user"});
                          }
 
 

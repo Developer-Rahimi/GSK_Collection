@@ -10,7 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt,faPen,faShoppingCart
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt,faPen,faShoppingCart,faPhone
 
 }
 from '@fortawesome/free-solid-svg-icons'
@@ -18,7 +18,8 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(
     faUserSecret,faHome, faInfoCircle,faUser,faPhoneSquareAlt,faDownload,faSignOutAlt,
     faTools,faIndustry,faSchool,faBlog,faTag,faMoneyBill,faCartPlus,faMoneyBillAlt,faHeart,
-    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt,faPen,faShoppingCart
+    faHistory,faMapMarkerAlt,faBarcode,faCheckCircle,faSignInAlt,faPen,faShoppingCart,faPhone
+
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -56,6 +57,7 @@ Vue.component('Test', require('./components/Page/Test.vue').default);
 Vue.component('Top', require('./components/Menu/Top.vue').default);
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
 Vue.component('Access', require('./components/Menu/Access.vue').default);
+Vue.component('New', require('./components/Menu/New.vue').default);
 
 
 
@@ -64,6 +66,8 @@ Vue.component('Admin', require('./components/Admin/Admin.vue').default);
 Vue.component('Contents', require('./components/Admin/Content.vue').default);
 Vue.component('User', require('./components/Admin/User.vue').default);
 Vue.component('Order', require('./components/Admin/Order.vue').default);
+Vue.component('Store', require('./components/Admin/Store.vue').default);
+Vue.component('Products', require('./components/Admin/Product.vue').default);
 
 
 

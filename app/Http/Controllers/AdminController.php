@@ -51,10 +51,26 @@ class AdminController extends Controller
         else
         return  View('Admin.Order');
     }
+    public function Store()
+    {
+        $check=Session::exists('Login');
+        if(!$check)
+            return redirect('/User/Login');
+        else
+        return  View('Admin.Store');
+    }
+    public function Product()
+    {
+        $check=Session::exists('Login');
+        if(!$check)
+            return redirect('/User/Login');
+        else
+        return  View('Admin.Product');
+    }
     /*api*/
     public function Contents()
     {
-        $url=config('Constant.ServicePath.GetContent');
+        $url=config('Constant.ServicePath.Contents');
         $data= DataFromServer::get($url,0,0);
 
 
@@ -62,7 +78,7 @@ class AdminController extends Controller
     }
     public function ContentID($id)
     {
-        $url=config('Constant.ServicePath.GetContent').'?index='.$id;
+        $url=config('Constant.ServicePath.Contents').'?index='.$id;
         $data= DataFromServer::get($url,0,0);
         return  $data;
     }
@@ -116,6 +132,7 @@ class AdminController extends Controller
         $data=['form_params' => [
             'UserID' => $request->UserID,
             'ContentName' => $request->ContentName,
+            'ProductID' => $request->ProductID,
             'ContentTypeID' => 1,
         ]];
         $res= DataFromServer::SendData($url,$data);
@@ -186,6 +203,43 @@ class AdminController extends Controller
 
 
 
+    }
+    /***************Store**********************/
+    public function GetStore()
+    {
+        $url=config('Constant.ServicePath.Store');
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    public function SendStore(Request $request)
+    {
+
+    $url=config('Constant.ServicePath.Store');
+    $data=['form_params' => [
+        'ProductID'                   => $request->ProductID,
+        'Quantity'                  => $request->Quantity,
+    ]];
+    $res= DataFromServer::SendData($url,$data);
+    return  $res;
+}
+    /***************Product**********************/
+    public function GetProduct()
+    {
+        $url=config('Constant.ServicePath.Product');
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
+    }
+    public function SendProducts(Request $request)
+    {
+
+        $url=config('Constant.ServicePath.Product');
+        $data=['form_params' => [
+            'ProductName'                   => $request->ProductName,
+            'ProductPrice'                  => $request->ProductPrice,
+            'CategoryID'                       => $request->CategoryID,
+        ]];
+        $res= DataFromServer::SendData($url,$data);
+        return  $res;
     }
 /*************************************Statistics**************************************/
     public function Statistics()
