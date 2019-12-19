@@ -1,6 +1,31 @@
 <template>
-    <div>
-        {{Contacts}}
+    <div class="container">
+       <div class="card">
+           <div class="card-header">
+
+           </div>
+           <div class="card-body"><!--@row-selected="onRowSelected"-->
+               <div>
+                   <b-table
+                       ref="selectableTable"
+                       selectable
+                       :select-mode="'single'"
+                       selected-variant="active"
+                       striped hover :items="Contacts"  :fields="ContactFields">
+                       <template v-slot:cell(ContactID)="data">
+                           {{ data.index + 1 }}
+                       </template>
+                       <!--<template v-slot:cell(ContentStatus)="data">
+                           {{ data.item.ContentStatus.ContentStateTitle }}
+                       </template>-->
+                   </b-table>
+               </div>
+               <div>
+
+               </div>
+
+           </div>
+       </div>
     </div>
 </template>
 
@@ -20,6 +45,12 @@
         data(){
             return {
                 Contacts:[],
+                ContactFields:[
+                    { key: 'ContactID', label: 'ردیف' },
+                    { key: 'ContactName', label: 'نام' },
+                    { key: 'ContactEmail', label: 'ایمیل' },
+                    { key: 'ContactEmail', label: 'ایمیل' },
+                ],
                 Loading:false,
             }
         },
