@@ -67,6 +67,14 @@ class AdminController extends Controller
         else
         return  View('Admin.Product');
     }
+    public function Contact()
+    {
+        $check=Session::exists('Login');
+        if(!$check)
+            return redirect('/User/Login');
+        else
+        return  View('Admin.Contact');
+    }
     /*api*/
     public function Contents()
     {
@@ -240,6 +248,13 @@ class AdminController extends Controller
         ]];
         $res= DataFromServer::SendData($url,$data);
         return  $res;
+    }
+    /***************Product**********************/
+    public function GetContacts()
+    {
+        $url=config('Constant.ServicePath.Contacts');
+        $data= DataFromServer::get($url,0,0);
+        return  $data;
     }
 /*************************************Statistics**************************************/
     public function Statistics()

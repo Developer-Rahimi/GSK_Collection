@@ -21,5 +21,6 @@
                 "Category"                  => $server."Category",
                 "Address"                  => $server."Address",
                 "State"                  => $server."State",
+                "Contacts"                  => $server."Contact",
             ],
         ];

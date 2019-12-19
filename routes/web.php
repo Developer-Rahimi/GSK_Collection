@@ -80,6 +80,7 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Order', ['as'=>'Admin.User','uses'=>'AdminController@Order']);
         Route::get('/Product', ['as'=>'Admin.Product','uses'=>'AdminController@Product']);
         Route::get('/Store', ['as'=>'Admin.Store','uses'=>'AdminController@Store']);
+        Route::get('/Contact', ['as'=>'Admin.Contact','uses'=>'AdminController@Contact']);
         Route::group(['prefix' => '/api'], function () {
             Route::get('/User', ['as'=>'Admin.api.Users','uses'=>'AdminController@Users']);
             Route::get('/User/{id}', ['as'=>'Admin.api.User','uses'=>'AdminController@UserID']);
@@ -103,6 +104,8 @@ Route::group(['prefix' => '/'], function () {
 
             Route::get('/Product/Get', ['as'=>'Admin.api.GetProduct','uses'=>'AdminController@GetProduct']);
             Route::Post('/Product/Add', ['as'=>'Admin.api.SendProduct','uses'=>'AdminController@SendProducts']);
+
+            Route::get('/Contact/Get', ['as'=>'Admin.api.GetContact','uses'=>'AdminController@GetContacts']);
 
         });
     });

@@ -68,6 +68,7 @@ Vue.component('User', require('./components/Admin/User.vue').default);
 Vue.component('Order', require('./components/Admin/Order.vue').default);
 Vue.component('Store', require('./components/Admin/Store.vue').default);
 Vue.component('Products', require('./components/Admin/Product.vue').default);
+Vue.component('Contact', require('./components/Admin/Contact.vue').default);
 
 
 
