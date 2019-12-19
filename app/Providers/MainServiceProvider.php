@@ -34,12 +34,12 @@ class MainServiceProvider extends ServiceProvider
             $view->with('User', \Session::get('Login') );
             $view->with('Login', true);
         });
-        $date=Carbon::today();
-        $data=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
-        if($data!=null){
-            $d=Carbon::today();;
-            $data->Review=$data->Review+1;
-            $data->Datetime=$date;
+        /*$date=Carbon::today();
+            $data=Statistic::wheredate('Datetime','=',$date)->orderBy('Datetime', 'desc')->first();
+            if($data!=null){
+                $d=Carbon::today();;
+                $data->Review=$data->Review+1;
+                $data->Datetime=$date;
             $data->save();
         }else{
             $d=Carbon::today();;
@@ -47,7 +47,7 @@ class MainServiceProvider extends ServiceProvider
             $sta->Review=1;
             $sta->Datetime=$d;
             $sta->save();
-        }
+        }*/
 
 
     }
