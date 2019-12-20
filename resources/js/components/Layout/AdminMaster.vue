@@ -33,6 +33,7 @@
                     {Name:"محتوا",Link:"/Content"},
                     {Name:"سفارشات",Link:"/Order"},
                     {Name:"محصولات",Link:"/Product"},
+                    {Name:"تماس ها",Link:"/Contact"},
                     {Name:"کاربران",Link:"/User"},
                 ],
             }
