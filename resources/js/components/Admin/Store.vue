@@ -43,7 +43,7 @@
                 <div class="main">
                     <select class="c-text" v-model="Info.ProductID">
                         <option disabled value="">لطفا انتخاب کنید</option>
-                        <option v-for="Product in Products" v-bind:value="Product.id">{{Product.ProductName}}</option>
+                        <option v-for="Product in Products" v-bind:value="Product.ProductID">{{Product.ProductName}}</option>
                     </select>
                 </div>
             </div>
