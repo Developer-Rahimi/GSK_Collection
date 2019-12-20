@@ -93,6 +93,7 @@
             </div>
         </b-modal>
         </div>
+        {{Content}}
         <div v-show="Loading">
             <center>
                 <div style="width: 150px">
@@ -193,7 +194,7 @@
             SendCart(){
                 axios
                     .post(this.UrlSendCart,{
-                        ContentID:this.Index,
+                        ProductID:this.Content.Product.ProductID,
                         Quantity:this.Quantity
                     })
                     .then(response => {

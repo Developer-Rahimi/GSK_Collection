@@ -34,7 +34,9 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/Product', ['as'=>'Get.Product','uses'=>'ApiController@Product']);
 
 
+
         Route::get('/Cart', ['as'=>'Get.Cart','uses'=>'ApiController@GetCart']);
+        Route::get('/Cart/{id}', ['as'=>'Get.CartID','uses'=>'ApiController@GetCart']);
         Route::post('/Cart', ['as'=>'Send.Cart','uses'=>'ApiController@AddCart']);
 
         Route::get('/Order', ['as'=>'Get.Orders','uses'=>'ApiController@GetOrder']);

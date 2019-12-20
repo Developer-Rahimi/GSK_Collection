@@ -119,11 +119,11 @@ class ApiController extends Controller
         $res=DataFromServer::SendData($url,$data);
         return $res;
     }
+
     /***************************************Cart**************************************/
-    public function GetCart()
+    public function GetCart($id)
     {
-        $UserID=1;
-        $url=config('Constant.ServicePath.Cart').'?index='.$UserID;
+        $url=config('Constant.ServicePath.Cart').'?index='.$id;
         $data= DataFromServer::get($url,0,0);
         return  $data;
     }
@@ -133,7 +133,7 @@ class ApiController extends Controller
         $UserID=1;
         $data=['form_params' => [
             'UserID' => $UserID,
-            'ContentID' => $request->ContentID,
+            'ProductID' => $request->ProductID,
             'Quantity' => $request->Quantity,
         ]];
         $res= DataFromServer::SendData($url,$data);
@@ -155,7 +155,7 @@ class ApiController extends Controller
         $data= DataFromServer::get($url,0,0);
         return  $data;
     }
-    /***************************************Category**************************************/
+    /***************************************Address**************************************/
     public function GetAddress($id)
     {
         $url=config('Constant.ServicePath.Address')."?UserID=".$id;

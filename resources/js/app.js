@@ -57,7 +57,6 @@ Vue.component('Test', require('./components/Page/Test.vue').default);
 Vue.component('Top', require('./components/Menu/Top.vue').default);
 Vue.component('MainMenu', require('./components/Menu/Main.vue').default);
 Vue.component('Access', require('./components/Menu/Access.vue').default);
-Vue.component('New', require('./components/Menu/New.vue').default);
 
 
 

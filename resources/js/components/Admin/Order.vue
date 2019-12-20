@@ -6,6 +6,7 @@
                 :select-mode="'single'"
                 selected-variant="active"
                 :fields="OrderFields"
+                @row-selected="onRowSelected"
                 striped hover :items="Orders" >
             <!--:fields="ContentFields" @row-selected="onRowSelected"-->
            <template v-slot:cell(id)="data">
@@ -30,18 +31,21 @@
         data(){
             return{
                 Orders:[],
+                Order:{},
                 OrderFields:[
                     { key: 'id', label: 'ردیف' },
                     { key: 'OrderID', label: 'کد سفارش' },
                     { key: 'DatePay', label: 'تاریخ' },
-                ]
+                ],
+
             }
         },
         mounted() {
-            this. GetUsers();
+            this. GetOrder();
+
         },
         methods:{
-            GetUsers(){
+            GetOrder(){
                 this.Loading=true;
                 axios
                     .get(this.UrlGetOrder)
@@ -51,6 +55,9 @@
                         this.Orders=data;
                     }).finally(() => this.Loading = false)
             },
+            onRowSelected(items){
+                console.log(items[0]) ;
+            }
         }
     }
 </script>

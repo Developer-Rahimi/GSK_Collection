@@ -5,7 +5,7 @@
                 <h3>سبد خرید</h3>
             </div>
             <div class="card-body">
-        <div id="Cart" v-show="!Loading" v-if="Carts.length">
+        <div id="Cart"  v-if="Carts.length">
             <h2 class="title">سبد خريد</h2>
             <h3 class="head" v-text="'محتويات سبد خريد شما:  '+Carts.length +' محصول'"></h3>
             <b-table :items="Carts" :fields="CartFields" class="table" style="direction: rtl">
@@ -13,17 +13,18 @@
                     {{ data.index + 1 }}
                 </template>
                 <template v-slot:cell(ContentName)="data">
-                    {{ data.item.Content.ContentName}}
+                    <!--{{ data.item.Product.ProductName}}-->
+                    {{ data.item.Product.ProductName}}
                 </template>
                 <template v-slot:cell(ProductPrice)="data">
-                    <span v-if="data.item.Content.Products[0]"> {{ data.item.Content.Products[0].ProductPrice}}</span>
+                    <span v-if="data.item.Product"> {{ data.item.Product.ProductPrice}}</span>
 
                 </template>
                 <template v-slot:cell(Quntity)="data">
                     {{ data.item.Quantity}}
                 </template>
                 <template v-slot:cell(Total)="data">
-                    <span v-if="data.item.Content.Products[0]"> {{ data.item.Content.Products[0].ProductPrice * data.item.Quantity }}</span>
+                    <span v-if="data.item.Product"> {{ data.item.Product.ProductPrice * data.item.Quantity }}</span>
                 </template>
             </b-table>
             <div class="info">
@@ -39,6 +40,18 @@
                     <tr>
                         <td class="label">مجموع:</td>
                         <td>{{Total}}</td>
+                    </tr>
+                    <tr >
+                        <td class="label">آدرس:</td>
+                        <td>
+                            <div v-for="Address in Addresses" >
+
+                                <input id="add" type="radio"  name="gender" v-bind:value="Address.AddressID" >
+                                <label for="add" v-text="Address.AddressName"></label><br>
+                            </div>
+
+
+                        </td>
                     </tr>
                     <tr>
                         <td class="label"></td>
@@ -80,6 +93,14 @@
     export default {
         name: "Cart",
         props: {
+            User: {
+                type: String,
+                required: true,
+            },
+            UrlGetAddress: {
+                type: String,
+                required: true,
+            },
             UrlGetCart: {
                 type: String,
                 required: true,
@@ -99,6 +120,8 @@
                     { key: 'Quntity', label: 'تعداد' },
                     { key: 'Total', label: 'جمع(تومان)' },
                 ],
+                UserInfo:{},
+                Addresses:[],
                 Tot:null,
                 Total:null,
                 Loading:false,
@@ -107,13 +130,15 @@
             }
         },
         mounted() {
+            this.UserInfo=JSON.parse(this.User);
             this.GetCart();
+            this.GetAddress();
         },
         methods:{
             GetCart(){
                 this.Loading=true;
                 axios
-                    .get(this.UrlGetCart)
+                    .get(this.UrlGetCart+"/"+this.UserInfo.id)
                     .then(response => {
                         var data=response.data;
                         if(data.length>0){
@@ -123,6 +148,17 @@
                        this.PayOrder=data[0].OrderID;
                        console.log(this.PayOrder);
                         }
+                    }).finally(() => this.Loading = false);
+            },
+            GetAddress(){
+                this.Loading=true;
+                axios
+                    .get(this.UrlGetAddress+"/"+this.UserInfo.id)
+                    .then(response => {
+                        var data=response.data;
+                        this.Addresses=data;
+                       console.log(data);
+
                     }).finally(() => this.Loading = false);
             },
             SendPay(){
@@ -142,12 +178,12 @@
                         window.location.replace(data);
                     }).finally(() => this.Loading = false);
             },
-            total(data){/**/
+            total(data){
                 var tot=0;
                 for(var i=0;i<data.length;i++){
-                    tot += (data[i].Quantity *   data[i].Content.Products[0].ProductPrice);
-                    console.log(data[i].Content.Products[0].ProductPrice) ;
-                    console.log(data[i].Quantity *   data[i].Content.Products[0].ProductPrice) ;
+                    tot += (data[i].Quantity *   data[i].Product.ProductPrice);
+                    console.log(data[i].Product.ProductPrice) ;
+                    console.log(data[i].Quantity *   data[i].Product.ProductPrice) ;
                 }
                 console.log(tot) ;
                 this.Tot=tot;

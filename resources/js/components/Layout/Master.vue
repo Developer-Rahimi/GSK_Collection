@@ -3,7 +3,7 @@
         <div id="Header">
             <Top :UserInfo="UserInfo"></Top>
             <img v-bind:src="Home+'/icon/logo.png'" style="float:right;width:280px;height:200px;">
-            <div class="box">
+            <!--<div class="box">
                 <div style="float: right;">
                     <div>
                         <font-awesome-icon  icon="phone" /><span style="color:#888888">+989107608438</span>
@@ -12,7 +12,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div>-->
             <h1 class="SiteName">گروه صنعتی کریمی</h1>
             <br>
             <h4 class="SiteBanner">پیشرو در صنعت کنترل و ابزار دقیق</h4>
